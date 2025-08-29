@@ -48,6 +48,15 @@
             font-size: 1.5rem;
             font-weight: bold;
             color: #4c6ef5;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-img {
+            height: 28px;
+            width: auto;
+            display: block;
         }
 
         .nav-links {
@@ -84,7 +93,10 @@
             right: 0;
             bottom: 0;
             background: rgba(0,0,0,0.3);
+            z-index: 1;
         }
+
+        /* Removed hero background logo to reposition elsewhere */
 
         .hero-content {
             position: relative;
@@ -136,6 +148,18 @@
             text-align: center;
             margin-bottom: 3rem;
             color: #333;
+        }
+
+        /* Brand (backlogo) section */
+        .brand-section {
+            padding: 40px 0;
+            background: #fff;
+        }
+        .brand-logo {
+            max-width: 520px;
+            width: 90%;
+            height: auto;
+            filter: none;
         }
 
         /* Event Info Cards */
@@ -316,14 +340,14 @@
         }
 
         /* Footer */
-        footer {
+footer {
             background: #333;
             color: white;
             text-align: center;
             padding: 2rem 0;
         }
 
-        .social-links {
+.social-links {
             margin-top: 1rem;
         }
 
@@ -403,7 +427,8 @@
     <header>
         <nav class="container">
             <div class="logo">
-                <i class="fas fa-database"></i> OpenAlex Forum KR
+                <img src="img/backlogo-small.webp" alt="OpenAlex Forum KR" class="logo-img">
+                <span>OpenAlex Forum KR</span>
             </div>
             <ul class="nav-links">
                 <li><a href="#about-openalex">OpenAlex</a></li>
@@ -431,6 +456,13 @@
                 <a href="#registration" class="cta-button">
                     <i class="fas fa-rocket"></i> 지금 참가신청하기
                 </a>
+            </div>
+        </section>
+
+        <!-- Brand section with backlogo placed before OpenAlex intro -->
+        <section class="section brand-section" aria-label="브랜드 로고">
+            <div class="container" style="text-align:center;">
+                <img src="img/backlogo.webp" alt="OpenAlex Forum Korea 브랜드 로고" class="brand-logo" loading="lazy">
             </div>
         </section>
 
@@ -627,7 +659,8 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 OpenAlex Forum KR. KISTI 글로벌 R&D 분석센터</p>
+            <img src="img/backlogo-small.webp" alt="OpenAlex Forum KR" style="max-height:40px;width:auto;opacity:.9;vertical-align:middle;" />
+            <p style="margin-top:.75rem;">&copy; 2025 OpenAlex Forum KR. KISTI 글로벌 R&D 분석센터</p>
             <div class="social-links">
                 <a href="https://github.com/KISTI-GlobalRnD"><i class="fab fa-github"></i></a>
                 <a href="https://dap.kisti.re.kr/globalrnd/"><i class="fas fa-globe"></i></a>

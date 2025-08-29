@@ -13,6 +13,20 @@
 - 참가 신청(Registration): 구글 폼으로 이동하는 버튼을 제공합니다.
 - 푸터(Footer): GitHub, 웹페이지, 이메일 링크를 제공합니다.
 
+## 브랜드 로고/이미지 자산
+- 위치: `img/`
+  - `backlogo.webp`: 메인 브랜드 로고(표준 크기)
+  - `backlogo-small.webp`: 헤더/푸터용 소형 로고
+  - `backlogo-bg.webp`: 희미한 배경용(현재는 미사용)
+- 사용처
+  - 헤더: `backlogo-small.webp`를 텍스트 옆에 노출
+  - 브랜드 섹션: 히어로 아래, OpenAlex 소개 위에 로고 단독 배치
+  - 푸터: 소셜 링크 위에 소형 로고 표시
+- 크기 조정
+  - 헤더 로고: `.logo-img { height: 28px; }` 높이 수정
+  - 브랜드 섹션 로고: `.brand-logo { max-width: 520px; }` 폭 수정
+  - 푸터 로고: `style="max-height:40px"` 인라인 값 수정 가능
+
 ## 콘텐츠 업데이트 방법
 - 일정 수정: `index.html`의 `#schedule` 섹션에서 각 `<tr>`의 시간/주제/발표자 텍스트를 직접 변경합니다.
 - 발표자 관리: `#speakers` 섹션에서 `.speaker-card`를 복제/편집합니다.
@@ -21,6 +35,11 @@
   - 순서 변경: 발표자 카드의 순서를 원하는 대로 재배치합니다.
 - 참가 신청 링크: `id="google-form-btn"` 앵커의 `href`를 구글 폼 URL로 교체합니다(이미 설정됨).
 - 소셜 링크: 푸터의 링크를 필요 시 교체합니다.
+
+## 파일 편집 포인트
+- 헤더 로고: `index.html`의 `.logo` 블록과 `.logo-img` 스타일
+- 브랜드 섹션: `index.html`의 `section.brand-section` 및 `.brand-logo` 스타일
+- 푸터 로고/링크: `index.html`의 `<footer>` 내부 링크 및 로고 이미지
 
 ## 저장소 구조
 - `index.html`: 메인 정적 페이지(행사 소개/일정/발표자/신청 포함)
