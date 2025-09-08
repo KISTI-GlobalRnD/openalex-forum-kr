@@ -15,11 +15,11 @@
 
 ## 브랜드 로고/이미지 자산
 - 위치: `img/`
-  - `backlogo.webp`: 메인 브랜드 로고(표준 크기)
-  - `backlogo-small.webp`: 헤더/푸터용 소형 로고
-  - `backlogo-bg.webp`: 희미한 배경용(현재는 미사용)
+  - `OpenAlex.webp`: 메인 브랜드 로고(표준 크기)
+  - `OpenAlex-small.webp`: 헤더/푸터용 소형 로고
+  - `OpenAlex-bg.webp`: 희미한 배경용(현재는 미사용)
 - 사용처
-  - 헤더: `backlogo-small.webp`를 텍스트 옆에 노출
+  - 헤더: `OpenAlex-small.webp`를 텍스트 옆에 노출
   - 브랜드 섹션: 히어로 아래, OpenAlex 소개 위에 로고 단독 배치
   - 푸터: 소셜 링크 위에 소형 로고 표시
 - 크기 조정
