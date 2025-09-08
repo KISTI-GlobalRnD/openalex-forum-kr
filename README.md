@@ -1,4 +1,4 @@
-# OpenAlex Forum Korea (오픈알렉스 포럼 코리아)
+# OpenAlex User Forum Korea (오픈알렉스 포럼 코리아)
 
 한국 OpenAlex 사용자 커뮤니티의 행사/자료/네트워킹 허브를 목표로 하는 저장소입니다. 행사 소개와 일정, 발표자, 참가 신청 등은 `index.html`에서 관리하며, 튜토리얼·발표자료·커뮤니티 문서 등은 폴더별로 정리합니다.
 
