@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAlex User Forum KR 1회 | KISTI 글로벌 R&D 분석센터</title>
+    <meta name="description" content="KISTI 글로벌 R&D 분석센터 주최, OpenAlex 한국 사용자들간의 연구 경험 공유 및 네트워킹 포럼">
+    <!-- Open Graph / Twitter for link previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="OpenAlex User Forum KR 1회 | KISTI 글로벌 R&D 분석센터">
+    <meta property="og:description" content="KISTI 글로벌 R&D 분석센터 주최, OpenAlex 한국 사용자들간의 연구 경험 공유 및 네트워킹 포럼">
+    <meta property="og:url" content="https://kisti-globalrnd.github.io/openalex-forum-kr/">
+    <meta property="og:image" content="https://kisti-globalrnd.github.io/openalex-forum-kr/img/OpenAlex.webp">
+    <meta property="og:image:alt" content="OpenAlex User Forum 브랜드 이미지">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="OpenAlex User Forum KR 1회 | KISTI 글로벌 R&D 분석센터">
+    <meta name="twitter:description" content="KISTI 글로벌 R&D 분석센터 주최, OpenAlex 한국 사용자들간의 연구 경험 공유 및 네트워킹 포럼">
+    <meta name="twitter:image" content="https://kisti-globalrnd.github.io/openalex-forum-kr/img/OpenAlex.webp">
+    <link rel="canonical" href="https://kisti-globalrnd.github.io/openalex-forum-kr/">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4c6ef5;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-img {
+            height: 28px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4c6ef5;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+            z-index: 1;
+        }
+
+        /* Removed hero background logo to reposition elsewhere */
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Main Content */
+        main {
+            background: white;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        /* Brand (backlogo) section */
+        .brand-section {
+            padding: 40px 0;
+            background: #fff;
+        }
+        .brand-logo {
+            max-width: 520px;
+            width: 90%;
+            height: auto;
+            filter: none;
+        }
+
+        /* Event Info Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-left: 4px solid #4c6ef5;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card h3 {
+            color: #4c6ef5;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .info-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Schedule */
+        .schedule-table {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .schedule-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .schedule-table th {
+            background: linear-gradient(135deg, #4c6ef5, #6c5ce7);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .schedule-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .schedule-table tr:hover {
+            background: #f8f9ff;
+        }
+
+        /* Speakers */
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .speaker-card {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .speaker-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4c6ef5, #6c5ce7);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .speaker-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+        }
+
+        .avatar-initial {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .speaker-card h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .speaker-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Registration */
+        .registration {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .registration h2 {
+            color: white;
+        }
+
+        .registration-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.9);
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+.social-links {
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #4c6ef5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .info-grid,
+            .speakers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            top: 40%;
+            left: 80%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="img/OpenAlex-small.webp" alt="OpenAlex User Forum KR" class="logo-img">
+                <span>OpenAlex User Forum KR</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about-openalex">OpenAlex</a></li>
+                <li><a href="#about">행사소개</a></li>
+                <li><a href="#schedule">일정</a></li>
+                <li><a href="#speakers">발표자</a></li>
+                <li><a href="#registration">참가신청</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="floating-elements">
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+            </div>
+            <div class="container hero-content">
+                <h1>OpenAlex User Forum KR</h1>
+                <p class="hero-subtitle">
+                    KISTI 글로벌 R&D 분석센터 주최<br>
+                    OpenAlex 한국 사용자들간의 연구 경험 공유 및 교류를 위한 첫 번째 포럼
+                </p>
+                <a href="#registration" class="cta-button">
+                    <i class="fas fa-rocket"></i> 지금 참가신청하기
+                </a>
+            </div>
+        </section>
+
+        <!-- Brand section with backlogo placed before OpenAlex intro -->
+        <section class="section brand-section" aria-label="브랜드 로고">
+            <div class="container" style="text-align:center;">
+                <img src="img/OpenAlex.webp" alt="OpenAlex User Forum Korea 브랜드 로고" class="brand-logo" loading="lazy">
+            </div>
+        </section>
+
+        <section id="about-openalex" class="section">
+            <div class="container">
+                <h2>🔍 OpenAlex란?</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3><i class="fas fa-database"></i> 오픈소스 학술 데이터베이스</h3>
+                        <p>OpenAlex는 <strong>2억 5천만 개 이상의 학술 논문</strong>과 연구 데이터를 무료로 제공하는 오픈소스 플랫폼입니다. Microsoft Academic Graph의 후속으로 개발되어, 전 세계 연구자들의 연구 분석을 지원합니다.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3><i class="fas fa-chart-line"></i> 포괄적 연구 분석</h3>
+                        <p><strong>논문, 저자, 기관, 학술지, 펀딩</strong> 등 다차원적 연구 데이터를 제공하며, Python, R 등 다양한 프로그래밍 언어로 API를 통해 접근할 수 있습니다.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3><i class="fas fa-users"></i> 왜 이 모임이 필요한가?</h3>
+                        <p>OpenAlex의 활용도가 높아지고 있지만, <strong>한국 연구자들 간의 경험 공유와 네트워킹</strong>이 부족한 상황입니다. 실제 연구에서의 활용 사례를 공유하고, 지속적인 커뮤니티를 구축하고자 합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section" style="background: #f8f9ff;">
+            <div class="container">
+                <h2>🎯 행사 소개</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3><i class="fas fa-calendar-alt"></i> 일시</h3>
+                        <p><strong>2025년 9월 25일 (목요일)</strong><br>
+                        14:00 ~ 17:40 (3시간 40분)</p>
+                    </div>
+                    <div class="info-card">
+                        <h3><i class="fas fa-map-marker-alt"></i> 장소</h3>
+                        <p><strong>정동1928 아트센터 이벤트홀</strong><br>
+                        서울특별시 중구 덕수궁길 130<br>
+                        (서울 기념물 제20호, 정동길 위치)</p>
+                    </div>
+                    <div class="info-card">
+                        <h3><i class="fas fa-users"></i> 정원 및 시설</h3>
+                        <p><strong>100명 (이벤트홀 수용인원)</strong><br>
+                        프로젝터, 스크린, 음향시설 완비</p>
+                    </div>
+                    <div class="info-card">
+                        <h3><i class="fas fa-heart"></i> 참가 대상</h3>
+                        <p>대학원생, 연구자, 사서,<br>
+                        연구지원 담당자, 데이터 분석가<br>
+                        <strong>참가비 무료</strong> (다과 제공)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="schedule" class="section">
+                <div class="schedule-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>시간</th>
+                                <th>내용</th>
+                                <th>발표자</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>13:30-14:00</td>
+                                <td>등록 및 기념품 제공</td>
+                                <td>운영진</td>
+                            </tr>
+                            <tr>
+                                <td>14:00-14:20</td>
+                                <td><strong>오프닝</strong><br>행사 취지와 목적</td>
+                                <td>이준영 센터장</td>
+                            </tr>
+                            <tr>
+                                <td>14:20-14:50</td>
+                                <td><strong>글로벌 오픈데이터 동향과 OpenAlex</strong></td>
+                                <td>박진서 책임연구원</td>
+                            </tr>
+                            <tr>
+                                <td>14:50-15:20</td>
+                                <td><strong>히치하이커를 위한 오픈알렉스 데이터 가이드</strong></td>
+                                <td>이정우 선임연구원</td>
+                            </tr>
+                            <tr>
+                                <td>15:20-15:50</td>
+                                <td><strong>☕ 휴식 시간</strong><br>네트워킹 및 다과</td>
+                                <td> </td>
+                            </tr>
+                            <tr>
+                                <td>15:50-16:20</td>
+                                <td><strong>OpenAlex를 활용한 분야별 AI 연구 및 활용 비교</strong></td>
+                                <td>유택호 교수</td>
+                            </tr>
+                            <tr>
+                                <td>16:20-16:50</td>
+                                <td><strong>Science of Science and Beyond: Understanding Science & Policy Ecosystem</strong></td>
+                                <td>윤지성 교수</td>
+                            </tr>
+                            <tr>
+                                <td>16:50-17:20</td>
+                                <td><strong>💬 자유 토론 세션</strong><br>추가 및 자유 Q&A 및 연구협력 논의</td>
+                                <td>전체 참가자, 권태훈 책임연구원</td>
+                            </tr>
+                            <tr>
+                                <td>17:20-17:30</td>
+                                <td><strong>클로징 & 커뮤니티 안내</strong></td>
+                                <td>김영진 선임연구원</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="speakers" class="section">
+            <div class="container">
+                <h2>🎤 발표자 소개</h2>
+                <div class="speakers-grid">
+                    <!-- 1) 박진서 -->
+                    <div class="speaker-card">
+                        <div class="speaker-avatar">
+                            <img src="img/PJS.jpeg" alt="박진서 사진">
+                        </div>
+                        <h4>박진서 책임연구원</h4>
+                        <p>KISTI 글로벌 R&D 분석센터<br>Open Science로의 움직임과 OpenAlex</p>
+                    </div>
+
+                    <!-- 2) 이정우 -->
+                    <div class="speaker-card">
+                        <div class="speaker-avatar">
+                            <img src="img/LJW.jpeg" alt="이정우 사진">
+                        </div>
+                        <h4>이정우 선임연구원</h4>
+                        <p>KISTI 글로벌 R&D 분석센터<br>히치하이커를 위한 오픈알렉스 데이터 가이드</p>
+                    </div>
+
+                    <!-- 3) 유택호 (capital initial) -->
+                    <div class="speaker-card">
+                        <div class="speaker-avatar">
+                            <img src="img/YTH.jpeg" alt="유택호 사진">
+                        </div>
+                        <h4>유택호 교수</h4>
+                        <p>KAIST 디지털인문사회과학센터<br>OpenAlex를 활용한 분야별 AI 연구 및 활용 비교</p>
+                    </div>
+
+                    <!-- 4) 윤지성 (capital initial) -->
+                    <div class="speaker-card">
+                        <div class="speaker-avatar">
+                            <img src="img/YJS.png" alt="윤지성 사진">
+                        </div>
+                        <h4>윤지성 교수</h4>
+                        <p>KDI School<br>Science of Science and Beyond: Understanding Science & Policy Ecosystem</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="registration" class="section registration">
+            <div class="container">
+                <h2>📝 참가 신청</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                    정원 120명 이내 (선착순 마감)
+                    <br>많은 지원으로 참가자 수를 제한하기보다 행사장 크기를 늘리기로 결정했습니다.<br>
+                    * 뒤늦게 신청하신 분들은 기념품 중 일부 수량이 부족할 수 있습니다. 양해 부탁드립니다.
+                </p>
+                <div class="registration-form">
+                    <h3 style="margin-bottom: 1.5rem;">Google 설문지로 참가신청</h3>
+                    <p style="margin-bottom: 2rem;">
+                        아래 버튼을 클릭하시면 Google 설문지로 이동합니다.<br>
+                        간단한 정보 입력 후 참가신청이 완료됩니다.
+                    </p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEQ4OgiJtCLmaz1hrWOoOqK_Y5RnVjWpVVSiKZ1tIri6apQA/viewform?usp=header" target="_blank" rel="noopener" class="cta-button" id="google-form-btn">
+                        <i class="fas fa-external-link-alt"></i> Google 설문지로 신청하기
+                    </a>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <img src="img/OpenAlex-small.webp" alt="OpenAlex User Forum KR" style="max-height:40px;width:auto;opacity:.9;vertical-align:middle;" />
+            <p style="margin-top:.75rem;">&copy; 2025 OpenAlex User Forum KR. KISTI 글로벌 R&D 분석센터</p>
+            <div class="social-links">
+                <a href="https://github.com/KISTI-GlobalRnD"><i class="fab fa-github"></i></a>
+                <a href="https://dap.kisti.re.kr/globalrnd/"><i class="fas fa-globe"></i></a>
+                <a href="mailto:kimyoungjin06@kisti.re.kr"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Google Form 링크는 버튼 href로 직접 이동합니다
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.info-card, .speaker-card, .schedule-table').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
