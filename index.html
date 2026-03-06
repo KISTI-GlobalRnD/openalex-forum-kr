@@ -776,7 +776,7 @@
                     </div>
                     <p class="survey-step-label"><span id="survey-step-current">1</span> / <span id="survey-step-total">6</span> 단계</p>
 
-                    <form id="demand-form" action="https://docs.google.com/forms/d/e/1FAIpQLSf719zPWQ8LmJuMJjsYbg2C24EFEkVOsM1QICL_hp7l9R7yLQ/formResponse" method="POST" target="hidden_iframe">
+                    <form id="demand-form" action="https://docs.google.com/forms/d/e/1FAIpQLSf719zPWQ8LmJuMJjsYbg2C24EFEkVOsM1QICL_hp7l9R7yLQ/formResponse" method="POST">
                         <div class="wizard-viewport" id="wizard-viewport">
                             <div class="wizard-track" id="wizard-track">
                                 <section class="wizard-step" data-step="1">
@@ -798,31 +798,37 @@
                                         <input id="field-org" name="entry.479301265" type="text" required placeholder="기관/회사/학교명">
                                     </div>
                                     <div class="wizard-field">
-                                        <label for="field-org-type">소속 유형</label>
+                                        <label for="field-org-type">소속 기관 유형</label>
                                         <select id="field-org-type" name="entry.1673767351" required>
                                             <option value="" selected disabled>선택</option>
                                             <option value="학교">학교</option>
-                                            <option value="연구기관">연구기관</option>
-                                            <option value="공공기관">공공기관</option>
+                                            <option value="연구소">연구소</option>
                                             <option value="기업">기업</option>
-                                            <option value="기타">기타</option>
+                                            <option value="__other_option__">기타(직접 입력)</option>
                                         </select>
+                                    </div>
+                                    <div class="wizard-field" id="org-type-other-wrap" hidden>
+                                        <label for="field-org-type-other">기타 소속 기관 유형</label>
+                                        <input id="field-org-type-other" name="entry.1673767351.other_option_response" type="text" placeholder="예: 공공기관, 도서관, 협회">
                                     </div>
                                 </section>
 
                                 <section class="wizard-step" data-step="3">
-                                    <h4>현재 역할</h4>
+                                    <h4>신분</h4>
                                     <div class="wizard-field">
-                                        <label for="field-role">참여자 역할</label>
+                                        <label for="field-role">신분</label>
                                         <select id="field-role" name="entry.1034130921" required>
                                             <option value="" selected disabled>선택</option>
                                             <option value="학생">학생</option>
-                                            <option value="연구자">연구자</option>
-                                            <option value="사서/정보서비스">사서/정보서비스</option>
-                                            <option value="연구지원">연구지원</option>
-                                            <option value="데이터분석/엔지니어">데이터분석/엔지니어</option>
-                                            <option value="기타">기타</option>
+                                            <option value="교수">교수</option>
+                                            <option value="연구원">연구원</option>
+                                            <option value="정책위원">정책위원</option>
+                                            <option value="__other_option__">기타(직접 입력)</option>
                                         </select>
+                                    </div>
+                                    <div class="wizard-field" id="role-other-wrap" hidden>
+                                        <label for="field-role-other">기타 신분</label>
+                                        <input id="field-role-other" name="entry.1034130921.other_option_response" type="text" placeholder="예: 사서, 엔지니어, 기획/운영">
                                     </div>
                                 </section>
 
@@ -837,15 +843,22 @@
                                         </select>
                                     </div>
                                     <div class="wizard-field">
-                                        <label for="field-tutorial-topic">희망 튜토리얼 내용</label>
-                                        <input id="field-tutorial-topic" name="entry.1818631509" type="text" required placeholder="예: API 활용, 프로젝트 중심 실습">
+                                        <label for="field-tutorial-topic">희망 튜토리얼 세션 유형</label>
+                                        <select id="field-tutorial-topic" name="entry.1818631509">
+                                            <option value="" selected disabled>선택</option>
+                                            <option value="API 활용, 프로젝트 중심 실습">API 활용, 프로젝트 중심 실습</option>
+                                            <option value="데이터 특성 등 경험 중심 설명">데이터 특성 등 경험 중심 설명</option>
+                                        </select>
                                     </div>
                                 </section>
 
                                 <section class="wizard-step" data-step="5">
-                                    <h4>네트워킹 수요</h4>
+                                    <h4>이그나이트 톡</h4>
+                                    <p class="wizard-hint">
+                                        이그나이트 톡은 짧은 발표로 관심 주제를 소개하는 시간입니다. 희망자가 적으면 생략될 수 있습니다.
+                                    </p>
                                     <div class="wizard-field">
-                                        <label for="field-networking">그룹 네트워킹 참여 의향</label>
+                                        <label for="field-networking">이그나이트 톡 발표 희망</label>
                                         <select id="field-networking" name="entry.588393791" required>
                                             <option value="" selected disabled>선택</option>
                                             <option value="네">네</option>
@@ -853,15 +866,15 @@
                                         </select>
                                     </div>
                                     <div class="wizard-field">
-                                        <label for="field-topic">희망 주제</label>
-                                        <input id="field-topic" name="entry.1909160417" type="text" placeholder="논의하고 싶은 주제">
+                                        <label for="field-topic">이그나이트 톡 희망 주제 (선택)</label>
+                                        <input id="field-topic" name="entry.1909160417" type="text" placeholder="예: OpenAlex 데이터 품질 분석, 기관 리포지터리 연계">
                                     </div>
                                 </section>
 
                                 <section class="wizard-step" data-step="6">
                                     <h4>추가 의견</h4>
                                     <div class="wizard-field">
-                                        <label for="field-comment">추가 의견</label>
+                                        <label for="field-comment">추가로 남기실 말씀 (선택)</label>
                                         <textarea id="field-comment" name="entry.461606720" placeholder="운영 방식/주제/질문 등 자유롭게 작성"></textarea>
                                     </div>
                                     <p class="wizard-hint">제출 후 수정이 필요하면 문의 메일로 알려 주세요.</p>
@@ -879,7 +892,6 @@
                     </form>
                     <div class="survey-success" id="survey-success" role="status" aria-live="polite"></div>
                     <p class="survey-alt"><a href="https://docs.google.com/forms/d/e/1FAIpQLSf719zPWQ8LmJuMJjsYbg2C24EFEkVOsM1QICL_hp7l9R7yLQ/viewform" target="_blank" rel="noopener">새 창에서 설문 열기</a></p>
-                    <iframe name="hidden_iframe" id="hidden_iframe" title="survey submission frame" style="display:none;"></iframe>
                 </div>
             </div>
         </section>
@@ -985,11 +997,59 @@
         const prevButton = document.getElementById('wizard-prev');
         const nextButton = document.getElementById('wizard-next');
         const submitButton = document.getElementById('wizard-submit');
-        const hiddenIframe = document.getElementById('hidden_iframe');
         const successBox = document.getElementById('survey-success');
 
         let currentWizardStep = 0;
-        let submissionStarted = false;
+
+        const orgTypeSelect = document.getElementById('field-org-type');
+        const orgTypeOtherWrap = document.getElementById('org-type-other-wrap');
+        const orgTypeOtherInput = document.getElementById('field-org-type-other');
+        const roleSelect = document.getElementById('field-role');
+        const roleOtherWrap = document.getElementById('role-other-wrap');
+        const roleOtherInput = document.getElementById('field-role-other');
+        const tutorialJoinSelect = document.getElementById('field-tutorial-join');
+        const tutorialTypeSelect = document.getElementById('field-tutorial-topic');
+        const igniteJoinSelect = document.getElementById('field-networking');
+        const igniteTopicInput = document.getElementById('field-topic');
+
+        function setOptionalFieldState({ wrapEl, fieldEl, enabled, required }) {
+            if (!wrapEl || !fieldEl) return;
+            wrapEl.hidden = !enabled;
+            fieldEl.disabled = !enabled;
+            fieldEl.required = Boolean(required);
+            if (!enabled) fieldEl.value = '';
+        }
+
+        function syncConditionalFields() {
+            const orgTypeIsOther = orgTypeSelect && orgTypeSelect.value === '__other_option__';
+            setOptionalFieldState({
+                wrapEl: orgTypeOtherWrap,
+                fieldEl: orgTypeOtherInput,
+                enabled: orgTypeIsOther,
+                required: orgTypeIsOther
+            });
+
+            const roleIsOther = roleSelect && roleSelect.value === '__other_option__';
+            setOptionalFieldState({
+                wrapEl: roleOtherWrap,
+                fieldEl: roleOtherInput,
+                enabled: roleIsOther,
+                required: roleIsOther
+            });
+
+            const tutorialJoin = tutorialJoinSelect ? tutorialJoinSelect.value : '';
+            const needsTutorialType = tutorialJoin === '네';
+            tutorialTypeSelect.disabled = !needsTutorialType;
+            tutorialTypeSelect.required = needsTutorialType;
+            if (!needsTutorialType) tutorialTypeSelect.value = '';
+
+            const igniteJoin = igniteJoinSelect ? igniteJoinSelect.value : '';
+            const needsIgniteTopic = igniteJoin === '네';
+            igniteTopicInput.disabled = !needsIgniteTopic;
+            if (!needsIgniteTopic) igniteTopicInput.value = '';
+
+            requestAnimationFrame(syncWizardHeight);
+        }
 
         function syncWizardHeight() {
             if (!wizardSteps[currentWizardStep]) return;
@@ -999,6 +1059,7 @@
         function validateCurrentStep() {
             const requiredFields = wizardSteps[currentWizardStep].querySelectorAll('[required]');
             for (const field of requiredFields) {
+                if (field.disabled) continue;
                 if (!field.checkValidity()) {
                     field.reportValidity();
                     return false;
@@ -1008,6 +1069,7 @@
         }
 
         function updateWizardUI() {
+            syncConditionalFields();
             const total = wizardSteps.length;
             wizardTrack.style.transform = 'translateX(-' + (currentWizardStep * 100) + '%)';
             stepCurrent.textContent = String(currentWizardStep + 1);
@@ -1027,6 +1089,7 @@
         }
 
         nextButton.addEventListener('click', () => {
+            syncConditionalFields();
             if (!validateCurrentStep()) return;
             currentWizardStep = Math.min(currentWizardStep + 1, wizardSteps.length - 1);
             updateWizardUI();
@@ -1038,32 +1101,41 @@
         });
 
         surveyForm.addEventListener('input', () => {
+            syncConditionalFields();
             successBox.classList.remove('visible');
         });
 
-        surveyForm.addEventListener('submit', (event) => {
-            if (!validateCurrentStep()) {
-                event.preventDefault();
-                return;
-            }
-            submissionStarted = true;
+        surveyForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            syncConditionalFields();
+            if (!validateCurrentStep()) return;
+
             submitButton.disabled = true;
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 제출 중';
-        });
 
-        hiddenIframe.addEventListener('load', () => {
-            if (!submissionStarted) return;
-            submissionStarted = false;
-            submitButton.disabled = false;
-            submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> 응답 제출';
-            successBox.textContent = '응답이 접수되었습니다. 참여해 주셔서 감사합니다.';
-            successBox.classList.add('visible');
-            surveyForm.reset();
-            currentWizardStep = 0;
-            updateWizardUI();
+            try {
+                await fetch(surveyForm.action, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: new FormData(surveyForm)
+                });
+                successBox.textContent = '응답이 접수되었습니다. 참여해 주셔서 감사합니다.';
+                successBox.classList.add('visible');
+                surveyForm.reset();
+                syncConditionalFields();
+                currentWizardStep = 0;
+                updateWizardUI();
+            } catch (err) {
+                successBox.textContent = '전송에 실패했습니다. 아래 “새 창에서 설문 열기”로 다시 시도해 주세요.';
+                successBox.classList.add('visible');
+            } finally {
+                submitButton.disabled = false;
+                submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> 응답 제출';
+            }
         });
 
         window.addEventListener('resize', syncWizardHeight);
+        syncConditionalFields();
         updateWizardUI();
     </script>
 </body>
