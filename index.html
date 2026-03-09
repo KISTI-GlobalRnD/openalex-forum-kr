@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OpenAlex User Forum KR #2 | Coming Soon</title>
-    <meta name="description" content="OpenAlex User Forum KR #2 공식 안내. 일정(예정), 프로그램, 수요조사 참여 정보를 제공합니다.">
+    <meta name="description" content="OpenAlex User Forum KR #2 공식 안내. 2026년 5월 15일(금) 개최 일정과 프로그램, 수요조사 참여 정보를 제공합니다.">
     <meta property="og:type" content="website">
     <meta property="og:title" content="OpenAlex User Forum KR #2 | Coming Soon">
-    <meta property="og:description" content="2026년 5월 13~15일 중 개최(예정). 정동1928 아트센터 이벤트홀(예정)에서 진행됩니다.">
+    <meta property="og:description" content="2026년 5월 15일(금) 개최. 정동1928 아트센터 이벤트홀(예정)에서 진행됩니다.">
     <meta property="og:url" content="https://kisti-globalrnd.github.io/openalex-forum-kr/">
     <meta property="og:image" content="https://kisti-globalrnd.github.io/openalex-forum-kr/img/OpenAlex.webp">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="OpenAlex User Forum KR #2 | Coming Soon">
-    <meta name="twitter:description" content="OpenAlex User Forum KR #2 일정(예정)·프로그램·수요조사 안내">
+    <meta name="twitter:description" content="2026년 5월 15일(금) 개최. OpenAlex User Forum KR #2 프로그램·수요조사 안내">
     <meta name="twitter:image" content="https://kisti-globalrnd.github.io/openalex-forum-kr/img/OpenAlex.webp">
     <link rel="canonical" href="https://kisti-globalrnd.github.io/openalex-forum-kr/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -260,6 +260,76 @@
             margin-top: 10px;
             font-size: 0.82rem;
             color: #54657a;
+        }
+
+        .survey-stats {
+            margin-top: 18px;
+            width: min(760px, 100%);
+            padding: 16px;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.86));
+            box-shadow: var(--shadow);
+        }
+
+        .survey-stats-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .survey-stats-title {
+            font-size: 0.82rem;
+            color: #4f6178;
+            letter-spacing: 0.8px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .survey-stats-copy {
+            margin-top: 6px;
+            font-size: 0.92rem;
+            color: #556579;
+            line-height: 1.55;
+        }
+
+        .survey-stats-status {
+            font-size: 0.82rem;
+            color: #54657a;
+            white-space: normal;
+            text-align: right;
+        }
+
+        .survey-stats-grid {
+            margin-top: 14px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .survey-stat {
+            padding: 14px 12px;
+            border-radius: 14px;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.96);
+        }
+
+        .survey-stat strong {
+            display: block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2.3rem);
+            line-height: 1;
+            color: #163533;
+        }
+
+        .survey-stat span {
+            display: block;
+            margin-top: 8px;
+            font-size: 0.82rem;
+            color: #5a6877;
+            line-height: 1.4;
         }
 
         .scroll-hint {
@@ -616,6 +686,10 @@
                 grid-template-columns: 1fr;
                 gap: 4px;
             }
+
+            .survey-stats-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 740px) {
@@ -697,7 +771,31 @@
                         <div class="count-item"><strong id="cd-minutes">--</strong><span>분</span></div>
                         <div class="count-item"><strong id="cd-seconds">--</strong><span>초</span></div>
                     </div>
-                    <div class="count-status" id="cd-status">2026년 5월 13일(수) 기준(예정)</div>
+                    <div class="count-status" id="cd-status">2026년 5월 15일(금) 기준</div>
+                </div>
+
+                <div class="survey-stats" aria-live="polite">
+                    <div class="survey-stats-head">
+                        <div>
+                            <div class="survey-stats-title">현재 수요조사 응답</div>
+                            <p class="survey-stats-copy">응답이 추가되면 아래 숫자도 함께 갱신됩니다.</p>
+                        </div>
+                        <div class="survey-stats-status" id="survey-stats-status">응답 현황 불러오는 중</div>
+                    </div>
+                    <div class="survey-stats-grid">
+                        <div class="survey-stat">
+                            <strong id="survey-total-count">--</strong>
+                            <span>총 참석 응답</span>
+                        </div>
+                        <div class="survey-stat">
+                            <strong id="survey-tutorial-count">--</strong>
+                            <span>튜토리얼 참여 희망</span>
+                        </div>
+                        <div class="survey-stat">
+                            <strong id="survey-ignite-count">--</strong>
+                            <span>이그나이트 톡 발표 희망</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="scroll-hint"><i class="fas fa-arrow-down"></i> 아래로 스크롤해 프로그램 보기</div>
@@ -733,7 +831,7 @@
             <div class="container panel-inner reveal">
                 <h2>언제, 어디서</h2>
                 <p>
-                    일정은 <strong>2026년 5월 13~15일</strong> 중(예정)입니다.
+                    일정은 <strong>2026년 5월 15일(금)</strong>입니다.
                     장소는 <strong>정동1928 아트센터 이벤트홀</strong>(예정)입니다.
                 </p>
                 <p class="keyline">최종 날짜와 신청 링크는 확정되는 대로 공개합니다.</p>
@@ -905,17 +1003,117 @@
     </footer>
 
     <script>
-        const targetDate = new Date('2026-05-13T09:00:00+09:00').getTime();
+        const targetDate = new Date('2026-05-15T09:00:00+09:00').getTime();
 
         const daysEl = document.getElementById('cd-days');
         const hoursEl = document.getElementById('cd-hours');
         const minutesEl = document.getElementById('cd-minutes');
         const secondsEl = document.getElementById('cd-seconds');
         const statusEl = document.getElementById('cd-status');
+        const surveyTotalCountEl = document.getElementById('survey-total-count');
+        const surveyTutorialCountEl = document.getElementById('survey-tutorial-count');
+        const surveyIgniteCountEl = document.getElementById('survey-ignite-count');
+        const surveyStatsStatusEl = document.getElementById('survey-stats-status');
+        const surveySheetEndpoint = 'https://docs.google.com/spreadsheets/d/19QzKJjjDGCQ-0RaePwGPzMtNLknLKPvduDGINblgqno/gviz/tq?tqx=out:json;responseHandler:handleSurveySheet';
+
+        let surveySheetScript = null;
 
         function pad(v) {
             return String(v).padStart(2, '0');
         }
+
+        function setSurveyStatText(el, value) {
+            if (!el) return;
+            el.textContent = String(value);
+        }
+
+        function setSurveyStatsStatus(text) {
+            if (!surveyStatsStatusEl) return;
+            surveyStatsStatusEl.textContent = text;
+        }
+
+        function getCellText(row, index) {
+            if (index < 0 || !row || !row.c || !row.c[index]) return '';
+            const cell = row.c[index];
+            if (cell.v == null) return '';
+            return String(cell.v).trim();
+        }
+
+        function getCellFormattedText(row, index) {
+            if (index < 0 || !row || !row.c || !row.c[index]) return '';
+            const cell = row.c[index];
+            if (cell.f) return String(cell.f).trim();
+            if (cell.v == null) return '';
+            return String(cell.v).trim();
+        }
+
+        function rowHasResponse(row) {
+            if (!row || !Array.isArray(row.c)) return false;
+            return row.c.some((cell) => cell && cell.v != null && String(cell.v).trim() !== '');
+        }
+
+        function refreshSurveyStats() {
+            setSurveyStatsStatus('응답 현황 불러오는 중');
+
+            if (surveySheetScript) {
+                surveySheetScript.remove();
+                surveySheetScript = null;
+            }
+
+            surveySheetScript = document.createElement('script');
+            surveySheetScript.src = surveySheetEndpoint + '&_=' + Date.now();
+            surveySheetScript.async = true;
+            surveySheetScript.onerror = () => {
+                setSurveyStatsStatus('응답 현황을 불러오지 못했습니다');
+            };
+            document.head.appendChild(surveySheetScript);
+        }
+
+        window.handleSurveySheet = function handleSurveySheet(payload) {
+            try {
+                if (!payload || payload.status !== 'ok' || !payload.table) {
+                    throw new Error('Invalid sheet payload');
+                }
+
+                const cols = Array.isArray(payload.table.cols) ? payload.table.cols : [];
+                const rows = Array.isArray(payload.table.rows) ? payload.table.rows : [];
+                const labels = cols.map((col) => col.label || '');
+                const tutorialIndex = labels.indexOf('튜토리얼 세션 참석');
+                const igniteIndex = labels.indexOf('이그나이트 톡 발표 희망');
+                const timeIndex = labels.indexOf('타임스탬프');
+
+                let totalResponses = 0;
+                let tutorialResponses = 0;
+                let igniteResponses = 0;
+                let latestTimestamp = '';
+
+                rows.forEach((row) => {
+                    if (!rowHasResponse(row)) return;
+
+                    totalResponses += 1;
+
+                    if (getCellText(row, tutorialIndex) === '네') {
+                        tutorialResponses += 1;
+                    }
+
+                    if (getCellText(row, igniteIndex) === '네') {
+                        igniteResponses += 1;
+                    }
+
+                    const timestamp = getCellFormattedText(row, timeIndex);
+                    if (timestamp) {
+                        latestTimestamp = timestamp;
+                    }
+                });
+
+                setSurveyStatText(surveyTotalCountEl, totalResponses);
+                setSurveyStatText(surveyTutorialCountEl, tutorialResponses);
+                setSurveyStatText(surveyIgniteCountEl, igniteResponses);
+                setSurveyStatsStatus(latestTimestamp ? '마지막 반영 ' + latestTimestamp : '응답 현황 반영 완료');
+            } catch (error) {
+                setSurveyStatsStatus('응답 현황을 불러오지 못했습니다');
+            }
+        };
 
         function updateCountdown() {
             const now = Date.now();
@@ -944,6 +1142,7 @@
 
         updateCountdown();
         setInterval(updateCountdown, 1000);
+        refreshSurveyStats();
 
         const revealItems = document.querySelectorAll('.reveal');
         const revealObserver = new IntersectionObserver((entries) => {
@@ -1125,6 +1324,8 @@
                 syncConditionalFields();
                 currentWizardStep = 0;
                 updateWizardUI();
+                window.setTimeout(refreshSurveyStats, 1800);
+                window.setTimeout(refreshSurveyStats, 4500);
             } catch (err) {
                 successBox.textContent = '전송에 실패했습니다. 아래 “새 창에서 설문 열기”로 다시 시도해 주세요.';
                 successBox.classList.add('visible');
