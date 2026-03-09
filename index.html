@@ -831,7 +831,7 @@
                             <div class="hero-dashboard-kicker">2026년 5월 15일(금) · 정동1928 아트센터 이벤트홀(예정)</div>
                             <p class="hero-dashboard-copy">튜토리얼과 이그나이트 톡은 수요조사 결과를 바탕으로 최종 구성됩니다.</p>
                         </div>
-                        <div class="survey-stats-status" id="survey-stats-status">수요조사 집계 불러오는 중</div>
+                        <div class="survey-stats-status" id="survey-stats-status">접속 기준 · 마지막 응답 기준</div>
                     </div>
 
                     <div class="hero-dashboard-body">
@@ -1083,6 +1083,7 @@
         const surveyIgniteCountEl = document.getElementById('survey-ignite-count');
         const surveyStatsStatusEl = document.getElementById('survey-stats-status');
         const surveySheetEndpoint = 'https://docs.google.com/spreadsheets/d/19QzKJjjDGCQ-0RaePwGPzMtNLknLKPvduDGINblgqno/gviz/tq?tqx=out:json;responseHandler:handleSurveySheet';
+        const firstAccessedAt = new Date();
 
         let surveySheetScript = null;
 
@@ -1100,11 +1101,19 @@
             surveyStatsStatusEl.textContent = text;
         }
 
-        function getCellText(row, index) {
-            if (index < 0 || !row || !row.c || !row.c[index]) return '';
-            const cell = row.c[index];
-            if (cell.v == null) return '';
-            return String(cell.v).trim();
+        function formatAccessTime(date) {
+            const year = date.getFullYear();
+            const month = date.getMonth() + 1;
+            const day = date.getDate();
+            const hour24 = date.getHours();
+            const minute = String(date.getMinutes()).padStart(2, '0');
+            const period = hour24 < 12 ? '오전' : '오후';
+            const hour12 = hour24 % 12 || 12;
+            return year + '. ' + month + '. ' + day + ' ' + period + ' ' + hour12 + ':' + minute + ' 접속 기준';
+        }
+
+        function formatSurveyTimestamp(text) {
+            return String(text).replace(/:(\d{2})$/, '');
         }
 
         function getCellFormattedText(row, index) {
@@ -1115,8 +1124,11 @@
             return String(cell.v).trim();
         }
 
-        function formatSurveyTimestamp(text) {
-            return String(text).replace(/:(\d{2})$/, '');
+        function getCellText(row, index) {
+            if (index < 0 || !row || !row.c || !row.c[index]) return '';
+            const cell = row.c[index];
+            if (cell.v == null) return '';
+            return String(cell.v).trim();
         }
 
         function rowHasResponse(row) {
@@ -1125,8 +1137,6 @@
         }
 
         function refreshSurveyStats() {
-            setSurveyStatsStatus('수요조사 집계 불러오는 중');
-
             if (surveySheetScript) {
                 surveySheetScript.remove();
                 surveySheetScript = null;
@@ -1135,9 +1145,7 @@
             surveySheetScript = document.createElement('script');
             surveySheetScript.src = surveySheetEndpoint + '&_=' + Date.now();
             surveySheetScript.async = true;
-            surveySheetScript.onerror = () => {
-                setSurveyStatsStatus('집계 정보를 불러오지 못했습니다');
-            };
+            surveySheetScript.onerror = () => {};
             document.head.appendChild(surveySheetScript);
         }
 
@@ -1150,9 +1158,9 @@
                 const cols = Array.isArray(payload.table.cols) ? payload.table.cols : [];
                 const rows = Array.isArray(payload.table.rows) ? payload.table.rows : [];
                 const labels = cols.map((col) => col.label || '');
+                const timeIndex = labels.indexOf('타임스탬프');
                 const tutorialIndex = labels.indexOf('튜토리얼 세션 참석');
                 const igniteIndex = labels.indexOf('이그나이트 톡 발표 희망');
-                const timeIndex = labels.indexOf('타임스탬프');
 
                 let totalResponses = 0;
                 let tutorialResponses = 0;
@@ -1181,10 +1189,10 @@
                 setSurveyStatText(surveyTotalCountEl, totalResponses);
                 setSurveyStatText(surveyTutorialCountEl, tutorialResponses);
                 setSurveyStatText(surveyIgniteCountEl, igniteResponses);
-                setSurveyStatsStatus(latestTimestamp ? latestTimestamp + ' 기준' : '수요조사 진행 중');
-            } catch (error) {
-                setSurveyStatsStatus('집계 정보를 불러오지 못했습니다');
-            }
+                setSurveyStatsStatus(
+                    formatAccessTime(firstAccessedAt) + (latestTimestamp ? ' · 마지막 응답 ' + latestTimestamp : '')
+                );
+            } catch (error) {}
         };
 
         function updateCountdown() {
@@ -1214,6 +1222,7 @@
 
         updateCountdown();
         setInterval(updateCountdown, 1000);
+        setSurveyStatsStatus(formatAccessTime(firstAccessedAt));
         refreshSurveyStats();
 
         const revealItems = document.querySelectorAll('.reveal');
