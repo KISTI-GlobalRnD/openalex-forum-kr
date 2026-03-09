@@ -208,125 +208,165 @@
             border-left: 3px solid rgba(15, 118, 110, 0.4);
         }
 
-        .count-wrap {
+        .hero-dashboard {
             margin-top: 28px;
-            padding: 14px 16px;
-            background: var(--surface-strong);
-            border: 1px solid var(--line);
-            border-radius: 14px;
-            width: fit-content;
+            width: min(920px, 100%);
+            padding: 18px 18px 16px;
+            background:
+                radial-gradient(420px 220px at 0% 0%, rgba(20, 184, 166, 0.13), transparent 72%),
+                radial-gradient(320px 220px at 100% 0%, rgba(234, 88, 12, 0.12), transparent 74%),
+                rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(24, 34, 47, 0.12);
+            border-radius: 24px;
             box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-dashboard-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding-bottom: 14px;
+            border-bottom: 1px solid rgba(24, 34, 47, 0.1);
+        }
+
+        .hero-dashboard-kicker {
+            font-size: 0.82rem;
+            color: #476072;
+            letter-spacing: 0.3px;
+            font-weight: 700;
+        }
+
+        .hero-dashboard-copy {
+            margin-top: 6px;
+            font-size: 0.95rem;
+            color: #556579;
+            line-height: 1.55;
+            max-width: 60ch;
+        }
+
+        .hero-dashboard-body {
+            margin-top: 14px;
+            display: grid;
+            grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+            gap: 12px;
+        }
+
+        .count-wrap,
+        .survey-stats {
+            min-width: 0;
+            height: 100%;
+            padding: 16px;
+            border-radius: 18px;
+        }
+
+        .count-wrap {
+            background:
+                linear-gradient(145deg, rgba(16, 64, 72, 0.96), rgba(15, 118, 110, 0.92));
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            color: #eef9f7;
         }
 
         .count-head {
-            font-size: 0.82rem;
-            color: #4f6178;
-            margin-bottom: 10px;
-            letter-spacing: 0.8px;
+            font-size: 0.9rem;
+            color: rgba(238, 249, 247, 0.88);
+            margin-bottom: 12px;
+            letter-spacing: 0.2px;
             font-weight: 700;
-            text-transform: uppercase;
         }
 
         .count-grid {
             display: grid;
-            grid-template-columns: repeat(4, minmax(54px, 80px));
-            gap: 8px;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 10px;
+            max-width: 420px;
         }
 
         .count-item {
             text-align: center;
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 10px;
-            padding: 7px 6px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            padding: 12px 8px 10px;
+            backdrop-filter: blur(6px);
         }
 
         .count-item strong {
             display: block;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.42rem;
+            font-size: clamp(1.55rem, 3.2vw, 2rem);
             line-height: 1;
-            color: #132f4f;
+            color: #ffffff;
         }
 
         .count-item span {
             display: block;
-            margin-top: 4px;
-            font-size: 0.73rem;
-            color: #5f6d7e;
+            margin-top: 6px;
+            font-size: 0.74rem;
+            color: rgba(238, 249, 247, 0.78);
         }
 
         .count-status {
-            margin-top: 10px;
+            margin-top: 12px;
             font-size: 0.82rem;
-            color: #54657a;
+            color: rgba(238, 249, 247, 0.76);
         }
 
         .survey-stats {
-            margin-top: 18px;
-            width: min(760px, 100%);
-            padding: 16px;
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.86));
-            box-shadow: var(--shadow);
-        }
-
-        .survey-stats-head {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            gap: 12px;
-            flex-wrap: wrap;
+            border: 1px solid rgba(24, 34, 47, 0.08);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 251, 245, 0.94));
         }
 
         .survey-stats-title {
-            font-size: 0.82rem;
+            font-size: 0.9rem;
             color: #4f6178;
-            letter-spacing: 0.8px;
+            letter-spacing: 0.2px;
             font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .survey-stats-copy {
-            margin-top: 6px;
-            font-size: 0.92rem;
-            color: #556579;
-            line-height: 1.55;
         }
 
         .survey-stats-status {
             font-size: 0.82rem;
-            color: #54657a;
+            color: #0f766e;
             white-space: normal;
             text-align: right;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(15, 118, 110, 0.08);
+            border: 1px solid rgba(15, 118, 110, 0.12);
         }
 
         .survey-stats-grid {
-            margin-top: 14px;
+            margin-top: 12px;
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 10px;
         }
 
         .survey-stat {
-            padding: 14px 12px;
+            padding: 14px 12px 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             border-radius: 14px;
-            border: 1px solid var(--line);
-            background: rgba(255, 255, 255, 0.96);
+            border: 1px solid rgba(24, 34, 47, 0.08);
+            background:
+                linear-gradient(180deg, rgba(244, 246, 239, 0.94), rgba(255, 255, 255, 0.98));
+            min-height: 96px;
         }
 
         .survey-stat strong {
             display: block;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(1.5rem, 4vw, 2.3rem);
+            font-size: clamp(1.8rem, 3.4vw, 2.4rem);
             line-height: 1;
             color: #163533;
         }
 
         .survey-stat span {
             display: block;
-            margin-top: 8px;
+            margin-top: 10px;
             font-size: 0.82rem;
             color: #5a6877;
             line-height: 1.4;
@@ -686,8 +726,10 @@
                 grid-template-columns: 1fr;
                 gap: 4px;
             }
+        }
 
-            .survey-stats-grid {
+        @media (max-width: 860px) {
+            .hero-dashboard-body {
                 grid-template-columns: 1fr;
             }
         }
@@ -709,6 +751,26 @@
             .scroll-hint {
                 position: static;
                 margin-top: 20px;
+            }
+
+            .hero-dashboard {
+                padding: 14px;
+                border-radius: 20px;
+            }
+
+            .count-wrap,
+            .survey-stats {
+                padding: 14px;
+                border-radius: 18px;
+            }
+
+            .count-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                max-width: none;
+            }
+
+            .survey-stats-grid {
+                grid-template-columns: 1fr;
             }
 
             .wizard-step {
@@ -763,37 +825,43 @@
                     튜토리얼 · 활용 사례 발표 · 선택형 네트워킹으로 구성됩니다.
                 </p>
 
-                <div class="count-wrap" aria-live="polite">
-                    <div class="count-head">포럼까지 남은 시간</div>
-                    <div class="count-grid">
-                        <div class="count-item"><strong id="cd-days">--</strong><span>일</span></div>
-                        <div class="count-item"><strong id="cd-hours">--</strong><span>시간</span></div>
-                        <div class="count-item"><strong id="cd-minutes">--</strong><span>분</span></div>
-                        <div class="count-item"><strong id="cd-seconds">--</strong><span>초</span></div>
-                    </div>
-                    <div class="count-status" id="cd-status">2026년 5월 15일(금) 기준</div>
-                </div>
-
-                <div class="survey-stats" aria-live="polite">
-                    <div class="survey-stats-head">
+                <div class="hero-dashboard">
+                    <div class="hero-dashboard-head">
                         <div>
-                            <div class="survey-stats-title">현재 수요조사 응답</div>
-                            <p class="survey-stats-copy">응답이 추가되면 아래 숫자도 함께 갱신됩니다.</p>
+                            <div class="hero-dashboard-kicker">2026년 5월 15일(금) · 정동1928 아트센터 이벤트홀(예정)</div>
+                            <p class="hero-dashboard-copy">튜토리얼과 이그나이트 톡은 수요조사 결과를 바탕으로 최종 구성됩니다.</p>
                         </div>
-                        <div class="survey-stats-status" id="survey-stats-status">응답 현황 불러오는 중</div>
+                        <div class="survey-stats-status" id="survey-stats-status">수요조사 집계 불러오는 중</div>
                     </div>
-                    <div class="survey-stats-grid">
-                        <div class="survey-stat">
-                            <strong id="survey-total-count">--</strong>
-                            <span>총 참석 응답</span>
+
+                    <div class="hero-dashboard-body">
+                        <div class="count-wrap" aria-live="polite">
+                            <div class="count-head">포럼까지 남은 시간</div>
+                            <div class="count-grid">
+                                <div class="count-item"><strong id="cd-days">--</strong><span>일</span></div>
+                                <div class="count-item"><strong id="cd-hours">--</strong><span>시간</span></div>
+                                <div class="count-item"><strong id="cd-minutes">--</strong><span>분</span></div>
+                                <div class="count-item"><strong id="cd-seconds">--</strong><span>초</span></div>
+                            </div>
+                            <div class="count-status" id="cd-status">2026년 5월 15일(금) 개최</div>
                         </div>
-                        <div class="survey-stat">
-                            <strong id="survey-tutorial-count">--</strong>
-                            <span>튜토리얼 참여 희망</span>
-                        </div>
-                        <div class="survey-stat">
-                            <strong id="survey-ignite-count">--</strong>
-                            <span>이그나이트 톡 발표 희망</span>
+
+                        <div class="survey-stats" aria-live="polite">
+                            <div class="survey-stats-title">현재 수요조사 응답</div>
+                            <div class="survey-stats-grid">
+                                <div class="survey-stat">
+                                    <strong id="survey-total-count">--</strong>
+                                    <span>전체 응답</span>
+                                </div>
+                                <div class="survey-stat">
+                                    <strong id="survey-tutorial-count">--</strong>
+                                    <span>튜토리얼 희망</span>
+                                </div>
+                                <div class="survey-stat">
+                                    <strong id="survey-ignite-count">--</strong>
+                                    <span>이그나이트 톡 희망</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -816,7 +884,7 @@
                     </div>
                     <div class="step-row" role="listitem">
                         <span>2</span>
-                        <p>실무자 활용 경험 공유(메인 세션)</p>
+                        <p>실무자 활용 경험 공유와 이그나이트 톡(메인 세션)</p>
                     </div>
                     <div class="step-row" role="listitem">
                         <span>3</span>
@@ -1047,13 +1115,17 @@
             return String(cell.v).trim();
         }
 
+        function formatSurveyTimestamp(text) {
+            return String(text).replace(/:(\d{2})$/, '');
+        }
+
         function rowHasResponse(row) {
             if (!row || !Array.isArray(row.c)) return false;
             return row.c.some((cell) => cell && cell.v != null && String(cell.v).trim() !== '');
         }
 
         function refreshSurveyStats() {
-            setSurveyStatsStatus('응답 현황 불러오는 중');
+            setSurveyStatsStatus('수요조사 집계 불러오는 중');
 
             if (surveySheetScript) {
                 surveySheetScript.remove();
@@ -1064,7 +1136,7 @@
             surveySheetScript.src = surveySheetEndpoint + '&_=' + Date.now();
             surveySheetScript.async = true;
             surveySheetScript.onerror = () => {
-                setSurveyStatsStatus('응답 현황을 불러오지 못했습니다');
+                setSurveyStatsStatus('집계 정보를 불러오지 못했습니다');
             };
             document.head.appendChild(surveySheetScript);
         }
@@ -1102,16 +1174,16 @@
 
                     const timestamp = getCellFormattedText(row, timeIndex);
                     if (timestamp) {
-                        latestTimestamp = timestamp;
+                        latestTimestamp = formatSurveyTimestamp(timestamp);
                     }
                 });
 
                 setSurveyStatText(surveyTotalCountEl, totalResponses);
                 setSurveyStatText(surveyTutorialCountEl, tutorialResponses);
                 setSurveyStatText(surveyIgniteCountEl, igniteResponses);
-                setSurveyStatsStatus(latestTimestamp ? '마지막 반영 ' + latestTimestamp : '응답 현황 반영 완료');
+                setSurveyStatsStatus(latestTimestamp ? latestTimestamp + ' 기준' : '수요조사 진행 중');
             } catch (error) {
-                setSurveyStatsStatus('응답 현황을 불러오지 못했습니다');
+                setSurveyStatsStatus('집계 정보를 불러오지 못했습니다');
             }
         };
 
