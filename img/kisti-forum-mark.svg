@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">KISTI 글로벌R&amp;D분석센터</title>
+  <rect width="128" height="128" rx="30" fill="#0f766e"/>
+  <path d="M22 91 C38 55 68 35 108 33" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity=".22"/>
+  <path d="M36 88 V36 H49 V58 L75 36 H93 L65 63 L96 88 H77 L49 65 V88 H36Z" fill="#ffffff"/>
+  <path d="M34 96 H82" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".82"/>
+  <circle cx="101" cy="95" r="8" fill="#ea580c"/>
+</svg>

@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenAlex User Forum KR 1회 | KISTI 글로벌 R&D 분석센터</title>
-    <meta name="description" content="KISTI 글로벌 R&D 분석센터 주최, OpenAlex 한국 사용자들간의 연구 경험 공유 및 네트워킹 포럼">
+    <title>OpenAlex User Forum KR 1회 | KISTI 글로벌R&D분석센터</title>
+    <meta name="description" content="KISTI 글로벌R&D분석센터 주최, OpenAlex 한국 사용자들간의 연구 경험 공유 및 네트워킹 포럼">
     <!-- Open Graph / Twitter for link previews -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="OpenAlex User Forum KR 1회 | KISTI 글로벌 R&D 분석센터">
-    <meta property="og:description" content="KISTI 글로벌 R&D 분석센터 주최, OpenAlex 한국 사용자들간의 연구 경험 공유 및 네트워킹 포럼">
+    <meta property="og:title" content="OpenAlex User Forum KR 1회 | KISTI 글로벌R&D분석센터">
+    <meta property="og:description" content="KISTI 글로벌R&D분석센터 주최, OpenAlex 한국 사용자들간의 연구 경험 공유 및 네트워킹 포럼">
     <meta property="og:url" content="https://kisti-globalrnd.github.io/openalex-forum-kr/">
     <meta property="og:image" content="https://kisti-globalrnd.github.io/openalex-forum-kr/img/OpenAlex.webp">
     <meta property="og:image:alt" content="OpenAlex User Forum 브랜드 이미지">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="OpenAlex User Forum KR 1회 | KISTI 글로벌 R&D 분석센터">
-    <meta name="twitter:description" content="KISTI 글로벌 R&D 분석센터 주최, OpenAlex 한국 사용자들간의 연구 경험 공유 및 네트워킹 포럼">
+    <meta name="twitter:title" content="OpenAlex User Forum KR 1회 | KISTI 글로벌R&D분석센터">
+    <meta name="twitter:description" content="KISTI 글로벌R&D분석센터 주최, OpenAlex 한국 사용자들간의 연구 경험 공유 및 네트워킹 포럼">
     <meta name="twitter:image" content="https://kisti-globalrnd.github.io/openalex-forum-kr/img/OpenAlex.webp">
     <link rel="canonical" href="https://kisti-globalrnd.github.io/openalex-forum-kr/">
+    <link rel="icon" href="img/kisti-forum-mark.svg" type="image/svg+xml">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -57,18 +58,51 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #4c6ef5;
+            color: #111827;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.7rem;
         }
 
-        .logo-img {
-            height: 28px;
-            width: auto;
+        .logo-mark {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 58px;
+            height: 40px;
+            padding: 2px 5px;
+            border: 1px solid rgba(15, 118, 110, 0.14);
+            border-radius: 18px;
+            background:
+                radial-gradient(circle at 25% 22%, rgba(250, 204, 21, 0.22), transparent 36%),
+                linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(232, 247, 245, 0.86));
+            overflow: hidden;
+            box-shadow: 0 9px 18px rgba(15, 118, 110, 0.14);
+            flex: 0 0 auto;
+        }
+
+        .logo-mark img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
             display: block;
+        }
+
+        .logo-text {
+            display: grid;
+            gap: 1px;
+            line-height: 1.1;
+        }
+
+        .logo-text strong {
+            font-size: 0.95rem;
+        }
+
+        .logo-text small {
+            color: #5b6878;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.6px;
         }
 
         .nav-links {
@@ -359,6 +393,18 @@ footer {
             padding: 2rem 0;
         }
 
+        .footer-brand strong {
+            display: block;
+            font-size: 1rem;
+        }
+
+        .footer-brand span {
+            display: block;
+            margin-top: .45rem;
+            color: rgba(255, 255, 255, 0.78);
+            font-size: .9rem;
+        }
+
 .social-links {
             margin-top: 1rem;
         }
@@ -439,8 +485,13 @@ footer {
     <header>
         <nav class="container">
             <div class="logo">
-                <img src="img/OpenAlex-small.webp" alt="OpenAlex User Forum KR" class="logo-img">
-                <span>OpenAlex User Forum KR</span>
+                <span class="logo-mark" aria-hidden="true">
+                    <img src="img/kisti-character-mark.png" alt="">
+                </span>
+                <span class="logo-text">
+                    <strong>KISTI 글로벌R&amp;D분석센터</strong>
+                    <small>OPENALEX FORUM KR</small>
+                </span>
             </div>
             <ul class="nav-links">
                 <li><a href="#about-openalex">OpenAlex</a></li>
@@ -462,7 +513,7 @@ footer {
             <div class="container hero-content">
                 <h1>OpenAlex User Forum KR</h1>
                 <p class="hero-subtitle">
-                    KISTI 글로벌 R&D 분석센터 주최<br>
+                    KISTI 글로벌R&D분석센터 주최<br>
                     OpenAlex 한국 사용자들간의 연구 경험 공유 및 교류를 위한 첫 번째 포럼
                 </p>
                 <a href="#registration" class="cta-button">
@@ -601,7 +652,7 @@ footer {
                             <img src="img/PJS.jpeg" alt="박진서 사진">
                         </div>
                         <h4>박진서 책임연구원</h4>
-                        <p>KISTI 글로벌 R&D 분석센터<br>Open Science로의 움직임과 OpenAlex</p>
+                        <p>KISTI 글로벌R&D분석센터<br>Open Science로의 움직임과 OpenAlex</p>
                     </div>
 
                     <!-- 2) 이정우 -->
@@ -610,7 +661,7 @@ footer {
                             <img src="img/LJW.jpeg" alt="이정우 사진">
                         </div>
                         <h4>이정우 선임연구원</h4>
-                        <p>KISTI 글로벌 R&D 분석센터<br>히치하이커를 위한 오픈알렉스 데이터 가이드</p>
+                        <p>KISTI 글로벌R&D분석센터<br>히치하이커를 위한 오픈알렉스 데이터 가이드</p>
                     </div>
 
                     <!-- 3) 유택호 (capital initial) -->
@@ -659,8 +710,10 @@ footer {
 
     <footer>
         <div class="container">
-            <img src="img/OpenAlex-small.webp" alt="OpenAlex User Forum KR" style="max-height:40px;width:auto;opacity:.9;vertical-align:middle;" />
-            <p style="margin-top:.75rem;">&copy; 2025 OpenAlex User Forum KR. KISTI 글로벌 R&D 분석센터</p>
+            <div class="footer-brand">
+                <strong>KISTI 글로벌R&amp;D분석센터</strong>
+                <span>&copy; 2025 OpenAlex User Forum KR</span>
+            </div>
             <div class="social-links">
                 <a href="https://github.com/KISTI-GlobalRnD"><i class="fab fa-github"></i></a>
                 <a href="https://dap.kisti.re.kr/globalrnd/"><i class="fas fa-globe"></i></a>
