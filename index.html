@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenAlex User Forum KR #2 | 공식 안내</title>
-    <meta name="description" content="OpenAlex User Forum KR #2 공식 안내. 2026년 6월 23일(화) 개최 일정과 프로그램, 참가 신청 정보를 제공합니다.">
+    <title>OpenAlex User Forum KR #2 | 2026. 6. 23.</title>
+    <meta name="description" content="OpenAlex User Forum KR #2. 2026년 6월 23일(화), 정동1928 아트센터에서 열립니다.">
     <meta name="theme-color" content="#0f766e">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="OpenAlex User Forum KR #2 | 공식 안내">
+    <meta property="og:title" content="OpenAlex User Forum KR #2 | 2026. 6. 23.">
     <meta property="og:description" content="2026년 6월 23일(화) 개최. 정동1928 아트센터 이벤트홀에서 진행됩니다.">
     <meta property="og:url" content="https://kisti-globalrnd.github.io/openalex-forum-kr/">
     <meta property="og:image" content="https://kisti-globalrnd.github.io/openalex-forum-kr/img/OpenAlex.webp">
     <meta property="og:image:alt" content="OpenAlex User Forum KR 대표 이미지">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="OpenAlex User Forum KR #2 | 공식 안내">
-    <meta name="twitter:description" content="2026년 6월 23일(화) 개최. OpenAlex User Forum KR #2 프로그램·참가 신청 안내">
+    <meta name="twitter:title" content="OpenAlex User Forum KR #2 | 2026. 6. 23.">
+    <meta name="twitter:description" content="2026년 6월 23일(화), 정동1928 아트센터에서 열립니다.">
     <meta name="twitter:image" content="https://kisti-globalrnd.github.io/openalex-forum-kr/img/OpenAlex.webp">
     <link rel="canonical" href="https://kisti-globalrnd.github.io/openalex-forum-kr/">
     <link rel="icon" href="img/kisti-forum-mark.svg" type="image/svg+xml">
@@ -318,7 +318,7 @@
         .hero-layout {
             width: min(1120px, 100%);
             display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(280px, 370px);
+            grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
             align-items: center;
             gap: 30px;
         }
@@ -326,17 +326,44 @@
         .hero-copy {
             position: relative;
             z-index: 1;
+            isolation: isolate;
             min-width: 0;
             max-width: 760px;
         }
 
+        .hero-copy > :not(.hero-bg-mark) {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-bg-mark {
+            position: absolute;
+            z-index: 0;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .hero-oa-mark {
+            width: clamp(150px, 22vw, 250px);
+            left: -52px;
+            top: 40px;
+            opacity: 0.16;
+            transform: rotate(-9deg);
+        }
+
+        .hero-new-oa-mark {
+            width: clamp(186px, 24vw, 288px);
+            left: clamp(96px, 13.5vw, 170px);
+            top: -36px;
+            opacity: 0.075;
+            transform: rotate(8deg);
+        }
+
         .hero-copy,
-        .hero-update-card,
-        .hero-dashboard {
+        .hero-update-card {
             max-width: 100%;
         }
 
-        .hero-layout .hero-dashboard,
         .hero-layout .scroll-hint {
             grid-column: 1 / -1;
         }
@@ -367,16 +394,8 @@
             font-size: clamp(1.02rem, 2vw, 1.28rem);
             color: var(--muted);
             max-width: 52ch;
-            overflow-wrap: anywhere;
-        }
-
-        .hero-note {
-            margin-top: 14px;
-            font-size: 0.95rem;
-            color: #2f485f;
-            padding-left: 12px;
-            border-left: 3px solid rgba(15, 118, 110, 0.4);
-            overflow-wrap: anywhere;
+            word-break: keep-all;
+            overflow-wrap: break-word;
         }
 
         .hero-update-card {
@@ -429,7 +448,8 @@
             font-size: clamp(1.45rem, 2.6vw, 2rem);
             line-height: 1.1;
             letter-spacing: -0.04em;
-            overflow-wrap: anywhere;
+            word-break: keep-all;
+            overflow-wrap: break-word;
         }
 
         .update-list {
@@ -505,7 +525,7 @@
         }
 
         .hero-dashboard {
-            margin-top: 28px;
+            min-width: 0;
             width: min(920px, 100%);
             padding: 18px 18px 16px;
             background:
@@ -516,6 +536,89 @@
             border-radius: 24px;
             box-shadow: var(--shadow);
             backdrop-filter: blur(10px);
+        }
+
+        .status-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+            gap: 24px;
+            align-items: start;
+            width: min(1040px, 100%);
+        }
+
+        .status-copy {
+            min-width: 0;
+        }
+
+        .status-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 11px;
+            border-radius: 999px;
+            background: rgba(15, 118, 110, 0.08);
+            color: #0f766e;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.74rem;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+        }
+
+        .forum-pillars {
+            margin-top: 20px;
+            display: grid;
+            gap: 10px;
+            width: min(520px, 100%);
+        }
+
+        .pillar-card {
+            display: grid;
+            grid-template-columns: 42px minmax(0, 1fr);
+            gap: 12px;
+            align-items: start;
+            padding: 14px;
+            border-radius: 18px;
+            border: 1px solid rgba(24, 34, 47, 0.09);
+            background:
+                radial-gradient(200px 90px at 0% 0%, rgba(20, 184, 166, 0.08), transparent 72%),
+                rgba(255, 255, 255, 0.78);
+            box-shadow: 0 12px 26px rgba(16, 34, 52, 0.07);
+        }
+
+        .pillar-card i {
+            width: 42px;
+            height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            color: #fff;
+            background: linear-gradient(135deg, #0f766e, #14b8a6);
+            box-shadow: 0 10px 20px rgba(15, 118, 110, 0.18);
+        }
+
+        .pillar-card:nth-child(2) i {
+            background: linear-gradient(135deg, #ea580c, #fb923c);
+            box-shadow: 0 10px 20px rgba(234, 88, 12, 0.17);
+        }
+
+        .pillar-card:nth-child(3) i {
+            background: linear-gradient(135deg, #1d4ed8, #38bdf8);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.16);
+        }
+
+        .pillar-card strong {
+            display: block;
+            color: #1f2f44;
+            font-size: 0.94rem;
+        }
+
+        .pillar-card span {
+            display: block;
+            margin-top: 4px;
+            color: #5a6877;
+            font-size: 0.87rem;
+            line-height: 1.55;
         }
 
         .hero-dashboard-head {
@@ -794,6 +897,36 @@
             position: relative;
         }
 
+        .program-brief {
+            margin-top: 22px;
+            width: min(780px, 100%);
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .program-brief-item {
+            padding: 15px 16px;
+            border-radius: 18px;
+            border: 1px solid rgba(24, 34, 47, 0.08);
+            background: rgba(255, 255, 255, 0.78);
+            box-shadow: 0 10px 22px rgba(16, 34, 52, 0.07);
+        }
+
+        .program-brief-item strong {
+            display: block;
+            color: #163533;
+            font-size: 0.9rem;
+        }
+
+        .program-brief-item span {
+            display: block;
+            margin-top: 6px;
+            color: #5a6877;
+            font-size: 0.84rem;
+            line-height: 1.45;
+        }
+
         .program-list::before {
             content: '';
             position: absolute;
@@ -993,112 +1126,6 @@
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
-        }
-
-        .lineup-head {
-            margin-top: 28px;
-        }
-
-        .lineup-head h3 {
-            font-size: 1.08rem;
-            color: #1f2f44;
-        }
-
-        .lineup-head p {
-            margin-top: 6px;
-            max-width: 100%;
-            font-size: 0.92rem;
-            color: #5a6877;
-            line-height: 1.6;
-        }
-
-        .lineup-grid {
-            margin-top: 16px;
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 14px;
-            width: min(900px, 100%);
-        }
-
-        .lineup-card {
-            min-width: 0;
-            padding: 16px;
-            border-radius: 20px;
-            border: 1px solid rgba(24, 34, 47, 0.1);
-            background:
-                radial-gradient(240px 100px at 0% 0%, rgba(20, 184, 166, 0.08), transparent 72%),
-                linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 251, 245, 0.94));
-            box-shadow: var(--shadow);
-        }
-
-        .lineup-card-head {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .lineup-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 10px;
-            border-radius: 999px;
-            background: rgba(15, 118, 110, 0.1);
-            color: #0f766e;
-            font-size: 0.76rem;
-            font-weight: 700;
-            letter-spacing: 0.3px;
-        }
-
-        .lineup-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 10px;
-            border-radius: 999px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.2px;
-        }
-
-        .lineup-status.is-confirmed {
-            background: rgba(15, 118, 110, 0.1);
-            color: #0f766e;
-        }
-
-        .lineup-status.is-prep {
-            background: rgba(234, 88, 12, 0.12);
-            color: #c2410c;
-        }
-
-        .lineup-status.is-open {
-            background: rgba(37, 99, 235, 0.1);
-            color: #1d4ed8;
-        }
-
-        .lineup-card h4 {
-            margin-top: 12px;
-            font-size: 1.04rem;
-            color: #163533;
-            line-height: 1.35;
-        }
-
-        .lineup-meta {
-            margin-top: 8px;
-            font-size: 0.84rem;
-            color: #5a6877;
-            line-height: 1.6;
-        }
-
-        .lineup-topic {
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px dashed rgba(24, 34, 47, 0.12);
-            font-size: 0.88rem;
-            color: #33485e;
-            line-height: 1.55;
         }
 
         .quick-links {
@@ -1487,8 +1514,9 @@
             }
 
             .detail-grid,
-            .lineup-grid,
-            .quick-links {
+            .quick-links,
+            .program-brief,
+            .status-layout {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
@@ -1499,12 +1527,27 @@
                 gap: 18px;
             }
 
+            .hero-oa-mark {
+                left: -34px;
+                top: 42px;
+                width: clamp(130px, 38vw, 210px);
+                opacity: 0.12;
+            }
+
+            .hero-new-oa-mark {
+                left: clamp(78px, 24vw, 130px);
+                top: -12px;
+                width: clamp(156px, 41vw, 234px);
+                opacity: 0.07;
+            }
+
             .hero-update-card {
                 min-height: auto;
             }
 
             .hero-summary-grid,
-            .hero-dashboard-body {
+            .hero-dashboard-body,
+            .status-layout {
                 grid-template-columns: 1fr;
             }
         }
@@ -1604,8 +1647,8 @@
             }
 
             .detail-grid,
-            .lineup-grid,
-            .quick-links {
+            .quick-links,
+            .program-brief {
                 grid-template-columns: 1fr;
             }
 
@@ -1697,7 +1740,7 @@
 
     <nav class="chapter-nav" aria-label="페이지 챕터">
         <a href="#intro" data-target="intro" class="active" aria-label="인트로"></a>
-        <a href="#story-1" data-target="story-1" aria-label="포럼 소개"></a>
+        <a href="#story-1" data-target="story-1" aria-label="신청 현황"></a>
         <a href="#story-2" data-target="story-2" aria-label="일정과 장소"></a>
         <a href="#story-3" data-target="story-3" aria-label="프로그램"></a>
         <a href="#story-4" data-target="story-4" aria-label="자료 허브"></a>
@@ -1707,78 +1750,95 @@
         <section class="panel hero-panel" id="intro" data-chapter="intro">
             <div class="container panel-inner hero-layout reveal">
                 <div class="hero-copy">
-                    <div class="eyebrow">KISTI 글로벌R&amp;D분석센터 주관</div>
+                    <img class="hero-bg-mark hero-oa-mark" src="img/openalex-hero-mark.png" alt="" aria-hidden="true">
+                    <img class="hero-bg-mark hero-new-oa-mark" src="img/openalex-new-hero-mark.png" alt="" aria-hidden="true">
+                    <div class="eyebrow">OpenAlex User Forum KR #2</div>
                     <h1 class="hero-title">
                         <span class="hero-title-line">OpenAlex User</span>
                         <span class="hero-title-line">Forum KR #2</span>
                     </h1>
                     <p class="hero-sub">
-                        KISTI 글로벌R&amp;D분석센터가 준비하는 OpenAlex 활용 사례 공유와
-                        연구 데이터 네트워킹 포럼입니다.
-                    </p>
-                    <p class="hero-note">
-                        연구와 실무, 튜토리얼, 주제별 네트워킹까지 한 자리에서 이어집니다.
+                        OpenAlex 활용 경험을 나누는 한국 사용자 포럼입니다.
                     </p>
                     <div class="hero-links" aria-label="주요 바로가기">
-                        <a class="hero-link-chip" href="#story-4"><i class="fas fa-layer-group"></i> 자료 허브 보기</a>
-                        <a class="hero-link-chip" href="index-forum-1.html"><i class="fas fa-history"></i> 1회 아카이브</a>
-                        <a class="hero-link-chip" href="https://github.com/KISTI-GlobalRnD/openalex-forum-kr/discussions" target="_blank" rel="noopener"><i class="fab fa-github"></i> Discussions</a>
+                        <a class="hero-link-chip" href="#survey-inline"><i class="fas fa-clipboard-list"></i> 참가 신청하기</a>
+                        <a class="hero-link-chip" href="#story-3"><i class="fas fa-calendar-days"></i> 프로그램 보기</a>
+                        <a class="hero-link-chip" href="#story-4"><i class="fas fa-layer-group"></i> 자료 허브</a>
                     </div>
                 </div>
 
                 <aside class="hero-update-card" aria-label="주요 업데이트">
-                    <div class="update-kicker"><i class="fas fa-bullhorn"></i> 주요 업데이트</div>
-                    <h2 class="update-title">일정과 프로그램 구성이 확정되었습니다</h2>
+                    <div class="update-kicker"><i class="fas fa-bullhorn"></i> 최근 업데이트</div>
+                    <h2 class="update-title">업데이트를 전달드립니다!</h2>
                     <div class="update-list">
                         <div class="update-item">
                             <i class="fas fa-calendar-check" aria-hidden="true"></i>
                             <div>
-                                <strong>일정 확정</strong>
-                                <span>2026년 6월 23일(화) 개최로 안내합니다.</span>
+                                <strong>날짜 변경</strong>
+                                <span>2026년 6월 23일(화) 개최</span>
                             </div>
                         </div>
                         <div class="update-item">
                             <i class="fas fa-user-check" aria-hidden="true"></i>
                             <div>
-                                <strong>연사 섭외 완료</strong>
-                                <span>메인 세션 연사와 운영진 구성이 마무리되었습니다.</span>
+                                <strong>연사 확정</strong>
+                                <span>메인 세션 4개 발표 구성</span>
                             </div>
                         </div>
                         <div class="update-item">
                             <i class="fas fa-clipboard-list" aria-hidden="true"></i>
                             <div>
-                                <strong>정식 참가 신청 오픈</strong>
-                                <span>수요조사가 아니라 실제 참가 신청을 접수합니다.</span>
+                                <strong>공식 참가신청 시작</strong>
+                                <span>참가 신청 폼 오픈</span>
                             </div>
                         </div>
                     </div>
                 </aside>
 
+                <div class="scroll-hint"><i class="fas fa-arrow-down"></i> 상세 정보 보기</div>
+            </div>
+        </section>
+
+        <section class="panel chapter" id="story-1" data-step="01" data-chapter="story-1">
+            <div class="container panel-inner status-layout reveal">
+                <div class="status-copy">
+                    <div class="status-kicker"><i class="fas fa-satellite-dish"></i> 참가 신청</div>
+                    <h2>지금 신청할 수 있습니다</h2>
+                    <p>
+                        튜토리얼 참여 여부와 이그나이트 톡 제안을 함께 확인합니다.
+                        신청 후 자세한 내용은 이메일로 보내드립니다.
+                    </p>
+                    <div class="forum-pillars" role="list" aria-label="이번 포럼 구성">
+                        <div class="pillar-card" role="listitem">
+                            <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                            <div>
+                                <strong>튜토리얼</strong>
+                                <span>OpenAlex를 처음 써보는 참가자도 따라올 수 있는 실습</span>
+                            </div>
+                        </div>
+                        <div class="pillar-card" role="listitem">
+                            <i class="fas fa-microphone-lines" aria-hidden="true"></i>
+                            <div>
+                                <strong>메인 세션</strong>
+                                <span>각 분야의 활용 사례와 고민을 나누는 발표</span>
+                            </div>
+                        </div>
+                        <div class="pillar-card" role="listitem">
+                            <i class="fas fa-bolt" aria-hidden="true"></i>
+                            <div>
+                                <strong>이그나이트 톡</strong>
+                                <span>짧게 꺼낸 주제를 네트워킹으로 이어가기</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="hero-dashboard">
                     <div class="hero-dashboard-head">
                         <div>
-                            <div class="hero-dashboard-kicker">참가 신청 및 실시간 집계</div>
-                            <p class="hero-dashboard-copy">튜토리얼 세션과 이그나이트 톡은 운영 가능한 인원이 제한되어 있어, 신청 내용을 검토한 뒤 참가 확정 메일로 안내드립니다.</p>
+                            <div class="hero-dashboard-kicker">실시간 신청 현황</div>
+                            <p class="hero-dashboard-copy">지금까지의 신청 현황입니다.</p>
                         </div>
                         <div class="survey-stats-status">신청 현황</div>
-                    </div>
-
-                    <div class="hero-summary-band" aria-label="행사 핵심 포인트">
-                        <div class="hero-summary-title">이번 포럼 포인트</div>
-                        <div class="hero-summary-grid">
-                            <article class="hero-summary-item">
-                                <strong>Hands-on Tutorial</strong>
-                                <p>튜토리얼 실습은 박서영, 김영진과 함께 바로 따라가며 참여할 수 있습니다.</p>
-                            </article>
-                            <article class="hero-summary-item">
-                                <strong>Main Sessions</strong>
-                                <p>4개 메인 발표와 이어지는 질의응답으로 OpenAlex 활용 경험을 사례 중심으로 다룹니다.</p>
-                            </article>
-                            <article class="hero-summary-item">
-                                <strong>Ignite Talk</strong>
-                                <p>짧은 발표로 주제를 꺼내고, 이어지는 네트워킹 시간에 관련 대화를 더 이어갈 수 있도록 운영합니다.</p>
-                            </article>
-                        </div>
                     </div>
 
                     <div class="hero-dashboard-body">
@@ -1795,7 +1855,7 @@
 
                         <div class="survey-stats" aria-label="현재 신청자 정보" aria-live="polite">
                             <div class="live-stats-head">
-                                <strong>현재 신청자 정보</strong>
+                                <strong>신청자 정보</strong>
                                 <span class="live-stats-note" id="survey-stats-status">신청 집계 불러오는 중</span>
                             </div>
                             <div class="live-stats-grid">
@@ -1814,34 +1874,24 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="scroll-hint"><i class="fas fa-arrow-down"></i> 아래로 스크롤해 프로그램과 신청 보기</div>
-            </div>
-        </section>
-
-        <section class="panel chapter" id="story-1" data-step="01" data-chapter="story-1">
-            <div class="container panel-inner reveal">
-                <h2>포럼 구성 안내</h2>
-                <p>
-                    연구 현장부터 도서관, 정책, 엔지니어링까지 OpenAlex를 실제로 어떻게 쓰는지 사례 중심으로 나눕니다.
-                </p>
-                <p class="keyline">처음 시작하는 분도 따라올 수 있게, 실무자는 바로 적용할 수 있게 구성합니다.</p>
-                <div class="steps" role="list" aria-label="2회 포럼 운영 목표">
-                    <div class="step-row" role="listitem">
-                        <span>1</span>
-                        <p>초보자 튜토리얼(별도 세션)</p>
-                    </div>
-                    <div class="step-row" role="listitem">
-                        <span>2</span>
-                        <p>확정 연사 중심의 메인 세션 4개 발표와 이그나이트 톡 세션</p>
-                    </div>
-                    <div class="step-row" role="listitem">
-                        <span>3</span>
-                        <p>이그나이트 톡 주제를 잇는 네트워킹과 종합 Q&A</p>
+                    <div class="hero-summary-band" aria-label="참가 안내">
+                        <div class="hero-summary-title">신청 항목</div>
+                        <div class="hero-summary-grid">
+                            <article class="hero-summary-item">
+                                <strong>기본 정보</strong>
+                                <p>소속, 직책, 이메일</p>
+                            </article>
+                            <article class="hero-summary-item">
+                                <strong>튜토리얼</strong>
+                                <p>참여 여부와 관심 수준</p>
+                            </article>
+                            <article class="hero-summary-item">
+                                <strong>이그나이트 톡</strong>
+                                <p>공유하고 싶은 사례나 질문</p>
+                            </article>
+                        </div>
                     </div>
                 </div>
-                <p class="keyline">정식 신청 오픈 기준으로 공개 중이며, 발표 제목과 일부 세부 슬롯은 계속 업데이트합니다.</p>
             </div>
         </section>
 
@@ -1857,7 +1907,7 @@
                     <article class="detail-card" role="listitem">
                         <span><i class="fas fa-location-dot"></i> VENUE</span>
                         <h3>정동1928 아트센터 이벤트홀</h3>
-                        <p>메인 세션과 튜토리얼, 이그나이트 톡, 네트워킹이 같은 흐름 안에서 자연스럽게 이어집니다.</p>
+                        <p>정동 일대에 위치한 포럼 공간입니다.</p>
                         <div class="detail-actions">
                             <a class="detail-action" href="https://www.google.com/maps/search/?api=1&query=%EC%A0%95%EB%8F%991928%20%EC%95%84%ED%8A%B8%EC%84%BC%ED%84%B0" target="_blank" rel="noopener">
                                 <i class="fas fa-map-location-dot"></i> 지도 열기
@@ -1870,12 +1920,12 @@
                     <article class="detail-card" role="listitem">
                         <span><i class="fas fa-clock"></i> TIMING</span>
                         <h3>11:30 튜토리얼, 13:00 등록, 13:30 오프닝</h3>
-                        <p>본세션은 오후 1시 30분부터 시작하며, 발표 4개와 이그나이트 톡, 종합 Q&A까지 이어집니다.</p>
+                        <p>본세션은 오후 1시 30분에 시작합니다.</p>
                     </article>
                     <article class="detail-card" role="listitem">
                         <span><i class="fas fa-star"></i> HIGHLIGHT</span>
                         <h3>실습 + 사례 발표 + 이그나이트 톡</h3>
-                        <p>처음 접하는 참가자는 튜토리얼로 시작하고, 실무자는 발표와 짧은 사례 공유 세션까지 한 번에 볼 수 있습니다.</p>
+                        <p>실습으로 시작해 발표와 네트워킹까지 이어집니다.</p>
                     </article>
                 </div>
             </div>
@@ -1885,10 +1935,23 @@
             <div class="container panel-inner reveal">
                 <h2>당일 프로그램</h2>
                 <p>
-                    튜토리얼 이후 본세션 등록, 전반부 발표 2개, 이그나이트 톡,
-                    주제별 네트워킹, 후반부 발표 2개와 종합 Q&A로 이어집니다.
+                    오전 튜토리얼에서 시작해 사례 발표, 이그나이트 톡, 네트워킹으로 이어집니다.
                 </p>
-                <ul class="program-list" aria-label="프로그램 초안">
+                <div class="program-brief" aria-label="프로그램 요약">
+                    <div class="program-brief-item">
+                        <strong>튜토리얼</strong>
+                        <span>박서영, 김영진</span>
+                    </div>
+                    <div class="program-brief-item">
+                        <strong>메인 발표</strong>
+                        <span>김호범, 권은낭, 박현우, 이정우</span>
+                    </div>
+                    <div class="program-brief-item">
+                        <strong>이그나이트 톡</strong>
+                        <span>신청서에서 제안 가능</span>
+                    </div>
+                </div>
+                <ul class="program-list" aria-label="당일 프로그램">
                     <li data-track="tutorial">
                         <strong class="program-time">11:30~13:00</strong>
                         <span class="program-body">
@@ -1907,122 +1970,60 @@
                         <strong class="program-time">13:30~13:40</strong>
                         <span class="program-body">
                             <span class="program-tag"><i class="fas fa-bullhorn"></i> 오프닝</span>
-                            <span class="program-copy">오프닝 및 진행 안내</span>
+                            <span class="program-copy">프로그램 소개</span>
                         </span>
                     </li>
                     <li data-track="talk">
                         <strong class="program-time">13:40~14:05</strong>
                         <span class="program-body">
                             <span class="program-tag"><i class="fas fa-microphone-lines"></i> 발표 1</span>
-                            <span class="program-copy">김호범 실장 (KEA 특허부품지원실) / 제목 TBA</span>
+                            <span class="program-copy">김호범 실장 · KEA 특허부품지원실</span>
                         </span>
                     </li>
                     <li data-track="talk">
                         <strong class="program-time">14:05~14:30</strong>
                         <span class="program-body">
                             <span class="program-tag"><i class="fas fa-microphone-lines"></i> 발표 2</span>
-                            <span class="program-copy">권은낭 박사 (KAIST 디지털인문사회과학센터) / 제목 TBA</span>
+                            <span class="program-copy">권은낭 박사 · KAIST 디지털인문사회과학센터</span>
                         </span>
                     </li>
                     <li data-track="ignite">
                         <strong class="program-time">14:30~15:00</strong>
                         <span class="program-body">
                             <span class="program-tag"><i class="fas fa-bolt"></i> 이그나이트 톡</span>
-                            <span class="program-copy">발표자 및 주제 TBA</span>
+                            <span class="program-copy">짧은 사례, 도구, 질문</span>
                         </span>
                     </li>
                     <li data-track="break">
                         <strong class="program-time">15:00~15:40</strong>
                         <span class="program-body">
                             <span class="program-tag"><i class="fas fa-mug-hot"></i> 네트워킹</span>
-                            <span class="program-copy">휴식 및 이그나이트 톡 연계 네트워킹 (40분)</span>
+                            <span class="program-copy">이그나이트 톡 주제로 이어지는 네트워킹</span>
                         </span>
                     </li>
                     <li data-track="talk">
                         <strong class="program-time">15:40~16:05</strong>
                         <span class="program-body">
                             <span class="program-tag"><i class="fas fa-microphone-lines"></i> 발표 3</span>
-                            <span class="program-copy">박현우 교수 (서울대 데이터사이언스대학원) / 제목 TBA</span>
+                            <span class="program-copy">박현우 교수 · 서울대 데이터사이언스대학원</span>
                         </span>
                     </li>
                     <li data-track="talk">
                         <strong class="program-time">16:05~16:30</strong>
                         <span class="program-body">
                             <span class="program-tag"><i class="fas fa-microphone-lines"></i> 발표 4</span>
-                            <span class="program-copy">이정우 / 제목 TBA</span>
+                            <span class="program-copy">이정우 · KISTI 글로벌R&amp;D분석센터</span>
                         </span>
                     </li>
                     <li data-track="qa">
                         <strong class="program-time">16:30~17:00</strong>
                         <span class="program-body">
-                            <span class="program-tag"><i class="fas fa-comments"></i> 마무리</span>
+                            <span class="program-tag"><i class="fas fa-comments"></i> 클로징</span>
                             <span class="program-copy">종합 Q&A + 클로징</span>
                         </span>
                     </li>
                 </ul>
-                <p class="keyline">이그나이트 톡은 5분 안팎의 짧은 발표로 사례, 도구, 데이터, 질문을 꺼내는 세션이며, 이어지는 네트워킹 시간에는 그 주제를 중심으로 대화를 더 이어갈 수 있습니다.</p>
-                <div class="lineup-head">
-                    <h3>현재 확정 또는 우선 배정된 연사/운영</h3>
-                    <p>아래 구성은 현재 공개 가능한 확정/우선 배정 기준입니다. 발표 제목과 일부 세부 슬롯은 TBA 상태로 유지합니다.</p>
-                </div>
-                <div class="lineup-grid" role="list" aria-label="현재 연사 및 운영진">
-                    <article class="lineup-card" role="listitem">
-                        <div class="lineup-card-head">
-                            <span class="lineup-tag"><i class="fas fa-laptop-code"></i> 튜토리얼</span>
-                            <span class="lineup-status is-confirmed"><i class="fas fa-circle-check"></i> 운영 확정</span>
-                        </div>
-                        <h4>실습 세션 운영</h4>
-                        <p class="lineup-meta">운영: 박서영, 김영진</p>
-                        <p class="lineup-topic">세션 세부 주제는 TBA</p>
-                    </article>
-                    <article class="lineup-card" role="listitem">
-                        <div class="lineup-card-head">
-                            <span class="lineup-tag"><i class="fas fa-building"></i> 외부 발표</span>
-                            <span class="lineup-status is-confirmed"><i class="fas fa-circle-check"></i> 연사 확정</span>
-                        </div>
-                        <h4>김호범 실장</h4>
-                        <p class="lineup-meta">KEA(한국전자정보통신산업진흥회) 특허부품지원실</p>
-                        <p class="lineup-topic">발표 제목: TBA</p>
-                    </article>
-                    <article class="lineup-card" role="listitem">
-                        <div class="lineup-card-head">
-                            <span class="lineup-tag"><i class="fas fa-university"></i> 외부 발표</span>
-                            <span class="lineup-status is-confirmed"><i class="fas fa-circle-check"></i> 연사 확정</span>
-                        </div>
-                        <h4>권은낭 박사</h4>
-                        <p class="lineup-meta">KAIST 디지털인문사회과학센터(DHCSS)</p>
-                        <p class="lineup-topic">발표 제목: TBA</p>
-                    </article>
-                    <article class="lineup-card" role="listitem">
-                        <div class="lineup-card-head">
-                            <span class="lineup-tag"><i class="fas fa-graduation-cap"></i> 외부 발표</span>
-                            <span class="lineup-status is-confirmed"><i class="fas fa-circle-check"></i> 연사 확정</span>
-                        </div>
-                        <h4>박현우 교수</h4>
-                        <p class="lineup-meta">서울대 데이터사이언스대학원</p>
-                        <p class="lineup-topic">발표 제목: TBA</p>
-                    </article>
-                    <article class="lineup-card" role="listitem">
-                        <div class="lineup-card-head">
-                            <span class="lineup-tag"><i class="fas fa-microphone-lines"></i> 내부 발표</span>
-                            <span class="lineup-status is-prep"><i class="fas fa-pen"></i> 제목 준비 중</span>
-                        </div>
-                        <h4>이정우</h4>
-                        <p class="lineup-meta">내부 발표 슬롯</p>
-                        <p class="lineup-topic">발표 제목: TBA</p>
-                    </article>
-                    <article class="lineup-card" role="listitem">
-                        <div class="lineup-card-head">
-                            <span class="lineup-tag"><i class="fas fa-people-group"></i> 진행</span>
-                            <span class="lineup-status is-open"><i class="fas fa-bolt"></i> 발표자 모집 중</span>
-                        </div>
-                        <h4>이그나이트 톡 및 진행</h4>
-                        <p class="lineup-meta">사회: 김영진</p>
-                        <p class="lineup-meta">이그나이트 톡 발표자 및 주제: TBA</p>
-                        <p class="lineup-topic">짧은 발표로 사례와 질문을 꺼내고, 이어지는 네트워킹 시간에 관련 주제를 더 깊게 이야기할 수 있도록 운영합니다.</p>
-                    </article>
-                </div>
-                <p class="keyline">현재 확정된 연사와 운영진을 기준으로 시간표를 배치했으며, 세션 제목과 일부 슬롯만 남은 상태입니다.</p>
+                <p class="keyline">발표 제목은 순차 공개합니다.</p>
                 <div class="final-actions">
                     <a href="#survey-inline" class="btn btn-primary">
                         <i class="fas fa-clipboard-list"></i> 참가 신청하기
@@ -2035,8 +2036,8 @@
                     </a>
                 </div>
                 <div class="survey-inline" id="survey-inline">
-                    <h3>정식 참가 신청 (1~2분)</h3>
-                    <p>참가 신청과 튜토리얼 참여 여부를 함께 접수합니다. 질문에 답한 뒤 마지막에 제출해 주세요.</p>
+                    <h3>참가 신청 (1~2분)</h3>
+                    <p>기본 정보와 세션 참여 의사를 남겨주세요.</p>
                     <div class="survey-progress" aria-hidden="true">
                         <div class="survey-progress-bar" id="survey-progress-bar"></div>
                     </div>
@@ -2166,14 +2167,14 @@
             <div class="container panel-inner reveal">
                 <h2>자료와 커뮤니티 허브</h2>
                 <p>
-                    행사가 열리는 날만이 아니라, 준비 단계와 종료 이후까지 이어지는 자료 축적과 토론 공간을 함께 운영합니다.
+                    지난 자료와 토론 공간을 한곳에 모았습니다.
                 </p>
                 <div class="quick-links" role="list" aria-label="자료와 커뮤니티 바로가기">
                     <a class="quick-link" href="index-forum-1.html" role="listitem">
                         <span class="quick-link-icon"><i class="fas fa-landmark"></i></span>
                         <span>
                             <strong>1회 포럼 아카이브</strong>
-                            <p>지난 회차 안내 페이지를 통해 구성, 연사, 전체 분위기를 빠르게 확인할 수 있습니다.</p>
+                            <p>지난 회차의 구성과 분위기를 확인할 수 있습니다.</p>
                             <small>지난 행사 페이지 열기 <i class="fas fa-arrow-right"></i></small>
                         </span>
                     </a>
@@ -2181,7 +2182,7 @@
                         <span class="quick-link-icon"><i class="fas fa-file-pdf"></i></span>
                         <span>
                             <strong>1회 발표자료 모음</strong>
-                            <p>공개 동의를 받은 발표 PDF를 저장소에서 바로 확인하고 다운로드할 수 있습니다.</p>
+                            <p>공개 가능한 발표 PDF를 모아둔 저장소입니다.</p>
                             <small>발표자료 폴더 보기 <i class="fas fa-arrow-up-right-from-square"></i></small>
                         </span>
                     </a>
@@ -2189,12 +2190,12 @@
                         <span class="quick-link-icon"><i class="fab fa-github"></i></span>
                         <span>
                             <strong>GitHub Discussions</strong>
-                            <p>질문, 제안, 협업 아이디어, 행사 관련 피드백을 이어서 남길 수 있는 공식 토론 공간입니다.</p>
+                            <p>질문, 제안, 협업 아이디어를 남길 수 있습니다.</p>
                             <small>토론 바로가기 <i class="fas fa-arrow-up-right-from-square"></i></small>
                         </span>
                     </a>
                 </div>
-                <p class="keyline">랜딩 페이지는 공지용, 저장소는 자료 축적용, Discussions는 상시 대화 채널로 역할을 나눠 운영합니다.</p>
+                <p class="keyline">자료는 계속 보강합니다.</p>
             </div>
         </section>
     </main>
@@ -2261,7 +2262,7 @@
             const minute = String(date.getMinutes()).padStart(2, '0');
             const period = hour24 < 12 ? '오전' : '오후';
             const hour12 = hour24 % 12 || 12;
-            return year + '. ' + month + '. ' + day + ' ' + period + ' ' + hour12 + ':' + minute + ' 접속 기준';
+            return year + '. ' + month + '. ' + day + ' ' + period + ' ' + hour12 + ':' + minute + ' 업데이트';
         }
 
         function formatSurveyTimestamp(text) {
@@ -2553,7 +2554,7 @@
                     mode: 'no-cors',
                     body: new FormData(surveyForm)
                 });
-                successBox.textContent = '참가 신청이 접수되었습니다. 신청해 주셔서 감사합니다.';
+                successBox.textContent = '참가 신청을 받았습니다. 곧 이메일로 안내드리겠습니다.';
                 successBox.classList.add('visible');
                 surveyForm.reset();
                 syncConditionalFields();
