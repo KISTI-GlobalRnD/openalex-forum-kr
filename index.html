@@ -512,14 +512,9 @@
         .control-panel {
             position: relative;
             padding: 28px;
-            border: 1px solid rgba(147, 197, 253, 0.24);
+            border: 1px solid rgba(var(--brand-rgb), 0.2);
             border-radius: 8px;
-            background:
-                linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
-                radial-gradient(340px 180px at 92% 8%, rgba(var(--brand-light-rgb), 0.28), transparent 72%),
-                linear-gradient(155deg, #0f1f4c 0%, #173b7a 58%, #0b132f 100%);
-            background-size: 28px 28px, 28px 28px, auto, auto;
+            background: var(--brand);
             box-shadow: 0 28px 70px rgba(15, 31, 76, 0.22);
             color: #fff;
             overflow: hidden;
@@ -532,9 +527,9 @@
             bottom: -64px;
             width: 220px;
             aspect-ratio: 1;
-            border: 1px solid rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.16);
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(var(--brand-light-rgb), 0.18), transparent 68%);
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .control-panel > * {
@@ -543,7 +538,7 @@
         }
 
         .control-panel .section-kicker {
-            color: #93c5fd;
+            color: rgba(255, 255, 255, 0.74);
         }
 
         .control-panel h2 {
@@ -575,9 +570,47 @@
         }
 
         .update-item span {
-            color: #bfdbfe;
+            color: rgba(255, 255, 255, 0.78);
             font-size: 0.84rem;
             line-height: 1.5;
+        }
+
+        .hero-photo {
+            grid-column: 1 / -1;
+            position: relative;
+            margin-top: 8px;
+            border: 1px solid rgba(var(--brand-rgb), 0.16);
+            border-radius: 8px;
+            aspect-ratio: 16 / 5;
+            background: #dbeafe;
+            box-shadow: 0 22px 44px rgba(15, 31, 76, 0.14);
+            overflow: hidden;
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 72%;
+        }
+
+        .hero-photo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 58%, rgba(15, 31, 76, 0.16));
+            pointer-events: none;
+        }
+
+        .hero-photo figcaption {
+            position: absolute;
+            left: 16px;
+            bottom: 14px;
+            z-index: 1;
+            color: #fff;
+            font-size: 0.82rem;
+            font-weight: 800;
+            text-shadow: 0 2px 12px rgba(15, 31, 76, 0.42);
         }
 
         .update-item .speaker-lines {
@@ -1191,6 +1224,10 @@
                 opacity: 0.095;
             }
 
+            .hero-photo {
+                aspect-ratio: 16 / 7;
+            }
+
             .resources-grid {
                 grid-template-columns: 1fr;
             }
@@ -1234,6 +1271,16 @@
 
             .control-panel {
                 padding: 20px 0 20px 18px;
+            }
+
+            .hero-photo {
+                aspect-ratio: 4 / 3;
+            }
+
+            .hero-photo figcaption {
+                left: 12px;
+                bottom: 11px;
+                font-size: 0.76rem;
             }
 
             .update-item,
@@ -1445,6 +1492,11 @@
                         </div>
                     </div>
                 </aside>
+
+                <figure class="hero-photo">
+                    <img src="img/forums/2025-09-forum-01.png" alt="OpenAlex User Forum Korea 1회 단체 사진">
+                    <figcaption>OpenAlex User Forum Korea #1</figcaption>
+                </figure>
 
                 <div class="scroll-hint"><i class="fas fa-arrow-down"></i> 참가 현황 확인</div>
             </div>
