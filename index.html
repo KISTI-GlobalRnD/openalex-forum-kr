@@ -509,100 +509,110 @@
             transform: none;
         }
 
-        .data-network {
+        .brand-signal {
             position: relative;
-            min-height: 196px;
+            min-height: 190px;
+            display: grid;
+            align-content: space-between;
+            gap: 24px;
             margin-top: 30px;
-            border-top: 1px solid rgba(var(--ink-rgb), 0.14);
-            border-bottom: 1px solid rgba(var(--ink-rgb), 0.14);
+            padding: 24px;
+            border: 1px solid rgba(var(--brand-rgb), 0.18);
+            border-radius: 8px;
             background:
-                radial-gradient(280px 140px at 27% 44%, rgba(var(--brand-rgb), 0.12), transparent 70%),
-                radial-gradient(280px 140px at 71% 56%, rgba(var(--openalex-rgb), 0.1), transparent 70%),
-                linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.42) 48%, rgba(255, 255, 255, 0));
+                linear-gradient(115deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 16px),
+                linear-gradient(135deg, #0f1f4c 0%, #1d4ed8 58%, #0f766e 100%);
+            box-shadow: 0 26px 54px rgba(15, 31, 76, 0.18);
+            color: #fff;
             overflow: hidden;
         }
 
-        .data-network::before,
-        .data-network::after {
+        .brand-signal::before {
             content: '';
             position: absolute;
-            inset: 20px 0 auto;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(var(--brand-rgb), 0.16), transparent);
+            inset: 0 auto 0 58%;
+            width: 42%;
+            background:
+                linear-gradient(118deg, transparent 0 28%, rgba(255, 255, 255, 0.14) 28% 46%, transparent 46% 58%, rgba(255, 255, 255, 0.2) 58% 72%, transparent 72%),
+                linear-gradient(90deg, transparent, rgba(var(--brand-light-rgb), 0.28));
+            opacity: 0.78;
         }
 
-        .data-network::after {
-            inset: auto 0 22px;
-            background: linear-gradient(90deg, transparent, rgba(var(--openalex-rgb), 0.16), transparent);
+        .brand-signal::after {
+            content: 'OPENALEX';
+            position: absolute;
+            right: -12px;
+            bottom: -20px;
+            color: rgba(255, 255, 255, 0.09);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3.8rem, 8vw, 6.4rem);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            line-height: 0.9;
         }
 
-        .network-svg {
-            width: min(700px, 100%);
-            height: 186px;
+        .signal-copy,
+        .signal-footer,
+        .signal-bars {
+            position: relative;
+            z-index: 1;
         }
 
-        .network-path {
-            fill: none;
-            stroke: url(#network-blue);
-            stroke-width: 1.8;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            opacity: 0.62;
+        .signal-copy {
+            display: grid;
+            gap: 4px;
         }
 
-        .network-path.accent {
-            stroke: url(#network-teal);
-            opacity: 0.52;
+        .signal-copy span {
+            color: #bfdbfe;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.77rem;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
         }
 
-        .network-path.soft {
-            stroke-width: 0.9;
-            opacity: 0.34;
+        .signal-copy strong {
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3.15rem, 7.4vw, 5.7rem);
+            line-height: 0.86;
+            letter-spacing: -0.055em;
         }
 
-        .network-flow {
-            fill: none;
-            stroke: rgba(255, 255, 255, 0.82);
-            stroke-width: 2.2;
-            stroke-linecap: round;
-            stroke-dasharray: 2 34;
-            opacity: 0.72;
-            animation: network-flow 8s linear infinite;
+        .signal-bars {
+            display: grid;
+            grid-template-columns: 1.2fr 0.72fr 0.42fr;
+            gap: 8px;
+            width: min(340px, 76%);
+            margin-top: 8px;
         }
 
-        .network-ring {
-            fill: none;
-            stroke: rgba(var(--brand-rgb), 0.13);
-            stroke-width: 1;
+        .signal-bars span {
+            height: 12px;
+            border-radius: 999px;
+            background: #fff;
+            box-shadow: 0 10px 20px rgba(15, 31, 76, 0.24);
         }
 
-        .network-node {
-            fill: url(#network-node-fill);
-            stroke: rgba(255, 255, 255, 0.92);
-            stroke-width: 2;
-            filter: drop-shadow(0 10px 18px rgba(15, 31, 76, 0.12));
+        .signal-bars span:nth-child(2) {
+            background: var(--accent-light);
         }
 
-        .network-node.teal {
-            fill: url(#network-node-teal);
+        .signal-bars span:nth-child(3) {
+            background: var(--accent-warm);
         }
 
-        .network-node.orange {
-            fill: url(#network-node-orange);
-        }
-
-        .network-dot {
-            fill: rgba(var(--brand-rgb), 0.32);
-        }
-
-        .network-dot.teal {
-            fill: rgba(var(--openalex-rgb), 0.34);
-        }
-
-        @keyframes network-flow {
-            to {
-                stroke-dashoffset: -144;
-            }
+        .signal-footer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 16px;
+            color: rgba(255, 255, 255, 0.78);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .control-panel {
@@ -1515,54 +1525,20 @@
                         <a class="btn btn-ghost" href="#program"><i class="fas fa-calendar-days"></i> 프로그램 보기</a>
                     </div>
 
-                    <div class="data-network" aria-hidden="true">
-                        <svg class="network-svg" viewBox="0 0 700 210" role="img">
-                            <defs>
-                                <linearGradient id="network-blue" x1="42" y1="52" x2="656" y2="158" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#38bdf8" stop-opacity="0.08"></stop>
-                                    <stop offset="0.42" stop-color="#2563eb" stop-opacity="0.82"></stop>
-                                    <stop offset="1" stop-color="#1d4ed8" stop-opacity="0.18"></stop>
-                                </linearGradient>
-                                <linearGradient id="network-teal" x1="70" y1="170" x2="610" y2="44" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#14b8a6" stop-opacity="0.12"></stop>
-                                    <stop offset="0.5" stop-color="#0f766e" stop-opacity="0.72"></stop>
-                                    <stop offset="1" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-                                </linearGradient>
-                                <radialGradient id="network-node-fill" cx="34%" cy="28%" r="78%">
-                                    <stop stop-color="#ffffff"></stop>
-                                    <stop offset="0.48" stop-color="#dcecff"></stop>
-                                    <stop offset="1" stop-color="#1d4ed8"></stop>
-                                </radialGradient>
-                                <radialGradient id="network-node-teal" cx="32%" cy="28%" r="78%">
-                                    <stop stop-color="#ffffff"></stop>
-                                    <stop offset="0.48" stop-color="#d6fbf7"></stop>
-                                    <stop offset="1" stop-color="#0f766e"></stop>
-                                </radialGradient>
-                                <radialGradient id="network-node-orange" cx="32%" cy="28%" r="78%">
-                                    <stop stop-color="#ffffff"></stop>
-                                    <stop offset="0.5" stop-color="#ffedd5"></stop>
-                                    <stop offset="1" stop-color="#ea580c"></stop>
-                                </radialGradient>
-                            </defs>
-                            <path class="network-path soft" d="M46 156 C126 185 210 170 284 126 S438 58 526 72 S626 112 666 154"></path>
-                            <path class="network-path" d="M48 132 C116 72 170 66 232 96 S350 154 430 92 S558 78 654 138"></path>
-                            <path class="network-path accent" d="M78 166 C160 120 218 134 286 150 S424 176 520 128 S600 62 656 54"></path>
-                            <path class="network-path soft" d="M144 58 C224 30 294 50 338 102 S430 168 590 158"></path>
-                            <path class="network-flow" d="M48 132 C116 72 170 66 232 96 S350 154 430 92 S558 78 654 138"></path>
-                            <circle class="network-ring" cx="232" cy="96" r="48"></circle>
-                            <circle class="network-ring" cx="430" cy="92" r="42"></circle>
-                            <circle class="network-ring" cx="520" cy="128" r="34"></circle>
-                            <circle class="network-dot teal" cx="112" cy="94" r="4"></circle>
-                            <circle class="network-dot" cx="154" cy="58" r="3.5"></circle>
-                            <circle class="network-dot teal" cx="286" cy="150" r="4"></circle>
-                            <circle class="network-dot" cx="338" cy="102" r="3"></circle>
-                            <circle class="network-dot teal" cx="590" cy="158" r="4"></circle>
-                            <circle class="network-node teal" cx="78" cy="166" r="12"></circle>
-                            <circle class="network-node" cx="232" cy="96" r="20"></circle>
-                            <circle class="network-node orange" cx="430" cy="92" r="15"></circle>
-                            <circle class="network-node teal" cx="520" cy="128" r="17"></circle>
-                            <circle class="network-node" cx="656" cy="54" r="11"></circle>
-                        </svg>
+                    <div class="brand-signal" aria-hidden="true">
+                        <div class="signal-copy">
+                            <span>Center for Global R&amp;D Analysis, KISTI</span>
+                            <strong>KR #2</strong>
+                        </div>
+                        <div class="signal-bars">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="signal-footer">
+                            <span>OpenAlex User Forum</span>
+                            <span>2026.06.23</span>
+                        </div>
                     </div>
                 </div>
 
@@ -1578,12 +1554,11 @@
                             <strong>연사 확정</strong>
                             <span class="speaker-lines">
                                 <span>김호범 · 권은낭 · 박현우 · 이정우</span>
-                                <span>박서영 연구원 · 김영진 선임</span>
                             </span>
                         </div>
                         <div class="update-item">
                             <strong>참가신청 시작</strong>
-                            <span>튜토리얼·이그나이트 톡 함께 접수</span>
+                            <span>튜토리얼·이그나이트 톡 별도 신청</span>
                         </div>
                     </div>
                 </aside>
@@ -1603,27 +1578,26 @@
                             <span>Status</span>
                             <div>
                                 <strong>신청 접수 중</strong>
-                                <p>외부 Google Form 링크를 fallback으로 제공합니다.</p>
+                                <p>좌석과 세션 운영 상황에 따라 빠르게 마감될 수 있습니다.</p>
                             </div>
                         </div>
                         <div class="status-row" role="listitem">
                             <span>Scope</span>
                             <div>
-                                <strong>튜토리얼 + 본세션 + 이그나이트 톡</strong>
-                                <p>참가 목적과 제안 주제를 함께 수집합니다.</p>
+                                <strong>본세션 + 튜토리얼 신청 + 이그나이트 톡 제안</strong>
+                                <p>이그나이트 톡은 참가자가 직접 발제를 제안하는 라이트닝 슬롯입니다. OpenAlex 활용 경험과 논의 주제를 우선 모읍니다.</p>
                             </div>
                         </div>
                         <div class="status-row" role="listitem">
                             <span>Contact</span>
                             <div>
                                 <strong>kimyoungjin06@kisti.re.kr</strong>
-                                <p>수정 요청, 접근성 요청, 장소 문의.</p>
+                                <p>관련 문의.</p>
                             </div>
                         </div>
                     </div>
                     <div class="section-actions">
                         <a class="btn btn-primary" href="#survey-inline"><i class="fas fa-clipboard-list"></i> 신청서 작성</a>
-                        <a class="btn btn-ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSf719zPWQ8LmJuMJjsYbg2C24EFEkVOsM1QICL_hp7l9R7yLQ/viewform" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> 새 창에서 열기</a>
                     </div>
                 </div>
 
@@ -1713,8 +1687,8 @@
                         <strong class="timeline-time">14:30~15:00</strong>
                         <div class="timeline-body">
                             <span class="timeline-track"><i class="fas fa-bolt"></i> 이그나이트 톡</span>
-                            <strong class="timeline-title">짧은 사례, 도구, 질문</strong>
-                            <span class="timeline-note">참가자 제안 기반 라이트닝 세션.</span>
+                            <strong class="timeline-title">참가자 제안 라이트닝 세션</strong>
+                            <span class="timeline-note">OpenAlex 활용 경험과 논의하고 싶은 주제를 압축해서 공유.</span>
                         </div>
                     </div>
                     <div class="timeline-row" data-track="break" role="listitem">
@@ -1722,7 +1696,7 @@
                         <div class="timeline-body">
                             <span class="timeline-track"><i class="fas fa-mug-hot"></i> 네트워킹</span>
                             <strong class="timeline-title">주제별 교류</strong>
-                            <span class="timeline-note">이그나이트 톡 주제를 중심으로 대화.</span>
+                            <span class="timeline-note">발표 후 이어지는 자유 교류.</span>
                         </div>
                     </div>
                     <div class="timeline-row" data-track="talk" role="listitem">
@@ -1822,37 +1796,37 @@
             <div class="container panel-inner split-layout reveal">
                 <div>
                     <div class="section-kicker"><i class="fas fa-location-dot"></i> Venue</div>
-                    <h2 class="section-heading">날짜, 시간, 장소</h2>
-                    <p class="section-copy">서울 정동의 포럼 공간에서 튜토리얼과 본세션을 같은 날 운영합니다.</p>
+                    <h2 class="section-heading">포럼 장소와 운영 시간</h2>
+                    <p class="section-copy">정동1928 아트센터 이벤트홀에서 오프라인으로 열립니다. 오전 튜토리얼, 오후 본세션 순서입니다.</p>
                     <div class="detail-actions">
                         <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=%EC%A0%95%EB%8F%991928%20%EC%95%84%ED%8A%B8%EC%84%BC%ED%84%B0" target="_blank" rel="noopener">
                             <i class="fas fa-map-location-dot"></i> 지도 열기
                         </a>
                         <a class="btn btn-ghost" href="mailto:kimyoungjin06@kisti.re.kr?subject=OpenAlex%20User%20Forum%20KR%20%232%20%EC%9E%A5%EC%86%8C%20%EB%AC%B8%EC%9D%98">
-                            <i class="fas fa-envelope"></i> 장소 문의
+                            <i class="fas fa-envelope"></i> 관련 문의
                         </a>
                     </div>
                 </div>
                 <div class="venue-panel" role="list" aria-label="장소 정보">
                     <div class="venue-row" role="listitem">
-                        <span>Date</span>
+                        <span>Schedule</span>
                         <div>
-                            <strong>2026. 6. 23 Tue</strong>
-                            <p>튜토리얼 11:30 / 본세션 등록 13:00 / 오프닝 13:30</p>
+                            <strong>2026년 6월 23일(화)</strong>
+                            <p>튜토리얼 11:30, 본세션 등록 13:00, 오프닝 13:30</p>
                         </div>
                     </div>
                     <div class="venue-row" role="listitem">
-                        <span>Place</span>
+                        <span>Venue</span>
                         <div>
                             <strong>정동1928 아트센터 이벤트홀</strong>
-                            <p>서울 정동 일대 포럼 공간.</p>
+                            <p>서울 정동에 위치한 오프라인 행사장.</p>
                         </div>
                     </div>
                     <div class="venue-row" role="listitem">
                         <span>Format</span>
                         <div>
-                            <strong>오프라인 포럼</strong>
-                            <p>실습, 발표, 이그나이트 톡, 네트워킹.</p>
+                            <strong>튜토리얼 + 본세션 + 네트워킹</strong>
+                            <p>실습 후 발표, 이그나이트 톡, 교류 시간으로 이어집니다.</p>
                         </div>
                     </div>
                 </div>
@@ -1892,8 +1866,8 @@
             <div class="container panel-inner form-shell reveal">
                 <div>
                     <div class="section-kicker"><i class="fas fa-paper-plane"></i> Inline Form</div>
-                    <h2 class="section-heading">참가 신청서</h2>
-                    <p class="section-copy">기본 정보, 튜토리얼 참여, 이그나이트 톡 제안을 순서대로 입력해 주세요. 소요 시간은 1~2분입니다.</p>
+                    <h2 class="section-heading">참가 신청</h2>
+                    <p class="section-copy">기본 정보와 세션별 참여 의사를 순서대로 받습니다. 튜토리얼과 이그나이트 톡은 별도 항목으로 선택합니다.</p>
                     <div class="status-list" role="list" aria-label="폼 입력 항목">
                         <div class="status-row" role="listitem">
                             <span>Step 1-3</span>
@@ -1906,7 +1880,7 @@
                             <span>Step 4-6</span>
                             <div>
                                 <strong>튜토리얼, 이그나이트 톡, 메모</strong>
-                                <p>세션 구성과 네트워킹 주제에 반영합니다.</p>
+                                <p>튜토리얼 참여 여부와 이그나이트 톡 발표 희망, 추가 메모를 받습니다.</p>
                             </div>
                         </div>
                     </div>
@@ -1977,7 +1951,7 @@
                                 <section class="wizard-step" data-step="4" aria-label="튜토리얼 신청">
                                     <h3>튜토리얼 신청</h3>
                                     <div class="wizard-field">
-                                        <label for="field-tutorial-join">튜토리얼 세션 참여 신청</label>
+                                        <label for="field-tutorial-join">튜토리얼 참여 희망</label>
                                         <select id="field-tutorial-join" name="entry.1753222212" required>
                                             <option value="" selected disabled>선택</option>
                                             <option value="네">네</option>
@@ -1996,7 +1970,7 @@
 
                                 <section class="wizard-step" data-step="5" aria-label="이그나이트 톡 제안">
                                     <h3>이그나이트 톡 제안</h3>
-                                    <p class="wizard-hint">짧게 공유하고 싶은 사례, 도구, 질문을 적어 주세요. 네트워킹에서 이어갈 주제도 좋습니다.</p>
+                                    <p class="wizard-hint">이그나이트 톡은 참가자가 직접 발제를 제안하는 라이트닝 세션입니다. 공유할 OpenAlex 활용 경험이나 논의 주제를 적어 주세요.</p>
                                     <div class="wizard-field">
                                         <label for="field-networking">이그나이트 톡 발표 희망</label>
                                         <select id="field-networking" name="entry.588393791" required>
@@ -2006,8 +1980,8 @@
                                         </select>
                                     </div>
                                     <div class="wizard-field">
-                                        <label for="field-topic">이그나이트 톡/네트워킹 제안 주제 (선택)</label>
-                                        <input id="field-topic" name="entry.1909160417" type="text" placeholder="예: OpenAlex 데이터 품질 분석, 기관 리포지터리 연계">
+                                        <label for="field-topic">이그나이트 톡 제안 주제 (선택)</label>
+                                        <input id="field-topic" name="entry.1909160417" type="text" placeholder="예: OpenAlex 기반 분석 사례, 데이터 연계 경험, 토론하고 싶은 쟁점">
                                     </div>
                                 </section>
 
@@ -2015,9 +1989,9 @@
                                     <h3>추가 메모</h3>
                                     <div class="wizard-field">
                                         <label for="field-comment">추가로 남기실 말씀 (선택)</label>
-                                        <textarea id="field-comment" name="entry.461606720" placeholder="운영 방식/주제/질문 등 자유롭게 작성"></textarea>
+                                        <textarea id="field-comment" name="entry.461606720" placeholder="참석 관련 요청이나 운영 문의를 적어 주세요"></textarea>
                                     </div>
-                                    <p class="wizard-hint">제출 후 수정이 필요하면 문의 메일로 알려 주세요.</p>
+                                    <p class="wizard-hint">제출 후 변경이 필요하면 문의 메일로 알려 주세요.</p>
                                 </section>
                             </div>
                         </div>
@@ -2031,7 +2005,7 @@
                         </div>
                     </form>
                     <div class="survey-success" id="survey-success" role="status" aria-live="polite"></div>
-                    <p class="survey-alt"><a href="https://docs.google.com/forms/d/e/1FAIpQLSf719zPWQ8LmJuMJjsYbg2C24EFEkVOsM1QICL_hp7l9R7yLQ/viewform" target="_blank" rel="noopener">새 창에서 신청 폼 열기</a></p>
+                    <p class="survey-alt">입력이 잘 되지 않으면 <a href="https://docs.google.com/forms/d/e/1FAIpQLSf719zPWQ8LmJuMJjsYbg2C24EFEkVOsM1QICL_hp7l9R7yLQ/viewform" target="_blank" rel="noopener">새 창에서 신청 폼 열기</a></p>
                 </div>
             </div>
         </section>
