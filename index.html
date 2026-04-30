@@ -704,6 +704,10 @@
             padding: 2px 0 0;
         }
 
+        .register-stats {
+            margin-top: 158px;
+        }
+
         .panel-head {
             display: flex;
             justify-content: space-between;
@@ -724,17 +728,6 @@
             color: #617083;
             font-size: 0.86rem;
             line-height: 1.52;
-        }
-
-        .live-badge {
-            flex: 0 0 auto;
-            padding: 6px 10px;
-            border: 1px solid rgba(var(--brand-rgb), 0.12);
-            border-radius: 999px;
-            background: rgba(var(--brand-rgb), 0.08);
-            color: var(--brand);
-            font-size: 0.78rem;
-            font-weight: 800;
         }
 
         .count-grid,
@@ -1233,6 +1226,10 @@
             .resources-grid {
                 grid-template-columns: 1fr;
             }
+
+            .register-stats {
+                margin-top: 0;
+            }
         }
 
         @media (max-width: 740px) {
@@ -1537,13 +1534,12 @@
                     </div>
                 </div>
 
-                <div class="stats-panel" aria-label="참가 신청 현황">
+                <div class="stats-panel register-stats" aria-label="참가 신청 현황">
                     <div class="panel-head">
                         <div>
                             <div class="panel-title">포럼까지 남은 시간</div>
                             <p class="panel-note" id="cd-status">2026년 6월 23일(화) 11:30 시작</p>
                         </div>
-                        <span class="live-badge">FORUM</span>
                     </div>
                     <div class="count-grid" aria-live="polite">
                         <div class="count-item"><strong id="cd-days">--</strong><span>일</span></div>
