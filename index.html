@@ -511,39 +511,98 @@
 
         .data-network {
             position: relative;
-            min-height: 228px;
-            margin-top: 32px;
+            min-height: 196px;
+            margin-top: 30px;
             border-top: 1px solid rgba(var(--ink-rgb), 0.14);
             border-bottom: 1px solid rgba(var(--ink-rgb), 0.14);
+            background:
+                radial-gradient(280px 140px at 27% 44%, rgba(var(--brand-rgb), 0.12), transparent 70%),
+                radial-gradient(280px 140px at 71% 56%, rgba(var(--openalex-rgb), 0.1), transparent 70%),
+                linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.42) 48%, rgba(255, 255, 255, 0));
             overflow: hidden;
         }
 
+        .data-network::before,
+        .data-network::after {
+            content: '';
+            position: absolute;
+            inset: 20px 0 auto;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(var(--brand-rgb), 0.16), transparent);
+        }
+
+        .data-network::after {
+            inset: auto 0 22px;
+            background: linear-gradient(90deg, transparent, rgba(var(--openalex-rgb), 0.16), transparent);
+        }
+
         .network-svg {
-            width: min(680px, 100%);
-            height: 196px;
+            width: min(700px, 100%);
+            height: 186px;
         }
 
-        .network-line {
-            stroke: rgba(var(--brand-rgb), 0.28);
-            stroke-width: 1.4;
+        .network-path {
+            fill: none;
+            stroke: url(#network-blue);
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            opacity: 0.62;
         }
 
-        .network-line.alt {
-            stroke: rgba(var(--openalex-rgb), 0.28);
+        .network-path.accent {
+            stroke: url(#network-teal);
+            opacity: 0.52;
+        }
+
+        .network-path.soft {
+            stroke-width: 0.9;
+            opacity: 0.34;
+        }
+
+        .network-flow {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.82);
+            stroke-width: 2.2;
+            stroke-linecap: round;
+            stroke-dasharray: 2 34;
+            opacity: 0.72;
+            animation: network-flow 8s linear infinite;
+        }
+
+        .network-ring {
+            fill: none;
+            stroke: rgba(var(--brand-rgb), 0.13);
+            stroke-width: 1;
         }
 
         .network-node {
-            fill: #fff;
-            stroke: var(--brand);
-            stroke-width: 2.2;
+            fill: url(#network-node-fill);
+            stroke: rgba(255, 255, 255, 0.92);
+            stroke-width: 2;
+            filter: drop-shadow(0 10px 18px rgba(15, 31, 76, 0.12));
         }
 
         .network-node.teal {
-            stroke: var(--accent);
+            fill: url(#network-node-teal);
         }
 
         .network-node.orange {
-            stroke: var(--accent-warm);
+            fill: url(#network-node-orange);
+        }
+
+        .network-dot {
+            fill: rgba(var(--brand-rgb), 0.32);
+        }
+
+        .network-dot.teal {
+            fill: rgba(var(--openalex-rgb), 0.34);
+        }
+
+        @keyframes network-flow {
+            to {
+                stroke-dashoffset: -144;
+            }
         }
 
         .control-panel {
@@ -1457,18 +1516,52 @@
                     </div>
 
                     <div class="data-network" aria-hidden="true">
-                        <svg class="network-svg" viewBox="0 0 680 228" role="img">
-                            <line class="network-line" x1="62" y1="138" x2="180" y2="72"></line>
-                            <line class="network-line alt" x1="180" y1="72" x2="318" y2="118"></line>
-                            <line class="network-line" x1="318" y1="118" x2="472" y2="58"></line>
-                            <line class="network-line alt" x1="318" y1="118" x2="548" y2="154"></line>
-                            <line class="network-line" x1="180" y1="72" x2="548" y2="154"></line>
-                            <line class="network-line alt" x1="62" y1="138" x2="318" y2="118"></line>
-                            <circle class="network-node teal" cx="62" cy="138" r="14"></circle>
-                            <circle class="network-node" cx="180" cy="72" r="18"></circle>
-                            <circle class="network-node orange" cx="318" cy="118" r="15"></circle>
-                            <circle class="network-node" cx="472" cy="58" r="12"></circle>
-                            <circle class="network-node teal" cx="548" cy="154" r="17"></circle>
+                        <svg class="network-svg" viewBox="0 0 700 210" role="img">
+                            <defs>
+                                <linearGradient id="network-blue" x1="42" y1="52" x2="656" y2="158" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#38bdf8" stop-opacity="0.08"></stop>
+                                    <stop offset="0.42" stop-color="#2563eb" stop-opacity="0.82"></stop>
+                                    <stop offset="1" stop-color="#1d4ed8" stop-opacity="0.18"></stop>
+                                </linearGradient>
+                                <linearGradient id="network-teal" x1="70" y1="170" x2="610" y2="44" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#14b8a6" stop-opacity="0.12"></stop>
+                                    <stop offset="0.5" stop-color="#0f766e" stop-opacity="0.72"></stop>
+                                    <stop offset="1" stop-color="#38bdf8" stop-opacity="0.2"></stop>
+                                </linearGradient>
+                                <radialGradient id="network-node-fill" cx="34%" cy="28%" r="78%">
+                                    <stop stop-color="#ffffff"></stop>
+                                    <stop offset="0.48" stop-color="#dcecff"></stop>
+                                    <stop offset="1" stop-color="#1d4ed8"></stop>
+                                </radialGradient>
+                                <radialGradient id="network-node-teal" cx="32%" cy="28%" r="78%">
+                                    <stop stop-color="#ffffff"></stop>
+                                    <stop offset="0.48" stop-color="#d6fbf7"></stop>
+                                    <stop offset="1" stop-color="#0f766e"></stop>
+                                </radialGradient>
+                                <radialGradient id="network-node-orange" cx="32%" cy="28%" r="78%">
+                                    <stop stop-color="#ffffff"></stop>
+                                    <stop offset="0.5" stop-color="#ffedd5"></stop>
+                                    <stop offset="1" stop-color="#ea580c"></stop>
+                                </radialGradient>
+                            </defs>
+                            <path class="network-path soft" d="M46 156 C126 185 210 170 284 126 S438 58 526 72 S626 112 666 154"></path>
+                            <path class="network-path" d="M48 132 C116 72 170 66 232 96 S350 154 430 92 S558 78 654 138"></path>
+                            <path class="network-path accent" d="M78 166 C160 120 218 134 286 150 S424 176 520 128 S600 62 656 54"></path>
+                            <path class="network-path soft" d="M144 58 C224 30 294 50 338 102 S430 168 590 158"></path>
+                            <path class="network-flow" d="M48 132 C116 72 170 66 232 96 S350 154 430 92 S558 78 654 138"></path>
+                            <circle class="network-ring" cx="232" cy="96" r="48"></circle>
+                            <circle class="network-ring" cx="430" cy="92" r="42"></circle>
+                            <circle class="network-ring" cx="520" cy="128" r="34"></circle>
+                            <circle class="network-dot teal" cx="112" cy="94" r="4"></circle>
+                            <circle class="network-dot" cx="154" cy="58" r="3.5"></circle>
+                            <circle class="network-dot teal" cx="286" cy="150" r="4"></circle>
+                            <circle class="network-dot" cx="338" cy="102" r="3"></circle>
+                            <circle class="network-dot teal" cx="590" cy="158" r="4"></circle>
+                            <circle class="network-node teal" cx="78" cy="166" r="12"></circle>
+                            <circle class="network-node" cx="232" cy="96" r="20"></circle>
+                            <circle class="network-node orange" cx="430" cy="92" r="15"></circle>
+                            <circle class="network-node teal" cx="520" cy="128" r="17"></circle>
+                            <circle class="network-node" cx="656" cy="54" r="11"></circle>
                         </svg>
                     </div>
                 </div>
