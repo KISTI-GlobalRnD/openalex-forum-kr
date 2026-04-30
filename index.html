@@ -396,7 +396,7 @@
             top: 38px;
             left: -56px;
             width: clamp(150px, 22vw, 250px);
-            opacity: 0.13;
+            opacity: 0.18;
             transform: rotate(-9deg);
         }
 
@@ -404,7 +404,7 @@
             top: -36px;
             left: clamp(96px, 13.5vw, 170px);
             width: clamp(186px, 24vw, 288px);
-            opacity: 0.07;
+            opacity: 0.11;
             transform: rotate(8deg);
         }
 
@@ -1181,14 +1181,14 @@
                 left: -34px;
                 top: 42px;
                 width: clamp(130px, 38vw, 210px);
-                opacity: 0.11;
+                opacity: 0.15;
             }
 
             .hero-new-oa-mark {
                 left: clamp(78px, 24vw, 130px);
                 top: -12px;
                 width: clamp(156px, 41vw, 234px);
-                opacity: 0.065;
+                opacity: 0.095;
             }
 
             .resources-grid {
@@ -2044,13 +2044,24 @@
             rowHasResponse(row) {
                 return Boolean(row && Array.isArray(row.c) && row.c.some((cell) => cell && cell.v != null && String(cell.v).trim() !== ''));
             },
+            rowHasSubmission(row, timeIndex) {
+                if (timeIndex >= 0) return this.cell(row, timeIndex) !== '';
+                return this.rowHasResponse(row);
+            },
             handle(payload) {
                 try {
                     if (!payload || payload.status !== 'ok' || !payload.table) throw new Error('Invalid sheet payload');
 
                     const cols = Array.isArray(payload.table.cols) ? payload.table.cols : [];
-                    const rows = Array.isArray(payload.table.rows) ? payload.table.rows : [];
-                    const labels = cols.map((col) => col.label || '');
+                    let rows = Array.isArray(payload.table.rows) ? payload.table.rows : [];
+                    let labels = cols.map((col) => (col.label || '').trim());
+                    if (!labels.some(Boolean) && rows.length) {
+                        const firstRowLabels = rows[0].c ? rows[0].c.map((cell) => cell && cell.v != null ? String(cell.v).trim() : '') : [];
+                        if (firstRowLabels.includes('타임스탬프')) {
+                            labels = firstRowLabels;
+                            rows = rows.slice(1);
+                        }
+                    }
                     const timeIndex = labels.indexOf('타임스탬프');
                     const tutorialIndex = labels.indexOf('튜토리얼 세션 참석');
                     const igniteIndex = labels.indexOf('이그나이트 톡 발표 희망');
@@ -2061,7 +2072,7 @@
                     let latest = '';
 
                     rows.forEach((row) => {
-                        if (!this.rowHasResponse(row)) return;
+                        if (!this.rowHasSubmission(row, timeIndex)) return;
                         total += 1;
                         if (this.cell(row, tutorialIndex) === '네') tutorial += 1;
                         if (this.cell(row, igniteIndex) === '네') ignite += 1;
