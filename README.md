@@ -9,13 +9,17 @@
 - 협업 촉진: 공동 분석/도구 개발 아이디어의 발굴과 연계
 
 ## 연혁(History)
-- 2025-09-25: OpenAlex User Forum KR #1 예정 (서울 정동1928 아트센터)
-  - 프로그램 및 안내: `index.html`
+- 2026-06-23: OpenAlex User Forum KR #2 예정 (서울 정동1928 아트센터 이벤트홀)
+  - 공식 안내 및 참가 신청: `index.html`
+  - 예정 행사 메모: `events/upcoming.md`
+- 2025-09-25: OpenAlex User Forum KR #1 개최
+  - 1회 아카이브 페이지: `index-forum-1.html`
   - 발표 자료 디렉터리: `presentations/2025-09-forum-1/`
-- 저장소 개설: 2025, 커뮤니티 자료 구조 초안 확정
+- 2025: 저장소 개설, 커뮤니티 자료 구조 초안 확정
 
 ## 저장소 구조(Structure)
-- `index.html`: 웹 랜딩 페이지 (행사 소개/일정/신청 안내 포함)
+- `index.html`: 2회 포럼 랜딩 페이지(행사 소개/참가 신청/자료 허브)
+- `index-forum-1.html`: 1회 포럼 아카이브 페이지
 - `tutorials/`: 튜토리얼, pyalex 예제, 치트시트
 - `presentations/`: 포럼 발표 자료(PDF/슬라이드/코드)
 - `community/`: Discussions 가이드, 협업 프로젝트, Q&A
@@ -35,7 +39,8 @@ OpenAlex-Forum-KR/
 ```
 
 ## 사용법(Usage)
-- 행사 정보 업데이트: `events/` 문서와 `index.html`의 일정/신청 섹션을 갱신
+- 행사 정보 업데이트: `index.html`과 `events/upcoming.md`의 일정/신청 섹션을 함께 갱신
+- 지난 행사 아카이브 정리: `index-forum-1.html` 또는 `events/past-events/` 문서를 갱신
 - 발표 자료 업로드: `presentations/<행사폴더>/`에 PDF/슬라이드/코드 추가
 - 튜토리얼 추가: `tutorials/` 내에 노트북/예제/치트시트 추가
 - 리소스 정리: `resources/`에 링크/논문/도구 목록 확장
@@ -50,6 +55,7 @@ OpenAlex-Forum-KR/
 ## 배포(Deployment)
 - GitHub Pages를 통해 `index.html`을 공개할 수 있습니다.
 - 루트에 `.nojekyll` 포함, 브랜치/루트로 배포 설정 권장.
+- 공개 URL: https://kisti-globalrnd.github.io/openalex-forum-kr/
 
 ## 라이선스(License)
 - 추후 명시 예정(예: MIT/CC-BY). 현재 미정.
