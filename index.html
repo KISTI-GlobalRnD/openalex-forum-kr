@@ -2383,5 +2383,228 @@
             Wizard.init();
         });
     </script>
+
+    <!-- 참가 신청자 안내 팝업 -->
+    <style>
+        #notice-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(15, 31, 76, 0.55);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+        #notice-modal.is-open {
+            display: flex;
+            animation: notice-fade 0.25s ease;
+        }
+        @keyframes notice-fade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .notice-card {
+            position: relative;
+            width: 100%;
+            max-width: 540px;
+            max-height: 88vh;
+            overflow-y: auto;
+            background: var(--surface-strong);
+            border: 1px solid var(--line-strong);
+            border-radius: 22px;
+            box-shadow: var(--shadow);
+            padding: 30px 30px 22px;
+            animation: notice-rise 0.3s ease;
+        }
+        @keyframes notice-rise {
+            from { transform: translateY(18px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .notice-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(var(--ink-rgb), 0.06);
+            color: var(--muted);
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        .notice-close:hover { background: rgba(var(--ink-rgb), 0.12); color: var(--ink); }
+        .notice-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--brand-mid);
+            margin-bottom: 10px;
+        }
+        .notice-title {
+            font-size: 1.32rem;
+            font-weight: 700;
+            line-height: 1.4;
+            color: var(--ink);
+            margin-bottom: 16px;
+        }
+        .notice-highlight {
+            border: 1.5px solid var(--accent-warm);
+            background: rgba(var(--warm-rgb), 0.08);
+            border-radius: 16px;
+            padding: 16px 18px;
+            margin-bottom: 16px;
+        }
+        .notice-highlight .nh-tag {
+            display: inline-block;
+            font-size: 0.74rem;
+            font-weight: 700;
+            color: #fff;
+            background: var(--accent-warm);
+            border-radius: 999px;
+            padding: 3px 10px;
+            margin-bottom: 8px;
+        }
+        .notice-highlight h3 {
+            font-size: 1.05rem;
+            color: var(--ink);
+            margin-bottom: 6px;
+        }
+        .notice-highlight p {
+            font-size: 0.92rem;
+            line-height: 1.6;
+            color: var(--ink);
+        }
+        .notice-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+        .notice-list li {
+            display: flex;
+            gap: 11px;
+            font-size: 0.9rem;
+            line-height: 1.55;
+            color: var(--ink);
+        }
+        .notice-list li i {
+            flex: none;
+            margin-top: 3px;
+            color: var(--brand-mid);
+            width: 18px;
+            text-align: center;
+        }
+        .notice-list li strong { color: var(--ink); }
+        .notice-list li span { color: var(--muted); }
+        .notice-foot {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            border-top: 1px solid var(--line);
+            padding-top: 14px;
+        }
+        .notice-sign { font-size: 0.82rem; color: var(--muted); }
+        .notice-actions { display: flex; align-items: center; gap: 14px; }
+        .notice-dismiss {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.82rem;
+            color: var(--muted);
+            cursor: pointer;
+            user-select: none;
+        }
+        .notice-ok {
+            border: none;
+            border-radius: 999px;
+            background: var(--brand);
+            color: #fff;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 10px 22px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .notice-ok:hover { background: var(--brand-mid); transform: translateY(-1px); }
+        @media (max-width: 520px) {
+            .notice-card { padding: 26px 20px 18px; border-radius: 18px; }
+            .notice-title { font-size: 1.16rem; }
+        }
+    </style>
+
+    <div id="notice-modal" role="dialog" aria-modal="true" aria-labelledby="notice-title" hidden>
+        <div class="notice-card">
+            <button type="button" class="notice-close" aria-label="닫기" data-notice-close>&times;</button>
+            <span class="notice-eyebrow"><i class="fa-solid fa-bullhorn"></i> 참가 신청자 안내</span>
+            <h2 class="notice-title" id="notice-title">신청해 주신 분들께 행사 전 안내드립니다</h2>
+
+            <div class="notice-highlight">
+                <span class="nh-tag">마감 · 만석</span>
+                <h3><i class="fa-solid fa-graduation-cap"></i> 튜토리얼 세션은 좌석이 모두 찼습니다</h3>
+                <p>이제부터는 <strong>취소자가 생길 때만 대기 순으로 참석이 가능</strong>합니다. 부득이하게 참석이 어려우신 분은 안내 메일에 답장 주시면 대기자분들께 큰 도움이 됩니다. <span style="color:var(--muted)">(💡 간단한 다과 제공)</span></p>
+            </div>
+
+            <ul class="notice-list">
+                <li><i class="fa-solid fa-microphone-lines"></i><span><strong>이그나이트 톡 &mdash; 딱 한 분 더!</strong><br>정원은 찼으나 사회자 재량으로 한 분 정도 더 모실 수 있습니다. 망설이셨다면 지금 신청해 주세요.</span></li>
+                <li><i class="fa-solid fa-users"></i><span><strong>전체 인원 마감 임박</strong><br>현재 74명 등록 &middot; 최대 120명. 함께할 동료가 있다면 서둘러 등록을 완료해 주세요.</span></li>
+                <li><i class="fa-solid fa-table-list"></i><span><strong>발표 순서 변경</strong><br>변경된 순서는 홈페이지 타임테이블에 반영했고, 발표 자료는 받는 대로 업데이트합니다.</span></li>
+                <li><i class="fa-solid fa-couch"></i><span><strong>몰입형 객석 운영</strong><br>올해는 발표 집중도를 높이기 위해 객석에 별도 테이블을 두지 않습니다. 양해 부탁드립니다.</span></li>
+            </ul>
+
+            <div class="notice-foot">
+                <span class="notice-sign">KISTI 글로벌R&amp;D분석센터 김영진 드림</span>
+                <div class="notice-actions">
+                    <label class="notice-dismiss"><input type="checkbox" id="notice-dismiss-chk"> 오늘 하루 그만 보기</label>
+                    <button type="button" class="notice-ok" data-notice-close>확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const KEY = 'oaf-notice-2026-dismiss';
+            const modal = document.getElementById('notice-modal');
+            const chk = document.getElementById('notice-dismiss-chk');
+            if (!modal) return;
+
+            const dismissedUntil = Number(localStorage.getItem(KEY) || 0);
+            if (Date.now() < dismissedUntil) return;
+
+            function open() {
+                modal.hidden = false;
+                modal.classList.add('is-open');
+                document.body.style.overflow = 'hidden';
+            }
+            function close() {
+                modal.classList.remove('is-open');
+                modal.hidden = true;
+                document.body.style.overflow = '';
+                if (chk && chk.checked) {
+                    localStorage.setItem(KEY, String(Date.now() + 24 * 60 * 60 * 1000));
+                }
+            }
+
+            modal.querySelectorAll('[data-notice-close]').forEach(el => el.addEventListener('click', close));
+            modal.addEventListener('click', e => { if (e.target === modal) close(); });
+            document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('is-open')) close(); });
+
+            setTimeout(open, 600);
+        })();
+    </script>
 </body>
 </html>
