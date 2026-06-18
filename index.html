@@ -1100,18 +1100,46 @@
 
         .survey-success {
             display: none;
-            margin-top: 12px;
-            padding: 10px 12px;
-            border: 1px solid rgba(var(--brand-rgb), 0.22);
+            margin-top: 18px;
+            padding: 18px;
+            border: 1px solid rgba(var(--brand-rgb), 0.28);
+            border-left: 5px solid var(--brand);
             border-radius: 8px;
-            background: rgba(var(--brand-rgb), 0.1);
+            background:
+                radial-gradient(180px 120px at 100% 0, rgba(var(--brand-rgb), 0.16), transparent 68%),
+                rgba(var(--brand-rgb), 0.08);
             color: var(--brand-dark);
-            font-size: 0.9rem;
-            font-weight: 700;
+            box-shadow: 0 14px 32px rgba(var(--brand-rgb), 0.12);
         }
 
         .survey-success.visible {
             display: block;
+        }
+
+        .survey-success strong {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 8px;
+            color: #173e77;
+            font-family: 'Space Grotesk', 'Noto Sans KR', sans-serif;
+            font-size: 1.14rem;
+            line-height: 1.35;
+        }
+
+        .survey-success p {
+            margin: 0;
+            color: #34475b;
+            font-size: 0.94rem;
+            font-weight: 700;
+            line-height: 1.65;
+        }
+
+        .survey-success a {
+            color: var(--brand);
+            font-weight: 800;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(var(--brand-rgb), 0.35);
         }
 
         .survey-alt {
@@ -1963,6 +1991,7 @@
             eventDate: '2026-06-23T11:30:00+09:00',
             formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSf719zPWQ8LmJuMJjsYbg2C24EFEkVOsM1QICL_hp7l9R7yLQ/formResponse',
             sheetEndpoint: 'https://docs.google.com/spreadsheets/d/19QzKJjjDGCQ-0RaePwGPzMtNLknLKPvduDGINblgqno/gviz/tq?tqx=out:json;responseHandler:handleSurveySheet',
+            registrationStorageKey: 'openalex-forum-kr-2-registration-submitted',
             sectionIds: ['intro', 'register', 'program', 'speakers', 'venue', 'resources', 'survey-inline']
         };
 
@@ -2225,6 +2254,7 @@
                     next: DOM.one('#wizard-next'),
                     submit: DOM.one('#wizard-submit'),
                     success: DOM.one('#survey-success'),
+                    alt: DOM.one('.survey-alt'),
                     orgType: DOM.one('#field-org-type'),
                     orgOtherWrap: DOM.one('#org-type-other-wrap'),
                     orgOther: DOM.one('#field-org-type-other'),
@@ -2248,6 +2278,48 @@
 
                 this.syncConditionalFields();
                 this.update(false);
+                this.restoreSubmittedState();
+            },
+            getStoredSubmission() {
+                try {
+                    const raw = window.localStorage.getItem(CONFIG.registrationStorageKey);
+                    return raw ? JSON.parse(raw) : null;
+                } catch (error) {
+                    return null;
+                }
+            },
+            storeSubmission() {
+                try {
+                    const formData = new FormData(this.els.form);
+                    window.localStorage.setItem(CONFIG.registrationStorageKey, JSON.stringify({
+                        submittedAt: new Date().toISOString(),
+                        name: String(formData.get('entry.2092238618') || '').trim(),
+                        email: String(formData.get('entry.1556369182') || '').trim()
+                    }));
+                } catch (error) {
+                    // The form submission should still succeed if browser storage is unavailable.
+                }
+            },
+            formatSubmittedAt(value) {
+                if (!value) return '';
+                const date = new Date(value);
+                if (Number.isNaN(date.getTime())) return '';
+                return new Intl.DateTimeFormat('ko-KR', {
+                    dateStyle: 'medium',
+                    timeStyle: 'short',
+                    timeZone: 'Asia/Seoul'
+                }).format(date);
+            },
+            restoreSubmittedState() {
+                const submission = this.getStoredSubmission();
+                if (!submission) return;
+                const submittedAt = this.formatSubmittedAt(submission.submittedAt);
+                this.markSubmitted({
+                    title: '이미 참가 신청이 완료되었습니다.',
+                    detail: submittedAt
+                        ? submittedAt + '에 이 브라우저에서 신청이 접수되었습니다. 같은 분이라면 다시 제출하지 않아도 됩니다. 변경이나 취소가 필요하면 문의 메일로 알려 주세요.'
+                        : '이 브라우저에 신청 완료 기록이 있습니다. 같은 분이라면 다시 제출하지 않아도 됩니다. 변경이나 취소가 필요하면 문의 메일로 알려 주세요.'
+                });
             },
             setOptionalField({ wrapEl, fieldEl, enabled, required }) {
                 if (!wrapEl || !fieldEl) return;
@@ -2342,10 +2414,17 @@
             hideMessage() {
                 if (this.els.success) this.els.success.classList.remove('visible');
             },
-            showMessage(text) {
+            showMessage({ title, detail, icon = 'fa-circle-check' }) {
                 if (!this.els.success) return;
-                this.els.success.textContent = text;
+                this.els.success.innerHTML =
+                    '<strong><i class="fas ' + icon + '"></i> ' + title + '</strong>' +
+                    '<p>' + detail + ' <a href="mailto:kimyoungjin06@kisti.re.kr?subject=OpenAlex%20User%20Forum%20KR%20%232%20%EC%B0%B8%EA%B0%80%20%EC%8B%A0%EC%B2%AD%20%EB%B3%80%EA%B2%BD">문의 메일 보내기</a></p>';
                 this.els.success.classList.add('visible');
+            },
+            markSubmitted(message) {
+                if (this.els.form) this.els.form.hidden = true;
+                if (this.els.alt) this.els.alt.hidden = true;
+                this.showMessage(message);
             },
             async submit(event) {
                 event.preventDefault();
@@ -2361,17 +2440,27 @@
                         mode: 'no-cors',
                         body: new FormData(this.els.form)
                     });
-                    this.showMessage('참가 신청 접수 완료. 이메일로 후속 내용을 보냅니다.');
+                    this.storeSubmission();
+                    this.markSubmitted({
+                        title: '참가 신청 완료',
+                        detail: '신청이 접수되었습니다. 별도의 확인 이메일은 발송되지 않습니다. 같은 내용으로 다시 제출하지 않아도 됩니다. 변경이나 취소가 필요하면 문의 메일로 알려 주세요.'
+                    });
                     this.els.form.reset();
                     this.index = 0;
                     this.update(false);
                     window.setTimeout(() => SurveyStats.load(), 1800);
                     window.setTimeout(() => SurveyStats.load(), 4500);
                 } catch (error) {
-                    this.showMessage('전송에 실패했습니다. 아래 "새 창에서 신청 폼 열기"로 다시 시도해 주세요.');
+                    this.showMessage({
+                        title: '전송에 실패했습니다',
+                        detail: '입력이 잘 되지 않으면 아래 "새 창에서 신청 폼 열기"로 다시 시도해 주세요.',
+                        icon: 'fa-triangle-exclamation'
+                    });
                 } finally {
-                    this.setButtonState(submitButton, false);
-                    submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> 신청 제출';
+                    if (!this.els.form.hidden) {
+                        this.setButtonState(submitButton, false);
+                        submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> 신청 제출';
+                    }
                 }
             }
         };
