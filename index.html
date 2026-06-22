@@ -989,171 +989,62 @@
             box-shadow: var(--shadow);
         }
 
-        .survey-progress {
-            width: 100%;
-            height: 8px;
-            margin-top: 16px;
-            border-radius: 999px;
-            background: rgba(var(--ink-rgb), 0.12);
-            overflow: hidden;
+        .post-form-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
         }
 
-        .survey-progress-bar {
-            width: 16.66%;
-            height: 100%;
-            border-radius: 999px;
-            background: linear-gradient(90deg, var(--brand), var(--brand-light));
-            transition: width 0.3s ease;
-        }
-
-        .survey-step-label {
-            margin-top: 9px;
-            color: #5a6879;
-            font-size: 0.84rem;
-            font-weight: 700;
-        }
-
-        .wizard-viewport {
-            height: auto;
-            margin-top: 12px;
+        .post-form-card {
+            min-width: 0;
+            display: grid;
+            gap: 12px;
+            align-content: start;
+            padding: 18px;
             border: 1px solid rgba(var(--ink-rgb), 0.12);
             border-radius: 8px;
             background: #fff;
-            overflow: hidden;
-            transition: height 0.35s ease;
         }
 
-        .wizard-track {
-            display: flex;
-            transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
-            will-change: transform;
-        }
-
-        .wizard-step {
-            min-width: 100%;
-            padding: 16px;
-        }
-
-        .wizard-step h3 {
-            margin-bottom: 12px;
-            color: #1f2f44;
-            font-size: 1.02rem;
-        }
-
-        .wizard-field {
-            display: grid;
-            gap: 6px;
-            margin-bottom: 12px;
-        }
-
-        .wizard-field label {
-            color: #34475b;
-            font-size: 0.88rem;
-            font-weight: 700;
-        }
-
-        .wizard-field input,
-        .wizard-field select,
-        .wizard-field textarea {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid rgba(var(--ink-rgb), 0.2);
-            border-radius: 8px;
-            background: #fff;
-            color: #203246;
-            font-family: inherit;
-            font-size: 0.94rem;
-        }
-
-        .wizard-field input:focus,
-        .wizard-field select:focus,
-        .wizard-field textarea:focus {
-            border-color: var(--brand);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(var(--brand-rgb), 0.16);
-        }
-
-        .wizard-field textarea {
-            min-height: 96px;
-            resize: vertical;
-        }
-
-        .wizard-hint {
-            margin: -2px 0 12px;
-            color: #6a7787;
-            font-size: 0.84rem;
-            line-height: 1.55;
-        }
-
-        .wizard-controls {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-            align-items: center;
-            margin-top: 12px;
-        }
-
-        .wizard-controls-right {
-            display: flex;
-            gap: 8px;
-        }
-
-        .survey-success {
-            display: none;
-            margin-top: 18px;
-            padding: 18px;
-            border: 1px solid rgba(var(--brand-rgb), 0.28);
-            border-left: 5px solid var(--brand);
-            border-radius: 8px;
+        .post-form-card.required {
+            border-color: rgba(var(--brand-rgb), 0.28);
             background:
-                radial-gradient(180px 120px at 100% 0, rgba(var(--brand-rgb), 0.16), transparent 68%),
-                rgba(var(--brand-rgb), 0.08);
-            color: var(--brand-dark);
-            box-shadow: 0 14px 32px rgba(var(--brand-rgb), 0.12);
+                radial-gradient(200px 120px at 100% 0, rgba(var(--brand-rgb), 0.12), transparent 72%),
+                #fff;
         }
 
-        .survey-success.visible {
-            display: block;
+        .post-form-card.optional {
+            background:
+                radial-gradient(200px 120px at 100% 0, rgba(var(--warm-rgb), 0.12), transparent 72%),
+                #fff;
         }
 
-        .survey-success strong {
-            display: flex;
-            align-items: center;
-            gap: 9px;
-            margin-bottom: 8px;
-            color: #173e77;
+        .post-form-card small {
+            width: fit-content;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(var(--brand-rgb), 0.1);
+            color: var(--brand);
+            font-size: 0.76rem;
+            font-weight: 800;
+        }
+
+        .post-form-card.optional small {
+            background: rgba(var(--warm-rgb), 0.12);
+            color: var(--accent-warm);
+        }
+
+        .post-form-card strong {
+            color: #1f2f44;
             font-family: 'Space Grotesk', 'Noto Sans KR', sans-serif;
-            font-size: 1.14rem;
-            line-height: 1.35;
+            font-size: 1.08rem;
+            line-height: 1.3;
         }
 
-        .survey-success p {
-            margin: 0;
-            color: #34475b;
-            font-size: 0.94rem;
-            font-weight: 700;
-            line-height: 1.65;
-        }
-
-        .survey-success a {
-            color: var(--brand);
-            font-weight: 800;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(var(--brand-rgb), 0.35);
-        }
-
-        .survey-alt {
-            margin-top: 11px;
+        .post-form-card p {
             color: #5a6877;
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             line-height: 1.6;
-        }
-
-        .survey-alt a {
-            color: var(--brand);
-            font-weight: 800;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(var(--brand-rgb), 0.35);
         }
 
         .reveal {
@@ -1355,9 +1246,7 @@
 
             .hero-actions,
             .section-actions,
-            .detail-actions,
-            .wizard-controls,
-            .wizard-controls-right {
+            .detail-actions {
                 align-items: stretch;
                 flex-direction: column;
             }
@@ -1447,7 +1336,7 @@
                 </span>
             </a>
             <nav class="top-actions" aria-label="상단 메뉴">
-                <a class="primary" href="#survey-inline"><i class="fas fa-clipboard-list"></i> 참가 신청</a>
+                <a class="primary" href="#survey-inline"><i class="fas fa-clipboard-check"></i> 동의서</a>
                 <a href="#program"><i class="fas fa-calendar-days"></i> 프로그램</a>
                 <a href="#resources"><i class="fas fa-layer-group"></i> 자료</a>
                 <a href="mailto:kimyoungjin06@kisti.re.kr?subject=OpenAlex%20User%20Forum%20KR%20%232%20문의"><i class="fas fa-envelope"></i> 문의</a>
@@ -1488,7 +1377,7 @@
                         <strong>11:30-17:00</strong>
                     </div>
                     <div class="hero-actions" aria-label="주요 바로가기">
-                        <a class="btn btn-primary" href="#survey-inline"><i class="fas fa-clipboard-list"></i> 참가 신청</a>
+                        <a class="btn btn-primary" href="#survey-inline"><i class="fas fa-clipboard-check"></i> 동의서 제출</a>
                         <a class="btn btn-ghost" href="#program"><i class="fas fa-calendar-days"></i> 프로그램 보기</a>
                     </div>
                 </div>
@@ -1508,8 +1397,8 @@
                             </span>
                         </div>
                         <div class="update-item">
-                            <strong>참가신청 시작</strong>
-                            <span>튜토리얼·이그나이트 톡 별도 신청</span>
+                            <strong>참가신청 마감</strong>
+                            <span>개인정보 동의서 필수 제출</span>
                         </div>
                     </div>
                 </aside>
@@ -1532,15 +1421,22 @@
                         <div class="status-row" role="listitem">
                             <span>Status</span>
                             <div>
-                                <strong>신청 접수 중</strong>
-                                <p>좌석과 세션 운영 상황에 따라 빠르게 마감될 수 있습니다.</p>
+                                <strong>참가 신청 마감</strong>
+                                <p>기존 참가 신청 접수는 마감되었습니다.</p>
                             </div>
                         </div>
                         <div class="status-row" role="listitem">
-                            <span>Scope</span>
+                            <span>Required</span>
                             <div>
-                                <strong>본세션 + 튜토리얼 신청 + 이그나이트 톡 제안</strong>
-                                <p>이그나이트 톡은 참가자가 직접 발제를 제안하는 라이트닝 슬롯입니다. OpenAlex 활용 경험과 논의 주제를 우선 모읍니다.</p>
+                                <strong>개인정보 수집·이용 동의서</strong>
+                                <p>참석 확인과 향후 메일 안내 동의를 포함하므로 참석자는 반드시 제출해 주세요.</p>
+                            </div>
+                        </div>
+                        <div class="status-row" role="listitem">
+                            <span>Optional</span>
+                            <div>
+                                <strong>만족도 조사</strong>
+                                <p>행사 종료 후 다음 포럼 개선을 위해 부담 없이 참여해 주세요.</p>
                             </div>
                         </div>
                         <div class="status-row" role="listitem">
@@ -1552,7 +1448,7 @@
                         </div>
                     </div>
                     <div class="section-actions">
-                        <a class="btn btn-primary" href="#survey-inline"><i class="fas fa-clipboard-list"></i> 신청서 작성</a>
+                        <a class="btn btn-primary" href="#survey-inline"><i class="fas fa-clipboard-check"></i> 동의서와 만족도 조사</a>
                     </div>
                 </div>
 
@@ -1570,21 +1466,21 @@
                         <div class="count-item"><strong id="cd-seconds">--</strong><span>초</span></div>
                     </div>
                     <div class="live-stats-head">
-                        <strong>응답 집계</strong>
-                        <span class="live-stats-note" id="survey-stats-status" aria-live="polite">신청 집계 불러오는 중</span>
+                        <strong>마감 안내</strong>
+                        <span class="live-stats-note">정원 120명에 가까워 참가 신청을 마감했습니다</span>
                     </div>
-                    <div class="live-stats-grid" aria-label="신청자 집계" aria-live="polite">
+                    <div class="live-stats-grid" aria-label="마감 후 안내">
                         <div class="live-stat-pill">
-                            <strong id="survey-total-count">--</strong>
-                            <span>전체 신청</span>
+                            <strong>마감</strong>
+                            <span>참가 신청 종료</span>
                         </div>
                         <div class="live-stat-pill">
-                            <strong id="survey-tutorial-count">--</strong>
-                            <span>튜토리얼 신청</span>
+                            <strong>필수</strong>
+                            <span>개인정보 동의서 제출</span>
                         </div>
                         <div class="live-stat-pill">
-                            <strong id="survey-ignite-count">--</strong>
-                            <span>이그나이트 톡 신청</span>
+                            <strong>선택</strong>
+                            <span>만족도 조사 참여</span>
                         </div>
                     </div>
                 </div>
@@ -1820,147 +1716,53 @@
         <section class="section-panel compact" id="survey-inline" data-section="survey-inline">
             <div class="container panel-inner form-shell reveal">
                 <div>
-                    <div class="section-kicker"><i class="fas fa-paper-plane"></i> Inline Form</div>
-                    <h2 class="section-heading">참가 신청</h2>
-                    <p class="section-copy">이그나이트 톡 발표 제안을 적극 환영합니다. 공유하고 싶은 활용 사례나 토론 주제를 남겨 주세요.</p>
-                    <div class="status-list" role="list" aria-label="폼 입력 항목">
+                    <div class="section-kicker"><i class="fas fa-clipboard-check"></i> Forms</div>
+                    <h2 class="section-heading">동의서와 만족도 조사</h2>
+                    <p class="section-copy">참가 신청은 마감되었습니다. 참석자는 개인정보 수집·이용 동의서를 제출해 주세요. 만족도 조사는 선택 참여입니다.</p>
+                    <div class="status-list" role="list" aria-label="마감 후 제출 항목">
                         <div class="status-row" role="listitem">
-                            <span>Step 1-3</span>
+                            <span>필수</span>
                             <div>
-                                <strong>이름, 이메일, 소속, 신분</strong>
-                                <p>참석 확인과 후속 연락에 사용합니다.</p>
+                                <strong>개인정보 수집·이용 동의</strong>
+                                <p>참석 확인, 사진·영상 활용 여부, 향후 메일 안내 동의를 확인합니다.</p>
                             </div>
                         </div>
                         <div class="status-row" role="listitem">
-                            <span>Step 4-6</span>
+                            <span>선택</span>
                             <div>
-                                <strong>튜토리얼, 이그나이트 톡, 메모</strong>
-                                <p>튜토리얼 참여 여부와 이그나이트 톡 발표 희망, 추가 메모를 받습니다.</p>
+                                <strong>만족도 조사</strong>
+                                <p>응답은 다음 포럼과 후속 튜토리얼 개선에 사용합니다.</p>
+                            </div>
+                        </div>
+                        <div class="status-row" role="listitem">
+                            <span>마감</span>
+                            <div>
+                                <strong>기존 참가 신청</strong>
+                                <p>참가 신청 폼은 더 이상 받지 않습니다. 중복 제출하지 않아도 됩니다.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-panel">
-                    <div class="survey-progress" aria-hidden="true">
-                        <div class="survey-progress-bar" id="survey-progress-bar"></div>
+                    <div class="post-form-actions" aria-label="마감 후 제출 링크">
+                        <article class="post-form-card required">
+                            <small>필수</small>
+                            <strong>개인정보 수집·이용 동의서</strong>
+                            <p>참석 확인과 사진·영상 활용 여부, 향후 메일 안내 동의를 포함합니다. 참석자는 행사 전 또는 현장 접수 전 제출해 주세요.</p>
+                            <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdnKzbBrOrJfMvcZIHUoo_tITT567GF5GTH8ExLkMIFGcf12w/viewform" target="_blank" rel="noopener">
+                                <i class="fas fa-clipboard-check"></i> 동의서 작성
+                            </a>
+                        </article>
+                        <article class="post-form-card optional">
+                            <small>선택</small>
+                            <strong>만족도 조사</strong>
+                            <p>행사 운영과 다음 OpenAlex User Forum 개선을 위한 선택 설문입니다. 행사 후 편한 시간에 참여해 주세요.</p>
+                            <a class="btn btn-ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSc9cCK8SC5RFQlR-AJZ288jSm_G--kBHcOPJKaf54Oiiw7IGQ/viewform" target="_blank" rel="noopener">
+                                <i class="fas fa-chart-simple"></i> 만족도 조사
+                            </a>
+                        </article>
                     </div>
-                    <p class="survey-step-label" aria-live="polite"><span id="survey-step-current">1</span> / <span id="survey-step-total">6</span> 단계</p>
-
-                    <form id="demand-form" action="https://docs.google.com/forms/d/e/1FAIpQLSf719zPWQ8LmJuMJjsYbg2C24EFEkVOsM1QICL_hp7l9R7yLQ/formResponse" method="POST">
-                        <div class="wizard-viewport" id="wizard-viewport">
-                            <div class="wizard-track" id="wizard-track">
-                                <section class="wizard-step" data-step="1" aria-label="기본 정보">
-                                    <h3>기본 정보</h3>
-                                    <div class="wizard-field">
-                                        <label for="field-name">이름</label>
-                                        <input id="field-name" name="entry.2092238618" type="text" required placeholder="이름" autocomplete="name">
-                                    </div>
-                                    <div class="wizard-field">
-                                        <label for="field-email">이메일</label>
-                                        <input id="field-email" name="entry.1556369182" type="email" required placeholder="example@domain.com" autocomplete="email">
-                                    </div>
-                                </section>
-
-                                <section class="wizard-step" data-step="2" aria-label="소속 정보">
-                                    <h3>소속 정보</h3>
-                                    <div class="wizard-field">
-                                        <label for="field-org">소속</label>
-                                        <input id="field-org" name="entry.479301265" type="text" required placeholder="기관/회사/학교명" autocomplete="organization">
-                                    </div>
-                                    <div class="wizard-field">
-                                        <label for="field-org-type">소속 기관 유형</label>
-                                        <select id="field-org-type" name="entry.1673767351" required>
-                                            <option value="" selected disabled>선택</option>
-                                            <option value="학교">학교</option>
-                                            <option value="연구소">연구소</option>
-                                            <option value="기업">기업</option>
-                                            <option value="__other_option__">기타(직접 입력)</option>
-                                        </select>
-                                    </div>
-                                    <div class="wizard-field" id="org-type-other-wrap" hidden>
-                                        <label for="field-org-type-other">기타 소속 기관 유형</label>
-                                        <input id="field-org-type-other" name="entry.1673767351.other_option_response" type="text" placeholder="예: 공공기관, 도서관, 협회">
-                                    </div>
-                                </section>
-
-                                <section class="wizard-step" data-step="3" aria-label="신분">
-                                    <h3>신분</h3>
-                                    <div class="wizard-field">
-                                        <label for="field-role">신분</label>
-                                        <select id="field-role" name="entry.1034130921" required>
-                                            <option value="" selected disabled>선택</option>
-                                            <option value="학생">학생</option>
-                                            <option value="교수">교수</option>
-                                            <option value="연구원">연구원</option>
-                                            <option value="정책위원">정책위원</option>
-                                            <option value="__other_option__">기타(직접 입력)</option>
-                                        </select>
-                                    </div>
-                                    <div class="wizard-field" id="role-other-wrap" hidden>
-                                        <label for="field-role-other">기타 신분</label>
-                                        <input id="field-role-other" name="entry.1034130921.other_option_response" type="text" placeholder="예: 사서, 엔지니어, 기획/운영">
-                                    </div>
-                                </section>
-
-                                <section class="wizard-step" data-step="4" aria-label="튜토리얼 신청">
-                                    <h3>튜토리얼 신청</h3>
-                                    <div class="wizard-field">
-                                        <label for="field-tutorial-join">튜토리얼 참여 희망</label>
-                                        <select id="field-tutorial-join" name="entry.1753222212" required>
-                                            <option value="" selected disabled>선택</option>
-                                            <option value="네">네</option>
-                                            <option value="아니오">아니오</option>
-                                        </select>
-                                    </div>
-                                    <div class="wizard-field">
-                                        <label for="field-tutorial-topic">선호 튜토리얼 세션 유형</label>
-                                        <select id="field-tutorial-topic" name="entry.1818631509">
-                                            <option value="" selected disabled>선택</option>
-                                            <option value="API 활용, 프로젝트 중심 실습">API 활용, 프로젝트 중심 실습</option>
-                                            <option value="데이터 특성 등 경험 중심 설명">데이터 특성 등 경험 중심 설명</option>
-                                        </select>
-                                    </div>
-                                </section>
-
-                                <section class="wizard-step" data-step="5" aria-label="이그나이트 톡 제안">
-                                    <h3>이그나이트 톡 제안</h3>
-                                    <p class="wizard-hint">이그나이트 톡은 참가자가 직접 발제를 제안하는 라이트닝 세션입니다. 공유할 OpenAlex 활용 경험이나 논의 주제를 적어 주세요.</p>
-                                    <div class="wizard-field">
-                                        <label for="field-networking">이그나이트 톡 발표 희망</label>
-                                        <select id="field-networking" name="entry.588393791" required>
-                                            <option value="" selected disabled>선택</option>
-                                            <option value="네">네</option>
-                                            <option value="아니오">아니오</option>
-                                        </select>
-                                    </div>
-                                    <div class="wizard-field">
-                                        <label for="field-topic">이그나이트 톡 제안 주제 (선택)</label>
-                                        <input id="field-topic" name="entry.1909160417" type="text" placeholder="예: OpenAlex 기반 분석 사례, 데이터 연계 경험, 토론하고 싶은 쟁점">
-                                    </div>
-                                </section>
-
-                                <section class="wizard-step" data-step="6" aria-label="추가 메모">
-                                    <h3>추가 메모</h3>
-                                    <div class="wizard-field">
-                                        <label for="field-comment">추가로 남기실 말씀 (선택)</label>
-                                        <textarea id="field-comment" name="entry.461606720" placeholder="참석 관련 요청이나 운영 문의를 적어 주세요"></textarea>
-                                    </div>
-                                    <p class="wizard-hint">제출 후 변경이 필요하면 문의 메일로 알려 주세요.</p>
-                                </section>
-                            </div>
-                        </div>
-
-                        <div class="wizard-controls">
-                            <button type="button" class="btn btn-ghost" id="wizard-prev" disabled aria-disabled="true"><i class="fas fa-arrow-left"></i> 이전</button>
-                            <div class="wizard-controls-right">
-                                <button type="button" class="btn btn-primary" id="wizard-next">다음 질문 <i class="fas fa-arrow-right"></i></button>
-                                <button type="submit" class="btn btn-primary" id="wizard-submit" hidden><i class="fas fa-paper-plane"></i> 신청 제출</button>
-                            </div>
-                        </div>
-                    </form>
-                    <div class="survey-success" id="survey-success" role="status" aria-live="polite"></div>
-                    <p class="survey-alt">입력이 잘 되지 않으면 <a href="https://docs.google.com/forms/d/e/1FAIpQLSf719zPWQ8LmJuMJjsYbg2C24EFEkVOsM1QICL_hp7l9R7yLQ/viewform" target="_blank" rel="noopener">새 창에서 신청 폼 열기</a></p>
                 </div>
             </div>
         </section>
@@ -1981,7 +1783,7 @@
     </footer>
 
     <nav class="mobile-dock" aria-label="빠른 실행">
-        <a class="primary" href="#survey-inline" data-target="survey-inline"><i class="fas fa-clipboard-list"></i><span>참가 신청</span></a>
+        <a class="primary" href="#survey-inline" data-target="survey-inline"><i class="fas fa-clipboard-check"></i><span>동의서</span></a>
         <a href="#program" data-target="program"><i class="fas fa-calendar-days"></i><span>프로그램</span></a>
         <a href="#resources" data-target="resources"><i class="fas fa-layer-group"></i><span>자료</span></a>
     </nav>
@@ -1989,9 +1791,6 @@
     <script>
         const CONFIG = {
             eventDate: '2026-06-23T11:30:00+09:00',
-            formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSf719zPWQ8LmJuMJjsYbg2C24EFEkVOsM1QICL_hp7l9R7yLQ/formResponse',
-            sheetEndpoint: 'https://docs.google.com/spreadsheets/d/19QzKJjjDGCQ-0RaePwGPzMtNLknLKPvduDGINblgqno/gviz/tq?tqx=out:json;responseHandler:handleSurveySheet',
-            registrationStorageKey: 'openalex-forum-kr-2-registration-submitted',
             sectionIds: ['intro', 'register', 'program', 'speakers', 'venue', 'resources', 'survey-inline']
         };
 
@@ -2047,121 +1846,6 @@
                 this.setValue('hours', this.pad(hours));
                 this.setValue('minutes', this.pad(minutes));
                 this.setValue('seconds', this.pad(seconds));
-            }
-        };
-
-        const SurveyStats = {
-            script: null,
-            timeout: null,
-            startedAt: new Date(),
-            els: {},
-            init() {
-                this.els = {
-                    total: DOM.one('#survey-total-count'),
-                    tutorial: DOM.one('#survey-tutorial-count'),
-                    ignite: DOM.one('#survey-ignite-count'),
-                    status: DOM.one('#survey-stats-status')
-                };
-                if (!this.els.total && !this.els.tutorial && !this.els.ignite && !this.els.status) return;
-                window.handleSurveySheet = (payload) => this.handle(payload);
-                this.setStatus(this.formatAccessTime(this.startedAt));
-                this.load();
-            },
-            setText(el, value) {
-                if (el) el.textContent = String(value);
-            },
-            setStatus(text) {
-                this.setText(this.els.status, text);
-            },
-            formatAccessTime(date) {
-                const year = date.getFullYear();
-                const month = date.getMonth() + 1;
-                const day = date.getDate();
-                const hour24 = date.getHours();
-                const minute = String(date.getMinutes()).padStart(2, '0');
-                const period = hour24 < 12 ? '오전' : '오후';
-                const hour12 = hour24 % 12 || 12;
-                return year + '. ' + month + '. ' + day + ' ' + period + ' ' + hour12 + ':' + minute + ' 업데이트';
-            },
-            fail() {
-                this.setText(this.els.total, '--');
-                this.setText(this.els.tutorial, '--');
-                this.setText(this.els.ignite, '--');
-                this.setStatus('집계 확인 불가');
-                this.cleanup();
-            },
-            cleanup() {
-                if (this.timeout) {
-                    window.clearTimeout(this.timeout);
-                    this.timeout = null;
-                }
-                if (this.script) {
-                    this.script.remove();
-                    this.script = null;
-                }
-            },
-            load() {
-                this.cleanup();
-                this.script = document.createElement('script');
-                this.script.src = CONFIG.sheetEndpoint + '&_=' + Date.now();
-                this.script.async = true;
-                this.script.onerror = () => this.fail();
-                this.timeout = window.setTimeout(() => this.fail(), 7000);
-                document.head.appendChild(this.script);
-            },
-            cell(row, index, formatted = false) {
-                if (index < 0 || !row || !row.c || !row.c[index]) return '';
-                const cell = row.c[index];
-                const value = formatted && cell.f ? cell.f : cell.v;
-                return value == null ? '' : String(value).trim();
-            },
-            rowHasResponse(row) {
-                return Boolean(row && Array.isArray(row.c) && row.c.some((cell) => cell && cell.v != null && String(cell.v).trim() !== ''));
-            },
-            rowHasSubmission(row, timeIndex) {
-                if (timeIndex >= 0) return this.cell(row, timeIndex) !== '';
-                return this.rowHasResponse(row);
-            },
-            handle(payload) {
-                try {
-                    if (!payload || payload.status !== 'ok' || !payload.table) throw new Error('Invalid sheet payload');
-
-                    const cols = Array.isArray(payload.table.cols) ? payload.table.cols : [];
-                    let rows = Array.isArray(payload.table.rows) ? payload.table.rows : [];
-                    let labels = cols.map((col) => (col.label || '').trim());
-                    if (!labels.some(Boolean) && rows.length) {
-                        const firstRowLabels = rows[0].c ? rows[0].c.map((cell) => cell && cell.v != null ? String(cell.v).trim() : '') : [];
-                        if (firstRowLabels.includes('타임스탬프')) {
-                            labels = firstRowLabels;
-                            rows = rows.slice(1);
-                        }
-                    }
-                    const timeIndex = labels.indexOf('타임스탬프');
-                    const tutorialIndex = labels.indexOf('튜토리얼 세션 참석');
-                    const igniteIndex = labels.indexOf('이그나이트 톡 발표 희망');
-
-                    let total = 0;
-                    let tutorial = 0;
-                    let ignite = 0;
-                    let latest = '';
-
-                    rows.forEach((row) => {
-                        if (!this.rowHasSubmission(row, timeIndex)) return;
-                        total += 1;
-                        if (this.cell(row, tutorialIndex) === '네') tutorial += 1;
-                        if (this.cell(row, igniteIndex) === '네') ignite += 1;
-                        const timestamp = this.cell(row, timeIndex, true);
-                        if (timestamp) latest = String(timestamp).replace(/:(\d{2})$/, '');
-                    });
-
-                    this.setText(this.els.total, total);
-                    this.setText(this.els.tutorial, tutorial);
-                    this.setText(this.els.ignite, ignite);
-                    this.setStatus(this.formatAccessTime(this.startedAt) + (latest ? ' · 마지막 신청 ' + latest : ''));
-                    this.cleanup();
-                } catch (error) {
-                    this.fail();
-                }
             }
         };
 
@@ -2238,242 +1922,13 @@
             }
         };
 
-        const Wizard = {
-            index: 0,
-            els: {},
-            init() {
-                this.els = {
-                    form: DOM.one('#demand-form'),
-                    viewport: DOM.one('#wizard-viewport'),
-                    track: DOM.one('#wizard-track'),
-                    steps: DOM.all('.wizard-step'),
-                    current: DOM.one('#survey-step-current'),
-                    total: DOM.one('#survey-step-total'),
-                    progress: DOM.one('#survey-progress-bar'),
-                    prev: DOM.one('#wizard-prev'),
-                    next: DOM.one('#wizard-next'),
-                    submit: DOM.one('#wizard-submit'),
-                    success: DOM.one('#survey-success'),
-                    alt: DOM.one('.survey-alt'),
-                    orgType: DOM.one('#field-org-type'),
-                    orgOtherWrap: DOM.one('#org-type-other-wrap'),
-                    orgOther: DOM.one('#field-org-type-other'),
-                    role: DOM.one('#field-role'),
-                    roleOtherWrap: DOM.one('#role-other-wrap'),
-                    roleOther: DOM.one('#field-role-other'),
-                    tutorialJoin: DOM.one('#field-tutorial-join'),
-                    tutorialTopic: DOM.one('#field-tutorial-topic')
-                };
-
-                if (!this.els.form || !this.els.track || !this.els.steps.length) return;
-
-                this.els.next.addEventListener('click', () => this.next());
-                this.els.prev.addEventListener('click', () => this.prev());
-                this.els.form.addEventListener('input', () => {
-                    this.syncConditionalFields();
-                    this.hideMessage();
-                });
-                this.els.form.addEventListener('submit', (event) => this.submit(event));
-                window.addEventListener('resize', () => this.syncHeight());
-
-                this.syncConditionalFields();
-                this.update(false);
-                this.restoreSubmittedState();
-            },
-            getStoredSubmission() {
-                try {
-                    const raw = window.localStorage.getItem(CONFIG.registrationStorageKey);
-                    return raw ? JSON.parse(raw) : null;
-                } catch (error) {
-                    return null;
-                }
-            },
-            storeSubmission() {
-                try {
-                    const formData = new FormData(this.els.form);
-                    window.localStorage.setItem(CONFIG.registrationStorageKey, JSON.stringify({
-                        submittedAt: new Date().toISOString(),
-                        name: String(formData.get('entry.2092238618') || '').trim(),
-                        email: String(formData.get('entry.1556369182') || '').trim()
-                    }));
-                } catch (error) {
-                    // The form submission should still succeed if browser storage is unavailable.
-                }
-            },
-            formatSubmittedAt(value) {
-                if (!value) return '';
-                const date = new Date(value);
-                if (Number.isNaN(date.getTime())) return '';
-                return new Intl.DateTimeFormat('ko-KR', {
-                    dateStyle: 'medium',
-                    timeStyle: 'short',
-                    timeZone: 'Asia/Seoul'
-                }).format(date);
-            },
-            restoreSubmittedState() {
-                const submission = this.getStoredSubmission();
-                if (!submission) return;
-                const submittedAt = this.formatSubmittedAt(submission.submittedAt);
-                this.markSubmitted({
-                    title: '이미 참가 신청이 완료되었습니다.',
-                    detail: submittedAt
-                        ? submittedAt + '에 이 브라우저에서 신청이 접수되었습니다. 같은 분이라면 다시 제출하지 않아도 됩니다. 변경이나 취소가 필요하면 문의 메일로 알려 주세요.'
-                        : '이 브라우저에 신청 완료 기록이 있습니다. 같은 분이라면 다시 제출하지 않아도 됩니다. 변경이나 취소가 필요하면 문의 메일로 알려 주세요.'
-                });
-            },
-            setOptionalField({ wrapEl, fieldEl, enabled, required }) {
-                if (!wrapEl || !fieldEl) return;
-                wrapEl.hidden = !enabled;
-                fieldEl.disabled = !enabled;
-                fieldEl.required = Boolean(required);
-                if (!enabled) fieldEl.value = '';
-            },
-            syncConditionalFields() {
-                const orgTypeOther = this.els.orgType && this.els.orgType.value === '__other_option__';
-                this.setOptionalField({
-                    wrapEl: this.els.orgOtherWrap,
-                    fieldEl: this.els.orgOther,
-                    enabled: orgTypeOther,
-                    required: orgTypeOther
-                });
-
-                const roleOther = this.els.role && this.els.role.value === '__other_option__';
-                this.setOptionalField({
-                    wrapEl: this.els.roleOtherWrap,
-                    fieldEl: this.els.roleOther,
-                    enabled: roleOther,
-                    required: roleOther
-                });
-
-                const needsTutorialTopic = this.els.tutorialJoin && this.els.tutorialJoin.value === '네';
-                if (this.els.tutorialTopic) {
-                    this.els.tutorialTopic.disabled = !needsTutorialTopic;
-                    this.els.tutorialTopic.required = Boolean(needsTutorialTopic);
-                    if (!needsTutorialTopic) this.els.tutorialTopic.value = '';
-                }
-
-                window.requestAnimationFrame(() => this.syncHeight());
-            },
-            syncHeight() {
-                const step = this.els.steps[this.index];
-                if (this.els.viewport && step) this.els.viewport.style.height = step.offsetHeight + 'px';
-            },
-            activeFields() {
-                const step = this.els.steps[this.index];
-                return step ? Array.from(step.querySelectorAll('input, select, textarea, button')).filter((field) => !field.disabled && field.type !== 'hidden') : [];
-            },
-            focusFirstField() {
-                const first = this.activeFields().find((field) => !field.readOnly);
-                if (first) first.focus({ preventScroll: true });
-            },
-            validate() {
-                this.syncConditionalFields();
-                const requiredFields = this.activeFields().filter((field) => field.required);
-                for (const field of requiredFields) {
-                    if (!field.checkValidity()) {
-                        field.reportValidity();
-                        return false;
-                    }
-                }
-                return true;
-            },
-            setButtonState(button, disabled) {
-                if (!button) return;
-                button.disabled = disabled;
-                button.setAttribute('aria-disabled', String(disabled));
-            },
-            update(shouldFocus = true) {
-                const total = this.els.steps.length;
-                if (this.els.track) this.els.track.style.transform = 'translateX(-' + (this.index * 100) + '%)';
-                if (this.els.current) this.els.current.textContent = String(this.index + 1);
-                if (this.els.total) this.els.total.textContent = String(total);
-                if (this.els.progress) this.els.progress.style.width = (((this.index + 1) / total) * 100).toFixed(2) + '%';
-
-                this.els.steps.forEach((step, stepIndex) => {
-                    const active = stepIndex === this.index;
-                    step.setAttribute('aria-hidden', String(!active));
-                    if (active) step.setAttribute('aria-current', 'step');
-                    else step.removeAttribute('aria-current');
-                });
-
-                this.setButtonState(this.els.prev, this.index === 0);
-                if (this.els.next) this.els.next.hidden = this.index === total - 1;
-                if (this.els.submit) this.els.submit.hidden = this.index !== total - 1;
-                this.syncConditionalFields();
-                if (shouldFocus) window.requestAnimationFrame(() => this.focusFirstField());
-            },
-            next() {
-                if (!this.validate()) return;
-                this.index = Math.min(this.index + 1, this.els.steps.length - 1);
-                this.update();
-            },
-            prev() {
-                this.index = Math.max(this.index - 1, 0);
-                this.update();
-            },
-            hideMessage() {
-                if (this.els.success) this.els.success.classList.remove('visible');
-            },
-            showMessage({ title, detail, icon = 'fa-circle-check' }) {
-                if (!this.els.success) return;
-                this.els.success.innerHTML =
-                    '<strong><i class="fas ' + icon + '"></i> ' + title + '</strong>' +
-                    '<p>' + detail + ' <a href="mailto:kimyoungjin06@kisti.re.kr?subject=OpenAlex%20User%20Forum%20KR%20%232%20%EC%B0%B8%EA%B0%80%20%EC%8B%A0%EC%B2%AD%20%EB%B3%80%EA%B2%BD">문의 메일 보내기</a></p>';
-                this.els.success.classList.add('visible');
-            },
-            markSubmitted(message) {
-                if (this.els.form) this.els.form.hidden = true;
-                if (this.els.alt) this.els.alt.hidden = true;
-                this.showMessage(message);
-            },
-            async submit(event) {
-                event.preventDefault();
-                if (!this.validate()) return;
-
-                const submitButton = this.els.submit;
-                this.setButtonState(submitButton, true);
-                submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 제출 중';
-
-                try {
-                    await fetch(CONFIG.formUrl, {
-                        method: 'POST',
-                        mode: 'no-cors',
-                        body: new FormData(this.els.form)
-                    });
-                    this.storeSubmission();
-                    this.markSubmitted({
-                        title: '참가 신청 완료',
-                        detail: '신청이 접수되었습니다. 별도의 확인 이메일은 발송되지 않습니다. 같은 내용으로 다시 제출하지 않아도 됩니다. 변경이나 취소가 필요하면 문의 메일로 알려 주세요.'
-                    });
-                    this.els.form.reset();
-                    this.index = 0;
-                    this.update(false);
-                    window.setTimeout(() => SurveyStats.load(), 1800);
-                    window.setTimeout(() => SurveyStats.load(), 4500);
-                } catch (error) {
-                    this.showMessage({
-                        title: '전송에 실패했습니다',
-                        detail: '입력이 잘 되지 않으면 아래 "새 창에서 신청 폼 열기"로 다시 시도해 주세요.',
-                        icon: 'fa-triangle-exclamation'
-                    });
-                } finally {
-                    if (!this.els.form.hidden) {
-                        this.setButtonState(submitButton, false);
-                        submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> 신청 제출';
-                    }
-                }
-            }
-        };
-
         document.addEventListener('DOMContentLoaded', () => {
             Countdown.init();
-            SurveyStats.init();
             ScrollUI.init();
-            Wizard.init();
         });
     </script>
 
-    <!-- 참가 신청자 안내 팝업 -->
+    <!-- 참가자 안내 팝업 -->
     <style>
         #notice-modal {
             position: fixed;
@@ -2596,6 +2051,36 @@
         }
         .notice-list li strong { color: var(--ink); }
         .notice-list li span { color: var(--muted); }
+        .notice-link-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .notice-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 46px;
+            border-radius: 999px;
+            background: var(--brand);
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .notice-link:hover {
+            background: var(--brand-mid);
+            transform: translateY(-1px);
+        }
+        .notice-link.secondary {
+            border: 1px solid rgba(var(--brand-rgb), 0.24);
+            background: #fff;
+            color: var(--brand);
+        }
+        .notice-link.secondary:hover { background: rgba(var(--brand-rgb), 0.07); }
         .notice-foot {
             display: flex;
             align-items: center;
@@ -2632,27 +2117,37 @@
         @media (max-width: 520px) {
             .notice-card { padding: 26px 20px 18px; border-radius: 18px; }
             .notice-title { font-size: 1.16rem; }
+            .notice-link-grid { grid-template-columns: 1fr; }
         }
     </style>
 
     <div id="notice-modal" role="dialog" aria-modal="true" aria-labelledby="notice-title" hidden>
         <div class="notice-card">
             <button type="button" class="notice-close" aria-label="닫기" data-notice-close>&times;</button>
-            <span class="notice-eyebrow"><i class="fa-solid fa-bullhorn"></i> 참가 신청자 안내</span>
-            <h2 class="notice-title" id="notice-title">참가 신청 안내</h2>
+            <span class="notice-eyebrow"><i class="fa-solid fa-bullhorn"></i> 참가자 안내</span>
+            <h2 class="notice-title" id="notice-title">참가 신청 마감 및 제출 안내</h2>
 
             <div class="notice-highlight">
-                <span class="nh-tag">신청 확인</span>
-                <h3><i class="fa-solid fa-circle-check"></i> 신청 완료 화면을 보셨다면 정상 접수된 상태입니다</h3>
-                <p>별도의 확인 이메일은 발송되지 않습니다. 같은 내용으로 다시 신청하지 않아도 됩니다.</p>
+                <span class="nh-tag">필수 안내</span>
+                <h3><i class="fa-solid fa-circle-check"></i> 참가 신청은 마감되었습니다</h3>
+                <p>이미 신청하신 분은 개인정보 수집·이용 동의서를 제출해 주세요. 동의서에는 향후 메일 안내 동의가 포함되어 있습니다.</p>
             </div>
 
             <ul class="notice-list">
-                <li><i class="fa-solid fa-users"></i><span><strong>참가 신청 마감 임박</strong><br>전체 참가 신청이 정원 120명에 가까워지고 있어 곧 마감할 예정입니다.</span></li>
-                <li><i class="fa-solid fa-graduation-cap"></i><span><strong>튜토리얼 세션</strong><br>신청자가 많아 이후 신청자는 현장 상황에 따라 조정될 수 있습니다.</span></li>
-                <li><i class="fa-solid fa-bolt"></i><span><strong>이그나이트 톡</strong><br>현재 신청자 기준으로 마무리 편성 중입니다.</span></li>
-                <li><i class="fa-solid fa-envelope"></i><span><strong>신청 내용 변경 또는 취소</strong><br>이미 신청하신 분은 다시 제출하지 말고, 변경이나 취소가 필요한 경우에만 문의 메일로 알려 주세요.</span></li>
+                <li><i class="fa-solid fa-clipboard-check"></i><span><strong>개인정보 동의서</strong><br>참석 확인을 위해 필수 제출 항목입니다. 행사 전 또는 현장 접수 전 작성해 주세요.</span></li>
+                <li><i class="fa-solid fa-chart-simple"></i><span><strong>만족도 조사</strong><br>행사 운영과 다음 포럼 개선을 위한 선택 설문입니다. 행사 후 편한 시간에 참여해 주세요.</span></li>
+                <li><i class="fa-solid fa-users"></i><span><strong>기존 참가 신청</strong><br>참가 신청 폼은 마감되었습니다. 이미 신청하신 분은 중복 제출하지 않아도 됩니다.</span></li>
+                <li><i class="fa-solid fa-envelope"></i><span><strong>변경 또는 취소</strong><br>신청 내용 변경이나 취소가 필요한 경우에만 문의 메일로 알려 주세요.</span></li>
             </ul>
+
+            <div class="notice-link-grid" aria-label="제출 링크">
+                <a class="notice-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdnKzbBrOrJfMvcZIHUoo_tITT567GF5GTH8ExLkMIFGcf12w/viewform" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-clipboard-check"></i> 동의서 작성
+                </a>
+                <a class="notice-link secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSc9cCK8SC5RFQlR-AJZ288jSm_G--kBHcOPJKaf54Oiiw7IGQ/viewform" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-chart-simple"></i> 만족도 조사
+                </a>
+            </div>
 
             <div class="notice-foot">
                 <span class="notice-sign">KISTI 글로벌R&amp;D분석센터 김영진 드림</span>
@@ -2666,7 +2161,7 @@
 
     <script>
         (function () {
-            const KEY = 'oaf-notice-2026-final-registration-dismiss';
+            const KEY = 'oaf-notice-2026-forms-final-dismiss';
             const modal = document.getElementById('notice-modal');
             const chk = document.getElementById('notice-dismiss-chk');
             if (!modal) return;
