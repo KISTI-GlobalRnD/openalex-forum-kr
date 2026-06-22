@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2100" height="3246" viewBox="0 0 2100 3246">
+<style>
+.box { stroke: #1f2328; stroke-width: 1; rx: 10; ry: 10; }
+.head { stroke: none; }
+.label { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; font-size: 12px; font-weight: 700; fill: #111827; }
+.meta { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; font-size: 11px; fill: #57606a; }
+.col-name { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; font-size: 11px; fill: #111827; }
+.col-type { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; fill: #475467; }
+.col-key { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; font-size: 10px; font-weight: 700; fill: #0550ae; }
+.col-more { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; font-size: 10px; fill: #6b7280; }
+.edge { stroke: #64748B; stroke-width: 1.5; fill: none; }
+.edge-card { stroke: #64748B; stroke-width: 1.3; fill: none; }
+.edge-label { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; font-size: 10px; fill: #475467; }
+.candidate-edge { stroke: #d97706; stroke-dasharray: 5 5; }
+.candidate-edge-label { fill: #92400e; font-weight: 700; }
+.node { cursor: pointer; }
+.node.selected .box, .node.selected .head { stroke: #0f766e; stroke-width: 2.5; }
+.node.selected .col-name, .node.selected .col-key { fill: #0f172a; font-weight: 700; }
+.edge.selected + .edge-label, .edge.selected ~ .edge-card { stroke: #0f766e; fill: #0f766e; }
+.diff-added .box { stroke: #1a7f37; stroke-width: 2; }
+.diff-removed .box { stroke: #cf222e; stroke-width: 2; }
+.diff-changed .box { stroke: #bf8700; stroke-width: 2; }
+</style>
+<g class="edge-group">
+<path class="edge" data-parent="openalex_works_20260225" data-child="openalex_works_20260225__authorships" data-parent-sql="openalex_works_20260225" data-child-sql="openalex_works_20260225__authorships" data-relationship-source="structural_naming" d="M 390 264 C 420 264, 420 174, 450 174" />
+<text class="edge-label" x="420" y="213" text-anchor="middle">authorships · 1:N</text>
+<line class="edge-card" x1="395" y1="257" x2="395" y2="271" />
+<line class="edge-card" x1="448" y1="174" x2="438" y2="174" />
+<line class="edge-card" x1="448" y1="174" x2="438" y2="168" />
+<line class="edge-card" x1="448" y1="174" x2="438" y2="180" />
+</g>
+<g class="edge-group">
+<path class="edge" data-parent="openalex_works_20260225" data-child="openalex_works_20260225__best_oa_location__source__host_organization_lineage" data-parent-sql="openalex_works_20260225" data-child-sql="openalex_works_20260225__best_oa_location__source__host_organization_lineage" data-relationship-source="structural_naming" d="M 390 264 C 840 264, 840 95, 1290 95" />
+<text class="edge-label" x="840" y="173" text-anchor="middle">best_oa_locat…_lineage · 1:N</text>
+<line class="edge-card" x1="395" y1="257" x2="395" y2="271" />
+<line class="edge-card" x1="1288" y1="95" x2="1278" y2="95" />
+<line class="edge-card" x1="1288" y1="95" x2="1278" y2="89" />
+<line class="edge-card" x1="1288" y1="95" x2="1278" y2="101" />
+</g>
+<g class="edge-group">
+<path class="edge" data-parent="openalex_works_20260225" data-child="openalex_works_20260225__best_oa_location__source__host_organization_lineage_names" data-parent-sql="openalex_works_20260225" data-child-sql="openalex_works_20260225__best_oa_location__source__host_organization_lineage_names" data-relationship-source="structural_naming" d="M 390 264 C 840 264, 840 269, 1290 269" />
+<text class="edge-label" x="840" y="260" text-anchor="middle">best_oa_locat…ge_names · 1:N</text>
+<line class="edge-card" x1="395" y1="257" x2="395" y2="271" />
+<line class="edge-card" x1="1288" y1="269" x2="1278" y2="269" />
+<line class="edge-card" x1="1288" y1="269" x2="1278" y2="263" />
+<line class="edge-card" x1="1288" y1="269" x2="1278" y2="275" />
+</g>
+<g class="edge-group">
+<path class="edge" data-parent="openalex_works_20260225" data-child="openalex_works_20260225__best_oa_location__source__issn" data-parent-sql="openalex_works_20260225" data-child-sql="openalex_works_20260225__best_oa_location__source__issn" data-relationship-source="structural_naming" d="M 390 264 C 840 264, 840 443, 1290 443" />
+<text class="edge-label" x="840" y="347" text-anchor="middle">best_oa_locat…ce__issn · 1:N</text>
+<line class="edge-card" x1="395" y1="257" x2="395" y2="271" />
+<line class="edge-card" x1="1288" y1="443" x2="1278" y2="443" />
+<line class="edge-card" x1="1288" y1="443" x2="1278" y2="437" />
+<line class="edge-card" x1="1288" y1="443" x2="1278" y2="449" />
+</g>
+<g class="edge-group">
+<path class="edge" data-parent="openalex_works_20260225" data-child="openalex_works_20260225__concepts" data-parent-sql="openalex_works_20260225" data-child-sql="openalex_works_20260225__concepts" data-relationship-source="structural_naming" d="M 390 264 C 420 264, 420 467, 450 467" />
+<text class="edge-label" x="420" y="359" text-anchor="middle">concepts · 1:N</text>
+<line class="edge-card" x1="395" y1="257" x2="395" y2="271" />
+<line class="edge-card" x1="448" y1="467" x2="438" y2="467" />
+<line class="edge-card" x1="448" y1="467" x2="438" y2="461" />
+<line class="edge-card" x1="448" y1="467" x2="438" y2="473" />
+</g>
+<g class="edge-group">
+<path class="edge" data-parent="openalex_works_20260225" data-child="openalex_works_20260225__corresponding_author_ids" data-parent-sql="openalex_works_20260225" data-child-sql="openalex_works_20260225__corresponding_author_ids" data-relationship-source="structural_naming" d="M 390 264 C 420 264, 420 681, 450 681" />
+<text class="edge-label" x="420" y="466" text-anchor="middle">corresponding…thor_ids · 1:N</text>
+<line class="edge-card" x1="395" y1="257" x2="395" y2="271" />
+<line class="edge-card" x1="448" y1="681" x2="438" y2="681" />
+<line class="edge-card" x1="448" y1="681" x2="438" y2="675" />
+<line class="edge-card" x1="448" y1="681" x2="438" y2="687" />
+</g>
+<g class="edge-group">
+<path class="edge" data-parent="openalex_works_20260225" data-child="openalex_works_20260225__corresponding_institution_ids" data-parent-sql="openalex_works_20260225" data-child-sql="openalex_works_20260225__corresponding_institution_ids" data-relationship-source="structural_naming" d="M 390 264 C 420 264, 420 855, 450 855" />
+<text class="edge-label" x="420" y="553" text-anchor="middle">corresponding…tion_ids · 1:N</text>
+<line class="edge-card" x1="395" y1="257" x2="395" y2="271" />
+<line class="edge-card" x1="448" y1="855" x2="438" y2="855" />
+<line class="edge-card" x1="448" y1="855" x2="438" y2="849" />
+<line class="edge-card" x1="448" y1="855" x2="438" y2="861" />
+</g>
+<g class="edge-group">
+<path class="edge" data-parent="openalex_works_20260225" data-child="openalex_works_20260225__counts_by_year" data-parent-sql="openalex_works_20260225" data-child-sql="openalex_works_20260225__counts_by_year" data-relationship-source="structural_naming" d="M 390 264 C 420 264, 420 1039, 450 1039" />
+<text class="edge-label" x="420" y="645" text-anchor="middle">counts_by_year · 1:N</text>
+<line class="edge-card" x1="395" y1="257" x2="395" y2="271" />
+<line class="edge-card" x1="448" y1="1039" x2="438" y2="1039" />
+<line class="edge-card" x1="448" y1="1039" x2="438" y2="1033" />
+<line class="edge-card" x1="448" y1="1039" x2="438" y2="1045" />
+</g>
+<g class="edge-group">
+<path class="edge" data-parent="openalex_works_20260225" data-child="openalex_works_20260225__excepted__abstract_inverted_index" data-parent-sql="openalex_works_20260225" data-child-sql="openalex_works_20260225__excepted__abstract_inverted_index" data-relationship-source="structural_naming" d="M 390 264 C 630 264, 630 155, 870 155" />
+<text class="edge-label" x="630" y="203" text-anchor="middle">excepted__abs…ed_index · 1:N</text>
+<line class="edge-card" x1="395" y1="257" x2="395" y2="271" />
+<line class="edge-card" x1="868" y1="155" x2="858" y2="155" />
+<line class="edge-card" x1="868" y1="155" x2="858" y2="149" />
+<line class="edge-card" x1="868" y1="155" x2="858" y2="161" />
+</g>
+<g class="edge-group">
+<path class="edge" data-parent="openalex_works_20260225" data-child="openalex_works_20260225__funders" data-parent-sql="openalex_works_20260225" data-child-sql="openalex_works_20260225__funders" data-relationship-source="structural_naming" d="M 390 264 C 420 264, 420 1243, 450 1243" />
+<text class="edge-label" x="420" y="747" text-anchor="middle">funders · 1:N</text>
+<line class="edge-card" x1="395" y1="257" x2="395" y2="271" />
+<line class="edge-card" x1="448" y1="1243" x2="438" y2="1243" />
+<line class="edge-card" x1="448" y1="1243" x2="438" y2="1237" />
+<line class="edge-card" x1="448" y1="1243" x2="438" y2="1249" />
+</g>
+<g class="edge-group">
+<path class="edge" data-parent="openalex_works_20260225" data-child="openalex_works_20260225__indexed_in" data-parent-sql="openalex_works_20260225" data-child-sql="openalex_works_20260225__indexed_in" data-relationship-source="structural_naming" d="M 390 264 C 420 264, 420 1437, 450 1437" />
+<text class="edge-label" x="420" y="844" text-anchor="middle">indexed_in · 1:N</text>
+<line class="edge-card" x1="395" y1="257" x2="395" y2="271" />
+<line class="edge-card" x1="448" y1="1437" x2="438" y2="1437" />
+<line class="edge-card" x1="448" y1="1437" x2="438" y2="1431" />
+<line class="edge-card" x1="448" y1="1437" x2="438" y2="1443" />
+</g>
+<g class="edge-group">
+<path class="edge" data-parent="openalex_works_20260225" data-child="openalex_works_20260225__keywords" data-parent-sql="openalex_works_20260225" data-child-sql="openalex_works_20260225__keywords" data-relationship-source="structural_naming" d="M 390 264 C 420 264, 420 1631, 450 1631" />
+<text class="edge-label" x="420" y="941" text-anchor="middle">keywords · 1:N</text>
+<line class="edge-card" x1="395" y1="257" x2="395" y2="271" />
+<line class="edge-card" x1="448" y1="1631" x2="438" y2="1631" />
+<line class="edge-card" x1="448" y1="1631" x2="438" y2="1625" />
+<line class="edge-card" x1="448" y1="1631" x2="438" y2="1637" />
+</g>
+<g class="edge-group">
+<path class="edge" data-parent="openalex_works_20260225" data-child="openalex_works_20260225__locations" data-parent-sql="openalex_works_20260225" data-child-sql="openalex_works_20260225__locations" data-relationship-source="structural_naming" d="M 390 264 C 420 264, 420 1914, 450 1914" />
+<text class="edge-label" x="420" y="1083" text-anchor="middle">locations · 1:N</text>
+<line class="edge-card" x1="395" y1="257" x2="395" y2="271" />
+<line class="edge-card" x1="448" y1="1914" x2="438" y2="1914" />
+<line class="edge-card" x1="448" y1="1914" x2="438" y2="1908" />
+<line class="edge-card" x1="448" y1="1914" x2="438" y2="1920" />
+</g>
+<g class="edge-group">
+<path class="edge" data-parent="openalex_works_20260225" data-child="openalex_works_20260225__mesh" data-parent-sql="openalex_works_20260225" data-child-sql="openalex_works_20260225__mesh" data-relationship-source="structural_naming" d="M 390 264 C 420 264, 420 2217, 450 2217" />
+<text class="edge-label" x="420" y="1234" text-anchor="middle">mesh · 1:N</text>
+<line class="edge-card" x1="395" y1="257" x2="395" y2="271" />
+<line class="edge-card" x1="448" y1="2217" x2="438" y2="2217" />
+<line class="edge-card" x1="448" y1="2217" x2="438" y2="2211" />
+<line class="edge-card" x1="448" y1="2217" x2="438" y2="2223" />
+</g>
+<g class="edge-group">
+<path class="edge" data-parent="openalex_works_20260225" data-child="openalex_works_20260225__primary_location__source__host_organization_lineage" data-parent-sql="openalex_works_20260225" data-child-sql="openalex_works_20260225__primary_location__source__host_organization_lineage" data-relationship-source="structural_naming" d="M 390 264 C 840 264, 840 617, 1290 617" />
+<text class="edge-label" x="840" y="434" text-anchor="middle">primary_locat…_lineage · 1:N</text>
+<line class="edge-card" x1="395" y1="257" x2="395" y2="271" />
+<line class="edge-card" x1="1288" y1="617" x2="1278" y2="617" />
+<line class="edge-card" x1="1288" y1="617" x2="1278" y2="611" />
+<line class="edge-card" x1="1288" y1="617" x2="1278" y2="623" />
+</g>
+<g class="edge-group">
+<path class="edge" data-parent="openalex_works_20260225" data-child="openalex_works_20260225__primary_location__source__host_organization_lineage_names" data-parent-sql="openalex_works_20260225" data-child-sql="openalex_works_20260225__primary_location__source__host_organization_lineage_names" data-relationship-source="structural_naming" d="M 390 264 C 840 264, 840 791, 1290 791" />
+<text class="edge-label" x="840" y="521" text-anchor="middle">primary_locat…ge_names · 1:N</text>
+<line class="edge-card" x1="395" y1="257" x2="395" y2="271" />
+<line class="edge-card" x1="1288" y1="791" x2="1278" y2="791" />
+<line class="edge-card" x1="1288" y1="791" x2="1278" y2="785" />
+<line class="edge-card" x1="1288" y1="791" x2="1278" y2="797" />
+</g>
+<g class="edge-group">
+<path class="edge" data-parent="openalex_works_20260225" data-child="openalex_works_20260225__primary_location__source__issn" data-parent-sql="openalex_works_20260225" data-child-sql="openalex_works_20260225__primary_location__source__issn" data-relationship-source="structural_naming" d="M 390 264 C 840 264, 840 965, 1290 965" />
+<text class="edge-label" x="840" y="608" text-anchor="middle">primary_locat…ce__issn · 1:N</text>
+<line class="edge-card" x1="395" y1="257" x2="395" y2="271" />
+<line class="edge-card" x1="1288" y1="965" x2="1278" y2="965" />
+<line class="edge-card" x1="1288" y1="965" x2="1278" y2="959" />
+<line class="edge-card" x1="1288" y1="965" x2="1278" y2="971" />
+</g>
+<g class="edge-group">
+<path class="edge" data-parent="openalex_works_20260225" data-child="openalex_works_20260225__referenced_works" data-parent-sql="openalex_works_20260225" data-child-sql="openalex_works_20260225__referenced_works" data-relationship-source="structural_naming" d="M 390 264 C 420 264, 420 2431, 450 2431" />
+<text class="edge-label" x="420" y="1341" text-anchor="middle">referenced_works · 1:N</text>
+<line class="edge-card" x1="395" y1="257" x2="395" y2="271" />
+<line class="edge-card" x1="448" y1="2431" x2="438" y2="2431" />
+<line class="edge-card" x1="448" y1="2431" x2="438" y2="2425" />
+<line class="edge-card" x1="448" y1="2431" x2="438" y2="2437" />
+</g>
+<g class="edge-group">
+<path class="edge" data-parent="openalex_works_20260225" data-child="openalex_works_20260225__related_works" data-parent-sql="openalex_works_20260225" data-child-sql="openalex_works_20260225__related_works" data-relationship-source="structural_naming" d="M 390 264 C 420 264, 420 2605, 450 2605" />
+<text class="edge-label" x="420" y="1428" text-anchor="middle">related_works · 1:N</text>
+<line class="edge-card" x1="395" y1="257" x2="395" y2="271" />
+<line class="edge-card" x1="448" y1="2605" x2="438" y2="2605" />
+<line class="edge-card" x1="448" y1="2605" x2="438" y2="2599" />
+<line class="edge-card" x1="448" y1="2605" x2="438" y2="2611" />
+</g>
+<g class="edge-group">
+<path class="edge" data-parent="openalex_works_20260225" data-child="openalex_works_20260225__sustainable_development_goals" data-parent-sql="openalex_works_20260225" data-child-sql="openalex_works_20260225__sustainable_development_goals" data-relationship-source="structural_naming" d="M 390 264 C 420 264, 420 2799, 450 2799" />
+<text class="edge-label" x="420" y="1525" text-anchor="middle">sustainable_d…nt_goals · 1:N</text>
+<line class="edge-card" x1="395" y1="257" x2="395" y2="271" />
+<line class="edge-card" x1="448" y1="2799" x2="438" y2="2799" />
+<line class="edge-card" x1="448" y1="2799" x2="438" y2="2793" />
+<line class="edge-card" x1="448" y1="2799" x2="438" y2="2805" />
+</g>
+<g class="edge-group">
+<path class="edge" data-parent="openalex_works_20260225" data-child="openalex_works_20260225__topics" data-parent-sql="openalex_works_20260225" data-child-sql="openalex_works_20260225__topics" data-relationship-source="structural_naming" d="M 390 264 C 420 264, 420 3072, 450 3072" />
+<text class="edge-label" x="420" y="1662" text-anchor="middle">topics · 1:N</text>
+<line class="edge-card" x1="395" y1="257" x2="395" y2="271" />
+<line class="edge-card" x1="448" y1="3072" x2="438" y2="3072" />
+<line class="edge-card" x1="448" y1="3072" x2="438" y2="3066" />
+<line class="edge-card" x1="448" y1="3072" x2="438" y2="3078" />
+</g>
+<g id="node_openalex_works_20260225" class="node" data-name="openalex_works_20260225" data-name-sql="openalex_works_20260225" data-rows="1000" data-rows-exact="1" data-size="0" data-cols="97" data-name-original="openalex_works_20260225">
+<title>openalex_works_20260225 · rows: 1000 · cols: 97</title>
+<rect class="box" x="30" y="30" width="360" height="468" fill="#E6F0FF" />
+<rect class="head" x="30" y="30" width="360" height="28" rx="10" ry="10" fill="#BFDBFE" />
+<text class="label" x="40" y="48">openalex_works_20260225</text>
+<text class="meta" x="40" y="89">rows: 1000 · cols: 97</text>
+<text class="col-name" x="42" y="108">id</text>
+<text class="col-type" x="332" y="108" text-anchor="end">large_string</text>
+<text class="col-name" x="42" y="126">doi</text>
+<text class="col-type" x="332" y="126" text-anchor="end">large_string</text>
+<text class="col-name" x="42" y="144">title</text>
+<text class="col-type" x="332" y="144" text-anchor="end">large_string</text>
+<text class="col-name" x="42" y="162">display_name</text>
+<text class="col-type" x="332" y="162" text-anchor="end">large_string</text>
+<text class="col-name" x="42" y="180">publication_date</text>
+<text class="col-type" x="332" y="180" text-anchor="end">large_string</text>
+<text class="col-name" x="42" y="198">publication_year</text>
+<text class="col-type" x="332" y="198" text-anchor="end">int64</text>
+<text class="col-name" x="42" y="216">language</text>
+<text class="col-type" x="332" y="216" text-anchor="end">large_string</text>
+<text class="col-name" x="42" y="234">type</text>
+<text class="col-type" x="332" y="234" text-anchor="end">large_string</text>
+<text class="col-name" x="42" y="252">best_oa_location__id</text>
+<text class="col-type" x="332" y="252" text-anchor="end">large_string</text>
+<text class="col-key" x="378" y="252" text-anchor="end">FK</text>
+<text class="col-name" x="42" y="270">best_oa_loc…__license_id</text>
+<text class="col-type" x="332" y="270" text-anchor="end">large_string</text>
+<text class="col-key" x="378" y="270" text-anchor="end">FK</text>
+<text class="col-name" x="42" y="288">primary_location__id</text>
+<text class="col-type" x="332" y="288" text-anchor="end">large_string</text>
+<text class="col-key" x="378" y="288" text-anchor="end">FK</text>
+<text class="col-name" x="42" y="306">primary_loc…__license_id</text>
+<text class="col-type" x="332" y="306" text-anchor="end">large_string</text>
+<text class="col-key" x="378" y="306" text-anchor="end">FK</text>
+<text class="col-name" x="42" y="324">primary_loc…__source__id</text>
+<text class="col-type" x="332" y="324" text-anchor="end">large_string</text>
+<text class="col-key" x="378" y="324" text-anchor="end">FK</text>
+<text class="col-name" x="42" y="342">primary_topic__id</text>
+<text class="col-type" x="332" y="342" text-anchor="end">large_string</text>
+<text class="col-key" x="378" y="342" text-anchor="end">FK</text>
+<text class="col-name" x="42" y="360">primary_top…__domain__id</text>
+<text class="col-type" x="332" y="360" text-anchor="end">large_string</text>
+<text class="col-key" x="378" y="360" text-anchor="end">FK</text>
+<text class="col-name" x="42" y="378">primary_topic__field__id</text>
+<text class="col-type" x="332" y="378" text-anchor="end">large_string</text>
+<text class="col-key" x="378" y="378" text-anchor="end">FK</text>
+<text class="col-name" x="42" y="396">primary_top…subfield__id</text>
+<text class="col-type" x="332" y="396" text-anchor="end">large_string</text>
+<text class="col-key" x="378" y="396" text-anchor="end">FK</text>
+<text class="col-name" x="42" y="414">best_oa_loc…__source__id</text>
+<text class="col-type" x="332" y="414" text-anchor="end">large_string</text>
+<text class="col-key" x="378" y="414" text-anchor="end">FK</text>
+<text class="col-more" x="42" y="432">… +79 more columns</text>
+</g>
+<g id="node_openalex_works_20260225__authorships" class="node" data-name="openalex_works_20260225__authorships" data-name-sql="openalex_works_20260225__authorships" data-rows="1000" data-rows-exact="1" data-size="0" data-cols="11" data-name-original="openalex_works_20260225__authorships">
+<title>openalex_works_20260225__authorships · rows: 1000 · cols: 11</title>
+<rect class="box" x="450" y="30" width="360" height="288" fill="#F8FAFC" />
+<rect class="head" x="450" y="30" width="360" height="28" rx="10" ry="10" fill="#E5E7EB" />
+<text class="label" x="460" y="48">openalex_works_20260225__authorships</text>
+<text class="meta" x="460" y="73">authorships</text>
+<text class="meta" x="460" y="89">rows: 1000 · cols: 11</text>
+<text class="col-name" x="462" y="108">id</text>
+<text class="col-type" x="752" y="108" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="108" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="126">authorships…hor_position</text>
+<text class="col-type" x="752" y="126" text-anchor="end">large_string</text>
+<text class="col-name" x="462" y="144">authorships…affiliations</text>
+<text class="col-type" x="752" y="144" text-anchor="end">list&lt;ele…string&gt;&gt;</text>
+<text class="col-name" x="462" y="162">authorships__countries</text>
+<text class="col-type" x="752" y="162" text-anchor="end">list&lt;ele… string&gt;</text>
+<text class="col-name" x="462" y="180">authorships…_author_name</text>
+<text class="col-type" x="752" y="180" text-anchor="end">large_string</text>
+<text class="col-name" x="462" y="198">authorships…orresponding</text>
+<text class="col-type" x="752" y="198" text-anchor="end">bool</text>
+<text class="col-name" x="462" y="216">authorships…tion_strings</text>
+<text class="col-type" x="752" y="216" text-anchor="end">list&lt;ele… string&gt;</text>
+<text class="col-name" x="462" y="234">authorships…institutions</text>
+<text class="col-type" x="752" y="234" text-anchor="end">list&lt;ele…string&gt;&gt;</text>
+<text class="col-name" x="462" y="252">authorships__author__id</text>
+<text class="col-type" x="752" y="252" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="252" text-anchor="end">FK</text>
+<text class="col-more" x="462" y="270">… +2 more columns</text>
+</g>
+<g id="node_openalex_works_20260225__best_oa_location__source__host_organization_lineage" class="node" data-name="openalex_works_20260225__best_oa_location__source__host_organization_lineage" data-name-sql="openalex_works_20260225__best_oa_location__source__host_organization_lineage" data-rows="1000" data-rows-exact="1" data-size="0" data-cols="2" data-name-original="openalex_works_20260225__best_oa_location__source__host_organization_lineage">
+<title>openalex_works_20260225__best_oa_location__source__host_organization_lineage · rows: 1000 · cols: 2</title>
+<rect class="box" x="1290" y="30" width="360" height="130" fill="#F8FAFC" />
+<rect class="head" x="1290" y="30" width="360" height="28" rx="10" ry="10" fill="#E5E7EB" />
+<text class="label" x="1300" y="48">openalex_works_20…ganization_lineage</text>
+<text class="meta" x="1300" y="73">best_oa_location…anization_lineage</text>
+<text class="meta" x="1300" y="89">rows: 1000 · cols: 2</text>
+<text class="col-name" x="1302" y="108">id</text>
+<text class="col-type" x="1592" y="108" text-anchor="end">large_string</text>
+<text class="col-key" x="1638" y="108" text-anchor="end">FK</text>
+<text class="col-name" x="1302" y="126">best_oa_loc…tion_lineage</text>
+<text class="col-type" x="1592" y="126" text-anchor="end">large_string</text>
+</g>
+<g id="node_openalex_works_20260225__best_oa_location__source__host_organization_lineage_names" class="node" data-name="openalex_works_20260225__best_oa_location__source__host_organization_lineage_names" data-name-sql="openalex_works_20260225__best_oa_location__source__host_organization_lineage_names" data-rows="982" data-rows-exact="1" data-size="0" data-cols="2" data-name-original="openalex_works_20260225__best_oa_location__source__host_organization_lineage_names">
+<title>openalex_works_20260225__best_oa_location__source__host_organization_lineage_names · rows: 982 · cols: 2</title>
+<rect class="box" x="1290" y="204" width="360" height="130" fill="#F8FAFC" />
+<rect class="head" x="1290" y="204" width="360" height="28" rx="10" ry="10" fill="#E5E7EB" />
+<text class="label" x="1300" y="222">openalex_works_20…tion_lineage_names</text>
+<text class="meta" x="1300" y="247">best_oa_location…ion_lineage_names</text>
+<text class="meta" x="1300" y="263">rows: 982 · cols: 2</text>
+<text class="col-name" x="1302" y="282">id</text>
+<text class="col-type" x="1592" y="282" text-anchor="end">large_string</text>
+<text class="col-key" x="1638" y="282" text-anchor="end">FK</text>
+<text class="col-name" x="1302" y="300">best_oa_loc…ineage_names</text>
+<text class="col-type" x="1592" y="300" text-anchor="end">large_string</text>
+</g>
+<g id="node_openalex_works_20260225__best_oa_location__source__issn" class="node" data-name="openalex_works_20260225__best_oa_location__source__issn" data-name-sql="openalex_works_20260225__best_oa_location__source__issn" data-rows="1000" data-rows-exact="1" data-size="0" data-cols="2" data-name-original="openalex_works_20260225__best_oa_location__source__issn">
+<title>openalex_works_20260225__best_oa_location__source__issn · rows: 1000 · cols: 2</title>
+<rect class="box" x="1290" y="378" width="360" height="130" fill="#F8FAFC" />
+<rect class="head" x="1290" y="378" width="360" height="28" rx="10" ry="10" fill="#E5E7EB" />
+<text class="label" x="1300" y="396">openalex_works_20…tion__source__issn</text>
+<text class="meta" x="1300" y="421">best_oa_location/source/issn</text>
+<text class="meta" x="1300" y="437">rows: 1000 · cols: 2</text>
+<text class="col-name" x="1302" y="456">id</text>
+<text class="col-type" x="1592" y="456" text-anchor="end">large_string</text>
+<text class="col-key" x="1638" y="456" text-anchor="end">FK</text>
+<text class="col-name" x="1302" y="474">best_oa_loc…source__issn</text>
+<text class="col-type" x="1592" y="474" text-anchor="end">large_string</text>
+</g>
+<g id="node_openalex_works_20260225__concepts" class="node" data-name="openalex_works_20260225__concepts" data-name-sql="openalex_works_20260225__concepts" data-rows="1000" data-rows-exact="1" data-size="0" data-cols="6" data-name-original="openalex_works_20260225__concepts">
+<title>openalex_works_20260225__concepts · rows: 1000 · cols: 6</title>
+<rect class="box" x="450" y="362" width="360" height="210" fill="#F8FAFC" />
+<rect class="head" x="450" y="362" width="360" height="28" rx="10" ry="10" fill="#E5E7EB" />
+<text class="label" x="460" y="380">openalex_works_20260225__concepts</text>
+<text class="meta" x="460" y="405">concepts</text>
+<text class="meta" x="460" y="421">rows: 1000 · cols: 6</text>
+<text class="col-name" x="462" y="440">id</text>
+<text class="col-type" x="752" y="440" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="440" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="458">concepts__id</text>
+<text class="col-type" x="752" y="458" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="458" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="476">concepts__wikidata</text>
+<text class="col-type" x="752" y="476" text-anchor="end">large_string</text>
+<text class="col-name" x="462" y="494">concepts__display_name</text>
+<text class="col-type" x="752" y="494" text-anchor="end">large_string</text>
+<text class="col-name" x="462" y="512">concepts__level</text>
+<text class="col-type" x="752" y="512" text-anchor="end">int64</text>
+<text class="col-name" x="462" y="530">concepts__score</text>
+<text class="col-type" x="752" y="530" text-anchor="end">double</text>
+</g>
+<g id="node_openalex_works_20260225__corresponding_author_ids" class="node" data-name="openalex_works_20260225__corresponding_author_ids" data-name-sql="openalex_works_20260225__corresponding_author_ids" data-rows="1000" data-rows-exact="1" data-size="0" data-cols="2" data-name-original="openalex_works_20260225__corresponding_author_ids">
+<title>openalex_works_20260225__corresponding_author_ids · rows: 1000 · cols: 2</title>
+<rect class="box" x="450" y="616" width="360" height="130" fill="#F8FAFC" />
+<rect class="head" x="450" y="616" width="360" height="28" rx="10" ry="10" fill="#E5E7EB" />
+<text class="label" x="460" y="634">openalex_works_20…ponding_author_ids</text>
+<text class="meta" x="460" y="659">corresponding_author_ids</text>
+<text class="meta" x="460" y="675">rows: 1000 · cols: 2</text>
+<text class="col-name" x="462" y="694">id</text>
+<text class="col-type" x="752" y="694" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="694" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="712">corresponding_author_ids</text>
+<text class="col-type" x="752" y="712" text-anchor="end">large_string</text>
+</g>
+<g id="node_openalex_works_20260225__corresponding_institution_ids" class="node" data-name="openalex_works_20260225__corresponding_institution_ids" data-name-sql="openalex_works_20260225__corresponding_institution_ids" data-rows="463" data-rows-exact="1" data-size="0" data-cols="2" data-name-original="openalex_works_20260225__corresponding_institution_ids">
+<title>openalex_works_20260225__corresponding_institution_ids · rows: 463 · cols: 2</title>
+<rect class="box" x="450" y="790" width="360" height="130" fill="#F8FAFC" />
+<rect class="head" x="450" y="790" width="360" height="28" rx="10" ry="10" fill="#E5E7EB" />
+<text class="label" x="460" y="808">openalex_works_20…ng_institution_ids</text>
+<text class="meta" x="460" y="833">corresponding_institution_ids</text>
+<text class="meta" x="460" y="849">rows: 463 · cols: 2</text>
+<text class="col-name" x="462" y="868">id</text>
+<text class="col-type" x="752" y="868" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="868" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="886">correspondi…titution_ids</text>
+<text class="col-type" x="752" y="886" text-anchor="end">large_string</text>
+</g>
+<g id="node_openalex_works_20260225__counts_by_year" class="node" data-name="openalex_works_20260225__counts_by_year" data-name-sql="openalex_works_20260225__counts_by_year" data-rows="1000" data-rows-exact="1" data-size="0" data-cols="3" data-name-original="openalex_works_20260225__counts_by_year">
+<title>openalex_works_20260225__counts_by_year · rows: 1000 · cols: 3</title>
+<rect class="box" x="450" y="964" width="360" height="150" fill="#F8FAFC" />
+<rect class="head" x="450" y="964" width="360" height="28" rx="10" ry="10" fill="#E5E7EB" />
+<text class="label" x="460" y="982">openalex_works_20…25__counts_by_year</text>
+<text class="meta" x="460" y="1007">counts_by_year</text>
+<text class="meta" x="460" y="1023">rows: 1000 · cols: 3</text>
+<text class="col-name" x="462" y="1042">id</text>
+<text class="col-type" x="752" y="1042" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="1042" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="1060">counts_by_year__year</text>
+<text class="col-type" x="752" y="1060" text-anchor="end">int64</text>
+<text class="col-name" x="462" y="1078">counts_by_y…ted_by_count</text>
+<text class="col-type" x="752" y="1078" text-anchor="end">int64</text>
+</g>
+<g id="node_openalex_works_20260225__excepted__abstract_inverted_index" class="node" data-name="openalex_works_20260225__excepted__abstract_inverted_index" data-name-sql="openalex_works_20260225__excepted__abstract_inverted_index" data-rows="1000" data-rows-exact="1" data-size="0" data-cols="8" data-name-original="openalex_works_20260225__excepted__abstract_inverted_index">
+<title>openalex_works_20260225__excepted__abstract_inverted_index · rows: 1000 · cols: 8</title>
+<rect class="box" x="870" y="30" width="360" height="250" fill="#FFF8C5" />
+<rect class="head" x="870" y="30" width="360" height="28" rx="10" ry="10" fill="#FDE68A" />
+<text class="label" x="880" y="48">openalex_works_20…act_inverted_index</text>
+<text class="meta" x="880" y="73">excepted/abstract_inverted_index</text>
+<text class="meta" x="880" y="89">rows: 1000 · cols: 8</text>
+<text class="col-name" x="882" y="108">value</text>
+<text class="col-type" x="1172" y="108" text-anchor="end">large_string</text>
+<text class="col-name" x="882" y="126">id</text>
+<text class="col-type" x="1172" y="126" text-anchor="end">large_string</text>
+<text class="col-key" x="1218" y="126" text-anchor="end">FK</text>
+<text class="col-name" x="882" y="144">__except_path__</text>
+<text class="col-type" x="1172" y="144" text-anchor="end">large_string</text>
+<text class="col-name" x="882" y="162">__except_raw_type__</text>
+<text class="col-type" x="1172" y="162" text-anchor="end">large_string</text>
+<text class="col-name" x="882" y="180">__except_raw_json__</text>
+<text class="col-type" x="1172" y="180" text-anchor="end">large_string</text>
+<text class="col-name" x="882" y="198">__source_path__</text>
+<text class="col-type" x="1172" y="198" text-anchor="end">large_string</text>
+<text class="col-name" x="882" y="216">__line_no__</text>
+<text class="col-type" x="1172" y="216" text-anchor="end">int64</text>
+<text class="col-name" x="882" y="234">__record_index__</text>
+<text class="col-type" x="1172" y="234" text-anchor="end">int64</text>
+</g>
+<g id="node_openalex_works_20260225__funders" class="node" data-name="openalex_works_20260225__funders" data-name-sql="openalex_works_20260225__funders" data-rows="89" data-rows-exact="1" data-size="0" data-cols="4" data-name-original="openalex_works_20260225__funders">
+<title>openalex_works_20260225__funders · rows: 89 · cols: 4</title>
+<rect class="box" x="450" y="1158" width="360" height="170" fill="#F8FAFC" />
+<rect class="head" x="450" y="1158" width="360" height="28" rx="10" ry="10" fill="#E5E7EB" />
+<text class="label" x="460" y="1176">openalex_works_20260225__funders</text>
+<text class="meta" x="460" y="1201">funders</text>
+<text class="meta" x="460" y="1217">rows: 89 · cols: 4</text>
+<text class="col-name" x="462" y="1236">id</text>
+<text class="col-type" x="752" y="1236" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="1236" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="1254">funders__id</text>
+<text class="col-type" x="752" y="1254" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="1254" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="1272">funders__display_name</text>
+<text class="col-type" x="752" y="1272" text-anchor="end">large_string</text>
+<text class="col-name" x="462" y="1290">funders__ror</text>
+<text class="col-type" x="752" y="1290" text-anchor="end">large_string</text>
+</g>
+<g id="node_openalex_works_20260225__indexed_in" class="node" data-name="openalex_works_20260225__indexed_in" data-name-sql="openalex_works_20260225__indexed_in" data-rows="754" data-rows-exact="1" data-size="0" data-cols="2" data-name-original="openalex_works_20260225__indexed_in">
+<title>openalex_works_20260225__indexed_in · rows: 754 · cols: 2</title>
+<rect class="box" x="450" y="1372" width="360" height="130" fill="#F8FAFC" />
+<rect class="head" x="450" y="1372" width="360" height="28" rx="10" ry="10" fill="#E5E7EB" />
+<text class="label" x="460" y="1390">openalex_works_20260225__indexed_in</text>
+<text class="meta" x="460" y="1415">indexed_in</text>
+<text class="meta" x="460" y="1431">rows: 754 · cols: 2</text>
+<text class="col-name" x="462" y="1450">id</text>
+<text class="col-type" x="752" y="1450" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="1450" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="1468">indexed_in</text>
+<text class="col-type" x="752" y="1468" text-anchor="end">large_string</text>
+</g>
+<g id="node_openalex_works_20260225__keywords" class="node" data-name="openalex_works_20260225__keywords" data-name-sql="openalex_works_20260225__keywords" data-rows="1000" data-rows-exact="1" data-size="0" data-cols="4" data-name-original="openalex_works_20260225__keywords">
+<title>openalex_works_20260225__keywords · rows: 1000 · cols: 4</title>
+<rect class="box" x="450" y="1546" width="360" height="170" fill="#F8FAFC" />
+<rect class="head" x="450" y="1546" width="360" height="28" rx="10" ry="10" fill="#E5E7EB" />
+<text class="label" x="460" y="1564">openalex_works_20260225__keywords</text>
+<text class="meta" x="460" y="1589">keywords</text>
+<text class="meta" x="460" y="1605">rows: 1000 · cols: 4</text>
+<text class="col-name" x="462" y="1624">id</text>
+<text class="col-type" x="752" y="1624" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="1624" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="1642">keywords__id</text>
+<text class="col-type" x="752" y="1642" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="1642" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="1660">keywords__display_name</text>
+<text class="col-type" x="752" y="1660" text-anchor="end">large_string</text>
+<text class="col-name" x="462" y="1678">keywords__score</text>
+<text class="col-type" x="752" y="1678" text-anchor="end">double</text>
+</g>
+<g id="node_openalex_works_20260225__locations" class="node" data-name="openalex_works_20260225__locations" data-name-sql="openalex_works_20260225__locations" data-rows="1000" data-rows-exact="1" data-size="0" data-cols="25" data-name-original="openalex_works_20260225__locations">
+<title>openalex_works_20260225__locations · rows: 1000 · cols: 25</title>
+<rect class="box" x="450" y="1760" width="360" height="308" fill="#F8FAFC" />
+<rect class="head" x="450" y="1760" width="360" height="28" rx="10" ry="10" fill="#E5E7EB" />
+<text class="label" x="460" y="1778">openalex_works_20260225__locations</text>
+<text class="meta" x="460" y="1803">locations</text>
+<text class="meta" x="460" y="1819">rows: 1000 · cols: 25</text>
+<text class="col-name" x="462" y="1838">id</text>
+<text class="col-type" x="752" y="1838" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="1838" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="1856">locations__id</text>
+<text class="col-type" x="752" y="1856" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="1856" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="1874">locations__is_oa</text>
+<text class="col-type" x="752" y="1874" text-anchor="end">bool</text>
+<text class="col-name" x="462" y="1892">locations__is_published</text>
+<text class="col-type" x="752" y="1892" text-anchor="end">bool</text>
+<text class="col-name" x="462" y="1910">locations__…ing_page_url</text>
+<text class="col-type" x="752" y="1910" text-anchor="end">large_string</text>
+<text class="col-name" x="462" y="1928">locations__pdf_url</text>
+<text class="col-type" x="752" y="1928" text-anchor="end">large_string</text>
+<text class="col-name" x="462" y="1946">locations__…_source_name</text>
+<text class="col-type" x="752" y="1946" text-anchor="end">large_string</text>
+<text class="col-name" x="462" y="1964">locations__raw_type</text>
+<text class="col-type" x="752" y="1964" text-anchor="end">large_string</text>
+<text class="col-name" x="462" y="1982">locations__license_id</text>
+<text class="col-type" x="752" y="1982" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="1982" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="2000">locations__source__id</text>
+<text class="col-type" x="752" y="2000" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="2000" text-anchor="end">FK</text>
+<text class="col-more" x="462" y="2018">… +15 more columns</text>
+</g>
+<g id="node_openalex_works_20260225__mesh" class="node" data-name="openalex_works_20260225__mesh" data-name-sql="openalex_works_20260225__mesh" data-rows="1000" data-rows-exact="1" data-size="0" data-cols="6" data-name-original="openalex_works_20260225__mesh">
+<title>openalex_works_20260225__mesh · rows: 1000 · cols: 6</title>
+<rect class="box" x="450" y="2112" width="360" height="210" fill="#F8FAFC" />
+<rect class="head" x="450" y="2112" width="360" height="28" rx="10" ry="10" fill="#E5E7EB" />
+<text class="label" x="460" y="2130">openalex_works_20260225__mesh</text>
+<text class="meta" x="460" y="2155">mesh</text>
+<text class="meta" x="460" y="2171">rows: 1000 · cols: 6</text>
+<text class="col-name" x="462" y="2190">id</text>
+<text class="col-type" x="752" y="2190" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="2190" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="2208">mesh__descriptor_ui</text>
+<text class="col-type" x="752" y="2208" text-anchor="end">large_string</text>
+<text class="col-name" x="462" y="2226">mesh__descriptor_name</text>
+<text class="col-type" x="752" y="2226" text-anchor="end">large_string</text>
+<text class="col-name" x="462" y="2244">mesh__qualifier_ui</text>
+<text class="col-type" x="752" y="2244" text-anchor="end">large_string</text>
+<text class="col-name" x="462" y="2262">mesh__qualifier_name</text>
+<text class="col-type" x="752" y="2262" text-anchor="end">large_string</text>
+<text class="col-name" x="462" y="2280">mesh__is_major_topic</text>
+<text class="col-type" x="752" y="2280" text-anchor="end">bool</text>
+</g>
+<g id="node_openalex_works_20260225__primary_location__source__host_organization_lineage" class="node" data-name="openalex_works_20260225__primary_location__source__host_organization_lineage" data-name-sql="openalex_works_20260225__primary_location__source__host_organization_lineage" data-rows="1000" data-rows-exact="1" data-size="0" data-cols="2" data-name-original="openalex_works_20260225__primary_location__source__host_organization_lineage">
+<title>openalex_works_20260225__primary_location__source__host_organization_lineage · rows: 1000 · cols: 2</title>
+<rect class="box" x="1290" y="552" width="360" height="130" fill="#F8FAFC" />
+<rect class="head" x="1290" y="552" width="360" height="28" rx="10" ry="10" fill="#E5E7EB" />
+<text class="label" x="1300" y="570">openalex_works_20…ganization_lineage</text>
+<text class="meta" x="1300" y="595">primary_location…anization_lineage</text>
+<text class="meta" x="1300" y="611">rows: 1000 · cols: 2</text>
+<text class="col-name" x="1302" y="630">id</text>
+<text class="col-type" x="1592" y="630" text-anchor="end">large_string</text>
+<text class="col-key" x="1638" y="630" text-anchor="end">FK</text>
+<text class="col-name" x="1302" y="648">primary_loc…tion_lineage</text>
+<text class="col-type" x="1592" y="648" text-anchor="end">large_string</text>
+</g>
+<g id="node_openalex_works_20260225__primary_location__source__host_organization_lineage_names" class="node" data-name="openalex_works_20260225__primary_location__source__host_organization_lineage_names" data-name-sql="openalex_works_20260225__primary_location__source__host_organization_lineage_names" data-rows="1000" data-rows-exact="1" data-size="0" data-cols="2" data-name-original="openalex_works_20260225__primary_location__source__host_organization_lineage_names">
+<title>openalex_works_20260225__primary_location__source__host_organization_lineage_names · rows: 1000 · cols: 2</title>
+<rect class="box" x="1290" y="726" width="360" height="130" fill="#F8FAFC" />
+<rect class="head" x="1290" y="726" width="360" height="28" rx="10" ry="10" fill="#E5E7EB" />
+<text class="label" x="1300" y="744">openalex_works_20…tion_lineage_names</text>
+<text class="meta" x="1300" y="769">primary_location…ion_lineage_names</text>
+<text class="meta" x="1300" y="785">rows: 1000 · cols: 2</text>
+<text class="col-name" x="1302" y="804">id</text>
+<text class="col-type" x="1592" y="804" text-anchor="end">large_string</text>
+<text class="col-key" x="1638" y="804" text-anchor="end">FK</text>
+<text class="col-name" x="1302" y="822">primary_loc…ineage_names</text>
+<text class="col-type" x="1592" y="822" text-anchor="end">large_string</text>
+</g>
+<g id="node_openalex_works_20260225__primary_location__source__issn" class="node" data-name="openalex_works_20260225__primary_location__source__issn" data-name-sql="openalex_works_20260225__primary_location__source__issn" data-rows="1000" data-rows-exact="1" data-size="0" data-cols="2" data-name-original="openalex_works_20260225__primary_location__source__issn">
+<title>openalex_works_20260225__primary_location__source__issn · rows: 1000 · cols: 2</title>
+<rect class="box" x="1290" y="900" width="360" height="130" fill="#F8FAFC" />
+<rect class="head" x="1290" y="900" width="360" height="28" rx="10" ry="10" fill="#E5E7EB" />
+<text class="label" x="1300" y="918">openalex_works_20…tion__source__issn</text>
+<text class="meta" x="1300" y="943">primary_location/source/issn</text>
+<text class="meta" x="1300" y="959">rows: 1000 · cols: 2</text>
+<text class="col-name" x="1302" y="978">id</text>
+<text class="col-type" x="1592" y="978" text-anchor="end">large_string</text>
+<text class="col-key" x="1638" y="978" text-anchor="end">FK</text>
+<text class="col-name" x="1302" y="996">primary_loc…source__issn</text>
+<text class="col-type" x="1592" y="996" text-anchor="end">large_string</text>
+</g>
+<g id="node_openalex_works_20260225__referenced_works" class="node" data-name="openalex_works_20260225__referenced_works" data-name-sql="openalex_works_20260225__referenced_works" data-rows="1000" data-rows-exact="1" data-size="0" data-cols="2" data-name-original="openalex_works_20260225__referenced_works">
+<title>openalex_works_20260225__referenced_works · rows: 1000 · cols: 2</title>
+<rect class="box" x="450" y="2366" width="360" height="130" fill="#F8FAFC" />
+<rect class="head" x="450" y="2366" width="360" height="28" rx="10" ry="10" fill="#E5E7EB" />
+<text class="label" x="460" y="2384">openalex_works_20…__referenced_works</text>
+<text class="meta" x="460" y="2409">referenced_works</text>
+<text class="meta" x="460" y="2425">rows: 1000 · cols: 2</text>
+<text class="col-name" x="462" y="2444">id</text>
+<text class="col-type" x="752" y="2444" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="2444" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="2462">referenced_works</text>
+<text class="col-type" x="752" y="2462" text-anchor="end">large_string</text>
+</g>
+<g id="node_openalex_works_20260225__related_works" class="node" data-name="openalex_works_20260225__related_works" data-name-sql="openalex_works_20260225__related_works" data-rows="1000" data-rows-exact="1" data-size="0" data-cols="2" data-name-original="openalex_works_20260225__related_works">
+<title>openalex_works_20260225__related_works · rows: 1000 · cols: 2</title>
+<rect class="box" x="450" y="2540" width="360" height="130" fill="#F8FAFC" />
+<rect class="head" x="450" y="2540" width="360" height="28" rx="10" ry="10" fill="#E5E7EB" />
+<text class="label" x="460" y="2558">openalex_works_20…225__related_works</text>
+<text class="meta" x="460" y="2583">related_works</text>
+<text class="meta" x="460" y="2599">rows: 1000 · cols: 2</text>
+<text class="col-name" x="462" y="2618">id</text>
+<text class="col-type" x="752" y="2618" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="2618" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="2636">related_works</text>
+<text class="col-type" x="752" y="2636" text-anchor="end">large_string</text>
+</g>
+<g id="node_openalex_works_20260225__sustainable_development_goals" class="node" data-name="openalex_works_20260225__sustainable_development_goals" data-name-sql="openalex_works_20260225__sustainable_development_goals" data-rows="1000" data-rows-exact="1" data-size="0" data-cols="4" data-name-original="openalex_works_20260225__sustainable_development_goals">
+<title>openalex_works_20260225__sustainable_development_goals · rows: 1000 · cols: 4</title>
+<rect class="box" x="450" y="2714" width="360" height="170" fill="#F8FAFC" />
+<rect class="head" x="450" y="2714" width="360" height="28" rx="10" ry="10" fill="#E5E7EB" />
+<text class="label" x="460" y="2732">openalex_works_20…_development_goals</text>
+<text class="meta" x="460" y="2757">sustainable_development_goals</text>
+<text class="meta" x="460" y="2773">rows: 1000 · cols: 4</text>
+<text class="col-name" x="462" y="2792">id</text>
+<text class="col-type" x="752" y="2792" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="2792" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="2810">sustainable…nt_goals__id</text>
+<text class="col-type" x="752" y="2810" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="2810" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="2828">sustainable…display_name</text>
+<text class="col-type" x="752" y="2828" text-anchor="end">large_string</text>
+<text class="col-name" x="462" y="2846">sustainable…goals__score</text>
+<text class="col-type" x="752" y="2846" text-anchor="end">double</text>
+</g>
+<g id="node_openalex_works_20260225__topics" class="node" data-name="openalex_works_20260225__topics" data-name-sql="openalex_works_20260225__topics" data-rows="1000" data-rows-exact="1" data-size="0" data-cols="10" data-name-original="openalex_works_20260225__topics">
+<title>openalex_works_20260225__topics · rows: 1000 · cols: 10</title>
+<rect class="box" x="450" y="2928" width="360" height="288" fill="#F8FAFC" />
+<rect class="head" x="450" y="2928" width="360" height="28" rx="10" ry="10" fill="#E5E7EB" />
+<text class="label" x="460" y="2946">openalex_works_20260225__topics</text>
+<text class="meta" x="460" y="2971">topics</text>
+<text class="meta" x="460" y="2987">rows: 1000 · cols: 10</text>
+<text class="col-name" x="462" y="3006">id</text>
+<text class="col-type" x="752" y="3006" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="3006" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="3024">topics__id</text>
+<text class="col-type" x="752" y="3024" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="3024" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="3042">topics__display_name</text>
+<text class="col-type" x="752" y="3042" text-anchor="end">large_string</text>
+<text class="col-name" x="462" y="3060">topics__score</text>
+<text class="col-type" x="752" y="3060" text-anchor="end">double</text>
+<text class="col-name" x="462" y="3078">topics__domain__id</text>
+<text class="col-type" x="752" y="3078" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="3078" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="3096">topics__dom…display_name</text>
+<text class="col-type" x="752" y="3096" text-anchor="end">large_string</text>
+<text class="col-name" x="462" y="3114">topics__field__id</text>
+<text class="col-type" x="752" y="3114" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="3114" text-anchor="end">FK</text>
+<text class="col-name" x="462" y="3132">topics__fie…display_name</text>
+<text class="col-type" x="752" y="3132" text-anchor="end">large_string</text>
+<text class="col-name" x="462" y="3150">topics__subfield__id</text>
+<text class="col-type" x="752" y="3150" text-anchor="end">large_string</text>
+<text class="col-key" x="798" y="3150" text-anchor="end">FK</text>
+<text class="col-more" x="462" y="3168">… +1 more columns</text>
+</g>
+</svg>
