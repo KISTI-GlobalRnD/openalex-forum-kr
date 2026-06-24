@@ -9,9 +9,10 @@
 - 협업 촉진: 공동 분석/도구 개발 아이디어의 발굴과 연계
 
 ## 연혁(History)
-- 2026-06-23: OpenAlex User Forum KR #2 예정 (서울 정동1928 아트센터 이벤트홀)
-  - 공식 안내 및 참가 신청: `index.html`
-  - 예정 행사 메모: `events/upcoming.md`
+- 2026-06-23: OpenAlex User Forum KR #2 개최 (서울 정동1928 아트센터 이벤트홀)
+  - 공식 안내 페이지: `index.html`
+  - 발표 자료 디렉터리: `presentations/2026-06-forum-2/`
+  - 행사 메모: `events/upcoming.md`
 - 2025-09-25: OpenAlex User Forum KR #1 개최
   - 1회 아카이브 페이지: `index-forum-1.html`
   - 발표 자료 디렉터리: `presentations/2025-09-forum-1/`
