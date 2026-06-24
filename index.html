@@ -977,6 +977,92 @@
             background: linear-gradient(135deg, #334155, #0f172a);
         }
 
+        .gallery-layout {
+            display: grid;
+            gap: 16px;
+            margin-top: 28px;
+        }
+
+        .gallery-feature,
+        .gallery-card {
+            position: relative;
+            min-width: 0;
+            border: 1px solid rgba(var(--ink-rgb), 0.11);
+            border-radius: 8px;
+            background: #e8eef7;
+            box-shadow: 0 18px 38px rgba(15, 31, 76, 0.1);
+            overflow: hidden;
+        }
+
+        .gallery-feature {
+            aspect-ratio: 16 / 7.2;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .gallery-card {
+            aspect-ratio: 4 / 3;
+        }
+
+        .gallery-feature img,
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: var(--photo-position, center);
+        }
+
+        .gallery-caption,
+        .gallery-card figcaption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            display: grid;
+            gap: 5px;
+            padding: 52px 16px 16px;
+            background: linear-gradient(180deg, transparent 0%, rgba(15, 31, 76, 0.76) 100%);
+            color: #fff;
+        }
+
+        .gallery-feature .gallery-caption {
+            padding: 78px 20px 20px;
+        }
+
+        .gallery-tag {
+            width: fit-content;
+            padding: 4px 9px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.88);
+            font-family: 'Space Grotesk', 'Noto Sans KR', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+        }
+
+        .gallery-caption strong,
+        .gallery-card strong {
+            color: #fff;
+            font-size: 1rem;
+            line-height: 1.35;
+            text-shadow: 0 2px 12px rgba(15, 31, 76, 0.36);
+        }
+
+        .gallery-caption p,
+        .gallery-card p {
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.84rem;
+            line-height: 1.48;
+        }
+
         .resource-card strong {
             display: block;
             color: #1f2f44;
@@ -1171,6 +1257,14 @@
                 grid-template-columns: 1fr;
             }
 
+            .gallery-feature {
+                aspect-ratio: 16 / 8.8;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
             .register-stats {
                 margin-top: 0;
             }
@@ -1214,6 +1308,20 @@
 
             .hero-photo {
                 aspect-ratio: 3 / 2.45;
+            }
+
+            .gallery-feature,
+            .gallery-card {
+                aspect-ratio: 4 / 3;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-feature .gallery-caption,
+            .gallery-card figcaption {
+                padding: 58px 14px 14px;
             }
 
             .hero-photo figcaption {
@@ -1294,7 +1402,7 @@
                 bottom: max(12px, env(safe-area-inset-bottom, 0px));
                 z-index: 998;
                 display: grid;
-                grid-template-columns: repeat(3, minmax(0, 1fr));
+                grid-template-columns: repeat(4, minmax(0, 1fr));
                 gap: 8px;
                 padding: 8px;
                 border: 1px solid rgba(var(--ink-rgb), 0.12);
@@ -1365,6 +1473,7 @@
             <nav class="top-actions" aria-label="상단 메뉴">
                 <a class="primary" href="#survey-inline"><i class="fas fa-chart-simple"></i> 만족도 조사</a>
                 <a href="#program"><i class="fas fa-calendar-days"></i> 프로그램</a>
+                <a href="#gallery"><i class="fas fa-images"></i> 사진</a>
                 <a href="#resources"><i class="fas fa-layer-group"></i> 자료</a>
                 <a href="mailto:kimyoungjin06@kisti.re.kr?subject=OpenAlex%20User%20Forum%20KR%20%232%20문의"><i class="fas fa-envelope"></i> 문의</a>
             </nav>
@@ -1377,6 +1486,7 @@
         <a href="#program" data-target="program" aria-label="Program"></a>
         <a href="#speakers" data-target="speakers" aria-label="Speakers"></a>
         <a href="#venue" data-target="venue" aria-label="Venue"></a>
+        <a href="#gallery" data-target="gallery" aria-label="Photos"></a>
         <a href="#resources" data-target="resources" aria-label="Resources"></a>
         <a href="#survey-inline" data-target="survey-inline" aria-label="Form"></a>
     </nav>
@@ -1795,6 +1905,76 @@
             </div>
         </section>
 
+        <section class="section-panel compact" id="gallery" data-section="gallery">
+            <div class="container panel-inner reveal">
+                <div class="section-kicker"><i class="fas fa-images"></i> Photos</div>
+                <h2 class="section-heading">현장 스케치</h2>
+                <p class="section-copy">튜토리얼, 오프닝, 발표 세션 순서로 2회 포럼의 현장 흐름을 정리했습니다.</p>
+
+                <div class="gallery-layout" aria-label="OpenAlex User Forum KR #2 현장 사진">
+                    <figure class="gallery-feature">
+                        <img src="img/forums/2nd/web/T01.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="OpenAlex 튜토리얼 실습 현장">
+                        <figcaption class="gallery-caption">
+                            <span class="gallery-tag">Tutorial</span>
+                            <strong>OpenAlex 튜토리얼 실습</strong>
+                            <p>참가자들이 노트북으로 OpenAlex API와 데이터 분석 실습을 따라가는 현장.</p>
+                        </figcaption>
+                    </figure>
+
+                    <div class="gallery-grid">
+                        <figure class="gallery-card">
+                            <img src="img/forums/2nd/web/O01.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="OpenAlex User Forum KR 2회 오프닝 발표 현장">
+                            <figcaption>
+                                <span class="gallery-tag">Opening</span>
+                                <strong>두 번째 모임을 열며</strong>
+                                <p>본세션 오프닝과 프로그램 소개.</p>
+                            </figcaption>
+                        </figure>
+                        <figure class="gallery-card">
+                            <img src="img/forums/2nd/web/O02.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="오프닝 중 프로그램을 소개하는 현장">
+                            <figcaption>
+                                <span class="gallery-tag">Opening</span>
+                                <strong>프로그램 안내</strong>
+                                <p>하루 일정과 세션 흐름을 공유한 오프닝.</p>
+                            </figcaption>
+                        </figure>
+                        <figure class="gallery-card">
+                            <img src="img/forums/2nd/web/P01.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="메인 발표 1 현장">
+                            <figcaption>
+                                <span class="gallery-tag">Presentation</span>
+                                <strong>메인 발표 1</strong>
+                                <p>OpenAlex 활용 사례와 분석 경험 공유.</p>
+                            </figcaption>
+                        </figure>
+                        <figure class="gallery-card">
+                            <img src="img/forums/2nd/web/P02.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="메인 발표 2 현장">
+                            <figcaption>
+                                <span class="gallery-tag">Presentation</span>
+                                <strong>메인 발표 2</strong>
+                                <p>MCP와 스킬을 활용한 데이터 분석 발표.</p>
+                            </figcaption>
+                        </figure>
+                        <figure class="gallery-card">
+                            <img src="img/forums/2nd/web/P03.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="메인 발표 3 현장">
+                            <figcaption>
+                                <span class="gallery-tag">Presentation</span>
+                                <strong>메인 발표 3</strong>
+                                <p>한국 기관의 OpenAlex 가시성 분석 발표.</p>
+                            </figcaption>
+                        </figure>
+                        <figure class="gallery-card">
+                            <img src="img/forums/2nd/web/P04.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="메인 발표 4 현장">
+                            <figcaption>
+                                <span class="gallery-tag">Presentation</span>
+                                <strong>메인 발표 4</strong>
+                                <p>OpenAlex 기반 활용 사례 발표.</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="section-panel compact" id="resources" data-section="resources">
             <div class="container panel-inner reveal">
                 <div class="section-kicker"><i class="fas fa-layer-group"></i> Resources</div>
@@ -1910,13 +2090,14 @@
     <nav class="mobile-dock" aria-label="빠른 실행">
         <a class="primary" href="#survey-inline" data-target="survey-inline"><i class="fas fa-chart-simple"></i><span>설문</span></a>
         <a href="#program" data-target="program"><i class="fas fa-calendar-days"></i><span>프로그램</span></a>
+        <a href="#gallery" data-target="gallery"><i class="fas fa-images"></i><span>사진</span></a>
         <a href="#resources" data-target="resources"><i class="fas fa-layer-group"></i><span>자료</span></a>
     </nav>
 
     <script>
         const CONFIG = {
             eventDate: '2026-06-23T11:30:00+09:00',
-            sectionIds: ['intro', 'register', 'program', 'speakers', 'venue', 'resources', 'survey-inline']
+            sectionIds: ['intro', 'register', 'program', 'speakers', 'venue', 'gallery', 'resources', 'survey-inline']
         };
 
         const DOM = {
